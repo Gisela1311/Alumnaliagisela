@@ -58,3 +58,6 @@ class Inf_Prof(models.Model):
     
     class Meta:
         db_table = "Inf_Prof" 
+
+
+    

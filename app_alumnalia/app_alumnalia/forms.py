@@ -6,3 +6,10 @@ class Formadores(ModelForm):
         model = 
         fields = ['titulo', 'especializacion', 'experiencia', 'formacion', 'cv', 'modalidad', 'tipo_alumno', 'franja', 'certificacion', 'herramientas', 'competencias']
 
+
+# forms.py
+
+class DatosPersonalesForm(forms.ModelForm):
+    class Meta:
+        model = DatosPersonales
+        fields = '__all__'

@@ -17,7 +17,14 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
+from . import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+]
+
+#datos personales
+urlpatterns = [
+    path('datos-personales/', views.datos_personales_view, name='datos_personales'),
+    path('success/', views.success_view, name='success'),  # Define la vista de éxito
 ]

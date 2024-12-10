@@ -1,0 +1,15 @@
+<!-- datos_personales.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Datos Personales</title>
+</head>
+<body>
+    <h2>Formulario de Datos Personales</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
