@@ -18,7 +18,9 @@
 | **term_per**                    | 2. ¿Aceptas los términos y condiciones del portal ALUMNALIA? |
 | **noti_per**                    | 3. ¿Quieres recibir notificaciones sobre nuevas oportunidades formativas?    
 
-##Datos Formadores
+
+## Datos Formadores
+
 
 | Información Profesional | Detalles |
 |-------------------------|----------|
