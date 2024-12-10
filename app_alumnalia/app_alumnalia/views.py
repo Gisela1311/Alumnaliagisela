@@ -1,6 +1,6 @@
 
 from django.shortcuts import render, redirect
-from .forms import InfProfForm
+#from .forms import InfProfForm
 from .models import *
 
 def pagina_inicio(request): 
@@ -21,8 +21,8 @@ def nuevo_formador(request):
 
 
 # views.py
-from django.shortcuts import render, redirect
-from .forms import DatosPersonalesForm
+#from django.shortcuts import render, redirect
+#from .forms import DatosPersonalesForm
 
 def datos_personales_view(request):
     if request.method == 'POST':
@@ -37,8 +37,9 @@ def datos_personales_view(request):
 
 def success_view(request):
     return render(request, 'success.html')
-        form = InfProfForm()
-    return render(request, 'app_alumnalia/.html', {'form': form})
+
+#form = InfProfForm():
+#    return render(request, 'app_alumnalia/.html', {'form': form})
 
 # def nuevo_estudiante(request):
 #     if request.method == "POST":
