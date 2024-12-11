@@ -11,15 +11,35 @@ class InicioView(TemplateView):
     context_object_name = ""
 
 
-class datos_formardor_view(TemplateView):
-    template_name = "alumnalia/formadoresform.html"
-    context_object_name = ""
-
 
 class datos_personales_view(TemplateView):
     template_name = "alumnalia/datospersonalesform.html"
-    context_object_name = ""
-
+    
+    def get(self, request, *args, **kwargs): 
+        form = DatPerForm() 
+        return self.render_to_response({'form': form}) 
+    
+    def post(self, request, *args, **kwargs): 
+        form = DatPerForm(request.POST) 
+        if form.is_valid(): 
+            form.save() 
+            return redirect('alumnalia:inicio') # Redirigir después de guardar 
+        return self.render_to_response({'form': form})
+    
+    
+class datos_formador_view(TemplateView):
+    template_name = "alumnalia/formadoresform.html"
+    
+    def get(self, request, *args, **kwargs): 
+        form = FormadoresForm() 
+        return self.render_to_response({'form': form}) 
+    
+    def post(self, request, *args, **kwargs): 
+        form = FormadoresForm(request.POST) 
+        if form.is_valid(): 
+            form.save() 
+            return redirect('alumnalia:inicio') # Redirigir después de guardar 
+        return self.render_to_response({'form': form})
 
 # class success_view(TemplateView):
 #     return render(request, 'success.html')
