@@ -20,6 +20,8 @@
 
 
 
+
+
 ## Datos Formadores
 
 | Información Profesional | Detalles                     | Tipo de Dato  |
