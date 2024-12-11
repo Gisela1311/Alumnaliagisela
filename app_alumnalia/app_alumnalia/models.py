@@ -9,7 +9,7 @@ class Dat_Per(models.Model):
     pk_per = models.SmallAutoField(verbose_name="id de la Dat_Per", primary_key=True) 
     nom_per = models.CharField(max_length=150, verbose_name="Nombre de la Persona", null=False)    
     dni_per = models.CharField(max_length=15, unique=True, verbose_name="Nombre de la autoridad", validators=[validar_dni], null=False)
-    fec_nac = models.DateField(verbose_name="Naciuonalidad de la persona")
+    fn_per = models.DateField(verbose_name="fecha de nacimiento de la persona")
     cn_per = models.CharField(max_length=150, verbose_name="Naciuonalidad de la persona", null=False)    
     tel_per = models.IntegerField(verbose_name="Teléfono de la persona", null=True)
     email_per = models.EmailField(verbose_name="email de la persona")
