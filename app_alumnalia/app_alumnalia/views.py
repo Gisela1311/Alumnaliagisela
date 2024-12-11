@@ -1,22 +1,23 @@
 
 from django.shortcuts import render, redirect
 #from .forms import InfProfForm
+from .forms import Dat_PerForm, Inf_ProfForm
 from .models import *
+
 
 def pagina_inicio(request): 
     return render(request, 'app_alumnalia/inicio.html')
                   
 
-
 # Vista para añadir un nuevo formador
 def nuevo_formador(request):
     if request.method == "POST":
-        form = InfProfForm(request.POST)
+        form = Inf_ProfForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('app_alumnalia:')
     else:
-        form = Formadores()
+        form = Inf_ProfForm()
     return render(request, 'alumnalia.es/nuevoformador.html', {'form': form})
 
 
@@ -24,21 +25,19 @@ def nuevo_formador(request):
 #from django.shortcuts import render, redirect
 #from .forms import DatosPersonalesForm
 
-def datos_personales_view(request):
+def dat_per_view(request):
     if request.method == 'POST':
-        form = DatosPersonalesForm(request.POST)
+        form = Dat_PerForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('success')  # Redirigir a una página de éxito
+            return redirect('success') #Redirigir a una página de éxito
     else:
-        form = DatosPersonalesForm()
-    return render(request, 'datos_personales.html', {'form': form})
-# views.py
+        form = Dat_PerForm()
+    return render(request, 'dat_per_form.html', {'form': form})
 
-def success_view(request):
-    return render(request, 'success.html')
 
-#form = InfProfForm():
+
+#form = Inf_ProfForm():
 #    return render(request, 'app_alumnalia/.html', {'form': form})
 
 # def nuevo_estudiante(request):
@@ -50,6 +49,11 @@ def success_view(request):
 #     else:
 #         form = InfProfForm()
 #     return render(request, 'app_alumnalia/nuevo_inf_prof.html', {'form': form})
+
+
+
+
+
 
 
 
