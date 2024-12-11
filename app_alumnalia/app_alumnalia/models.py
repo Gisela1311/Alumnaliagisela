@@ -5,6 +5,8 @@ def validar_dni(value):
     if not value.isalnum() or len(value) != 9: 
         raise ValidationError("El DNI debe tener 9 caracteres alfanuméricos.")
 
+# Tabla de Datos Personales
+
 class Dat_Per(models.Model):
     pk_per = models.SmallAutoField(verbose_name="id de la Dat_Per", primary_key=True) 
     nom_per = models.CharField(max_length=150, verbose_name="Nombre de la Persona", null=False)    

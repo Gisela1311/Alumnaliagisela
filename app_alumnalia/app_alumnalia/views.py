@@ -24,7 +24,8 @@ class datos_personales_view(TemplateView):
 # class success_view(TemplateView):
 #     return render(request, 'success.html')
 
-#form = InfProfForm():
+
+#form = Inf_ProfForm():
 #    return render(request, 'app_alumnalia/.html', {'form': form})
 
 # def nuevo_estudiante(request):
@@ -36,6 +37,11 @@ class datos_personales_view(TemplateView):
 #     else:
 #         form = InfProfForm()
 #     return render(request, 'app_alumnalia/nuevo_inf_prof.html', {'form': form})
+
+
+
+
+
 
 
 
