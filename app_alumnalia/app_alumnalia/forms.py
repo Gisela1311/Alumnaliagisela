@@ -1,5 +1,5 @@
 from django import forms
-from .models import Dat_Per, Inf_Prof
+from .models import Inf_Prof, Dat_Per
 
 
 
@@ -13,6 +13,13 @@ class Dat_PerForm(forms.ModelForm):
 
 class Inf_ProfForm(forms.ModelForm):
     class Meta:
+        model = Dat_Per
+        fields = '__all__'
+
+
+class FormadoresForm(forms.ModelForm):
+    class Meta:
+                
         model = Inf_Prof
         fields = [
             'tit_inf_pro', 'tit_esp_inf_pro', 'esp_inf_pro', 'exp_inf_pro',

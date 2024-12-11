@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    {% load static %}
+    <link rel="icon" href="{% static 'alumnalia/img/favicon.ico' %}" type="image/jpg"> <!--AÑADIR FAVICON CORRECTO-->
+
+    <title>{% block titulo %}{% endblock titulo%}</title> <!--título de la pagina-->
+
+    <!-- <link rel="stylesheet" href="{% static 'css/cssinicio.css' %}"> CREAR CSS -->
+  </head>
+  <body >
+    <div > <!-- encabezado tipo barra-->
+      <header >
+        
+          <div >
+            <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+              
+            </a>
+
+            <img src="{% static 'img\logoalumnalia.png' %}" alt=" Logo Alumnalia" height="160" width="200"> <!--logo ALUMNALIA-->
+          </div>
+
+          
+          <ul > <!--opciones de navegación-->
+            <li><a href="{% static url 'alumnalia:inicio' %}" >Inicio</a></li>
+            <li><a href="#" >Oferta formativa</a></li> 
+            <li><a href="#" >Trabaja con nosotros</a></li> 
+            <li><a href="#" >¿Quienes somos?</a></li> 
+            
+          </ul>
+    
+          <div > <!--botones para entrar a login o registrarse-->
+            <a href="login.html" target="_blank">
+              <button type="button" class="btn btn-outline-primary rounded-pill me-3" style="background-color: #33b8d7; border-color: #33b8d7; color: #172635;">Entrar</button>
+            </a>  
+            <a href="login.html" target="_blank"> <!--introducir html correcto-->
+              <button type="button" class="btn btn-outline-primary rounded-pill me-3" style="background-color: #cad7dd; border-color: #cad7dd; color: #172635;">Registrarse</button>
+            </a>
+            
+          </div>
+        </header>
+    </div>  
+    <hr> 
+    
+
+    {% block contenido %} 
+
+    {% endblock contenido %}
+
+    <hr>
+    <div > <!--pie de página-->
+        <footer >
+            <div >
+                <a href="mailto:formacio@iveaempa.info" class="text-body-secondary text-decoration-none lh-1">
+                  
+                  formacio@iveamepa.info </a>
+                <span></span>
+            </div>       
+            <br> 
+            <div >
+              
+              <span>+34 933 23 12 12</span>
+            
+              <span >+34 608 28 88 60</span>
+            </div>
+            <div >
+                <ul >
+                    <li >
+                        <a  href="https://www.instagram.com/iveaempa/" target="_blank">
+                            <img src="{% static '\img\logo_insta.png' %}" alt="Instagram" width="40" height="40">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div>  
+                <ul class="nav justify-content-center ">
+                    <li ><a href="https://www.iveaempa.org/t%C3%A9rminos-y-condiciones" >Términos y Condiciones</a></li>
+                    <li ><a href="https://www.iveaempa.org/pol%C3%ADtica-de-privacidad" >Política de Privacidad</a></li>               
+                </ul>
+            </div>
+          <p >© 2024 Creado por los becarios del SEPE para IVEAEMPA</p>
+        </footer>
+      </div>
+  </body>
+
+</html>
