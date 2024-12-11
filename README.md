@@ -19,6 +19,21 @@
 | **noti_per**                    | ¿Quieres recibir notificaciones sobre nuevas oportunidades formativas?          | BooleanField      |
 
 
+## Tabla de Datos Personales
+
+| Campo            | Tipo de Dato        | Descripción                                                                                 |
+|------------------|---------------------|---------------------------------------------------------------------------------------------|
+| `pk_per`         | `SmallAutoField`    | Id de la Dat_Per (clave primaria).                                                          |
+| `nom_per`        | `CharField` (150)   | Nombre de la persona.                                                                       |
+| `dni_per`        | `CharField` (15)    | Nombre de la autoridad, debe ser único y validado.                                          |
+| `cn_per`         | `CharField` (150)   | Nacionalidad de la persona.                                                                 |
+| `tel_per`        | `IntegerField`      | Teléfono de la persona (opcional).                                                          |
+| `email_per`      | `EmailField`        | Email de la persona.                                                                        |
+| `dir_per`        | `CharField` (150)   | Dirección de la persona.                                                                    |
+| `sex_per`        | `CharField` (150)   | Género de la persona.                                                                       |
+| `uso_datos_per`  | `BooleanField`      | Aceptación de fines de gestión académica y administrativa.                                  |
+| `term_per`       | `BooleanField`      | Aceptación de términos y condiciones.                                                       |
+| `noti_per`       | `BooleanField`      | Aceptación para recibir notificaciones de oportunidades formativas.                         |
 
 
 
