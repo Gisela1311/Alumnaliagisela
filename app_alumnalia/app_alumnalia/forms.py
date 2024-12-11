@@ -1,12 +1,17 @@
 from django import forms
-from .models import Inf_Prof
+from .models import Inf_Prof, Dat_Per
 
 
 
 class DatosPersonalesForm(forms.ModelForm):
     class Meta:
-        model = DatosPersonales
+        model = Dat_Per
         fields = '__all__'
+
+
+class FormadoresForm(forms.ModelForm):
+    class Meta:
+                
         model = Inf_Prof
         fields = [
             'pk_inf_pro', 'tit_inf_pro', 'tit_esp_inf_pro', 'esp_inf_pro', 
@@ -15,3 +20,5 @@ class DatosPersonalesForm(forms.ModelForm):
             'cert_inf_pro', 'cert_esp_inf_pro', 'herr_inf_pro', 'herr_esp_inf_pro', 
             'comp_dig_inf_pro', 'comp_dig_esp_inf_pro', 'fk_per_inf_pro'
         ]
+
+
