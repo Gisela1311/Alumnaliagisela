@@ -24,7 +24,7 @@ app_name= "app_alumnalia"
 urlpatterns = [
     path("inicio/", views.InicioView.as_view(), name= 'inicio'),
     path("datos_personales/", views.datos_personales_view.as_view(), name= 'datos personales'),
-    path('formadores_form/', views.datos_formardor_view.as_view(), name='nuevo_formador'),
+    path('formadores_form/', views.datos_formador_view.as_view(), name='nuevo_formador'),
    
 ]
 
