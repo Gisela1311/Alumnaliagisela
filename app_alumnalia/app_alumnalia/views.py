@@ -1,6 +1,6 @@
 
 from django.shortcuts import render, redirect
-#from .forms import InfProfForm
+from .forms import InfProfForm
 from .models import *
 
 def pagina_inicio(request): 
