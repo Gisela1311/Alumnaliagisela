@@ -93,7 +93,7 @@ class Inf_Prof(models.Model):
         choices=Formacion,
         default='')  
     
-    for_imp_esp_inf_pro = models.CharField(max_length=30, verbose_name="Especifique que for_imp_inf_pro ha impartido")
+    for_imp_esp_inf_pro = models.CharField(  max_length=255, verbose_name="Especifique que for_imp_inf_pro ha impartido")
     
     cv_adj_inf_pro = models.CharField(max_length=15,verbose_name="Adjunta tu currículum en formato PDF.")  
     

@@ -2,82 +2,83 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     {% load static %}
-    <link rel="icon" href="{% static '\img\favicon-32x32.png' %}" type="image/png"> <!--AÑADIR FAVICON CORRECTO-->
+    <link rel="icon" href="{% static '/img/Logo3/favicon-32x32.png' %}" type="image/png"> 
     
-    <title>{% block titulo %}{% endblock titulo%}</title> <!--título de la pagina-->
-
+    <title>{% block titulo %}{% endblock titulo%}</title> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}"> 
+    <!-- jQuery, Popper.js, and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static '/css/base.css' %}"> 
   </head>
-  <body >
-    <div class="container"> <!-- encabezado tipo barra-->
+  <body class="fondo" >
+    <div class="container fondo1"> <!-- encabezado tipo barra-->
       <header class="d-flex flex-wrap align-items-center justify-content-between py-3 mb-4 border-bottom">
         
-        <div class="col-md-3"> 
-          <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none"> 
-            <img src="{% static '\img\logoalumnalia.png' %}" alt="Logo Alumnalia" height="60" width="100"> 
-          </a><!--logo ALUMNALIA-->
+        <div class="col-md-5 d-flex align-items-center" > 
+          <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+            <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+          </a>
+            <img src="{% static '\img\logoalumnalia.png' %}" alt="Logo Alumnalia" height="160" width="200"> 
         </div>
         <!--opciones de navegación-->
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0"> 
-          <li><a href="{% static url 'alumnalia:inicio' %}" class="nav-link px-2 link-secondary">Inicio</a></li>
-          <li><a href="#" class="nav-link px-2 link-secondary">Oferta formativa</a></li> 
-          <li><a href="#" class="nav-link px-2 link-secondary">Trabaja con nosotros</a></li> 
-          <li><a href="#" class="nav-link px-2 link-secondary">¿Quienes somos?</a></li> 
-          
-        </ul>
+        <div class="col-md-7 d-flex align-items-center" > 
+          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0" style=" font-size: 20px;"> 
+            <li><a href="{% static url 'app_alumnalia:inicio' %}" class="nav-link px-2 link-secondary">Inicio</a></li>
+            <li><a href="#" class="nav-link px-2 link-secondary">Oferta formativa</a></li> 
+            <li><a href="#" class="nav-link px-2 link-secondary">Trabaja con nosotros</a></li> 
+            <li><a href="#" class="nav-link px-2 link-secondary">¿Quienes somos?</a></li>    
+          </ul>
+        </div>
     
-          <div > <!--botones para entrar a login o registrarse-->
-            <a href="login.html" target="_blank">
-              <button type="button" class="btn btn-outline-primary rounded-pill me-3" style="background-color: #33b8d7; border-color: #33b8d7; color: #172635;">Entrar</button>
-            </a>  
-            <a href="login.html" target="_blank"> <!--introducir html correcto-->
-              <button type="button" class="btn btn-outline-primary rounded-pill me-3" style="background-color: #cad7dd; border-color: #cad7dd; color: #172635;">Registrarse</button>
-            </a>
-            
-          </div>
         </header>
     </div>  
     <hr> 
     
-    <div class="container">
+
     {% block contenido %} 
 
     {% endblock contenido %}
-    </div>
+ 
     <hr>
-    <div > <!--pie de página-->
-        <footer >
-            <div >
-                <a href="mailto:formacio@iveaempa.info" class="text-body-secondary text-decoration-none lh-1">
-                  
-                  formacio@iveamepa.info </a>
-                <span></span>
-            </div>       
-            <br> 
-            <div >
-              
-              <span>+34 933 23 12 12</span>
+    <div class="container"> <!--pie de página-->
+      <footer class="py-3 my-4">
+          <div class="nav justify-content-center">
+              <a href="mailto:formacio@iveaempa.info" class="text-body-secondary text-decoration-none lh-1">
+                
+                formacio@iveamepa.info </a>
+              <span class="mb-3 mb-md-0 text-body-secondary"></span>
+          </div>       
+          <br> 
+          <div class="nav justify-content-center">
             
-              <span >+34 608 28 88 60</span>
-            </div>
-            <div >
-                <ul >
-                    <li >
-                        <a  href="https://www.instagram.com/iveaempa/" target="_blank">
-                            <img src="{% static '\img\logo_insta.png' %}" alt="Instagram" width="40" height="40">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div>  
-                <ul class="nav justify-content-center ">
-                    <li ><a href="https://www.iveaempa.org/t%C3%A9rminos-y-condiciones" >Términos y Condiciones</a></li>
-                    <li ><a href="https://www.iveaempa.org/pol%C3%ADtica-de-privacidad" >Política de Privacidad</a></li>               
-                </ul>
-            </div>
-          <p >© 2024 Creado por los becarios del SEPE para IVEAEMPA</p>
+            <span class="mb-3 mb-md-0 text-body-secondary">+34 933 23 12 12</span>
+          
+            <a href="/" class="mb-3 me-2 mb-md-1 text-body-secondary text-decoration-none lh-1">
+              <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+            <span class="mb-3 mb-md-0 text-body-secondary">+34 608 28 88 60</span>
+          </div>
+          <div id="comp-jisqlg3q4" class="comp-jisqlg3q4 WzbAF8">
+              <ul class="nav justify-content-center">
+                  <li >
+                      <a class="text-body-secondary"  href="https://www.instagram.com/iveaempa/" target="_blank">
+                          <img src="{% static '\img\logo_insta.png' %}" alt="Instagram" width="40" height="40">
+                      </a>
+                  </li>
+              </ul>
+          </div>
+          <div>  
+              <ul class="nav justify-content-center ">
+                  <li class="nav-item"><a href="https://www.iveaempa.org/t%C3%A9rminos-y-condiciones" class="nav-link px-2 text-body-secondary">Términos y Condiciones</a></li>
+                  <li class="nav-item"><a href="https://www.iveaempa.org/pol%C3%ADtica-de-privacidad" class="nav-link px-2 text-body-secondary">Política de Privacidad</a></li>               
+              </ul>
+          </div>
+          <p class="text-center text-body-secondary">© 2024 Creado por los becarios del SEPE para IVEAEMPA</p>
         </footer>
       </div>
   </body>
