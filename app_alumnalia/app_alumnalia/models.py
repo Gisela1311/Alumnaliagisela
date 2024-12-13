@@ -14,19 +14,19 @@ def validar_longitud_nueve(value):
 
 class Dat_Per(models.Model):
     pk_per = models.SmallAutoField(verbose_name="id de la Dat_Per", primary_key=True) 
-    nom_per = models.CharField(max_length=150, verbose_name="Nombre de la Persona", null=False)    
-    dni_per = models.CharField(max_length=15, unique=True, verbose_name="Nombre de la autoridad", validators=[validar_dni], null=False)
-    fn_per = models.CharField(max_length=10,verbose_name="fecha de nacimiento de la persona", null=True)
-    cn_per = models.CharField(max_length=150, verbose_name="Naciuonalidad de la persona", null=False)    
-    tel_per = models.IntegerField(verbose_name="Teléfono de la persona", validators=[validar_longitud_nueve], null=True)
-    email_per = models.EmailField(verbose_name="email de la persona")
-    dir_per = models.CharField(max_length=150, verbose_name="Dirección de la persona", null=False) #models.ForeignKey(  on_delete=models.CASCADE, verbose_name="Dirección de la persona", default=0) #Direcciones
+    nom_per = models.CharField(max_length=150, verbose_name="Nombre", null=False)    
+    dni_per = models.CharField(max_length=15, unique=True, verbose_name="DNI/NIE", validators=[validar_dni], null=False)
+    fn_per = models.DateField(max_length=10,verbose_name="Fecha de nacimiento", null=True)
+    cn_per = models.CharField(max_length=150, verbose_name="Nacionalidad", null=False)    
+    tel_per = models.IntegerField(verbose_name="Teléfono", validators=[validar_longitud_nueve], null=True)
+    email_per = models.EmailField(verbose_name="Email")
+    dir_per = models.CharField(max_length=150, verbose_name="Dirección", null=False) #models.ForeignKey(  on_delete=models.CASCADE, verbose_name="Dirección de la persona", default=0) #Direcciones
     
     genero=[
         ('', 'Seleccione una opción'),
         ('1', 'Mujer'),
         ('2', 'Hombre'),
-        ('3', 'Prefiero no específicar'),
+        ('3', 'Prefiero no responder'),
         ('4','Otro')
     ]
     sex_per = models.IntegerField(
@@ -36,9 +36,9 @@ class Dat_Per(models.Model):
         )
        
     # Si se acepta o no la Declaraciones y Consentimientos de sus datos
-    uso_datos_per = models.BooleanField(verbose_name="fines de gestión académica y administrativa",default=True)
-    term_per = models.BooleanField(verbose_name="términos y condiciones",default=True)
-    noti_per = models.BooleanField(verbose_name="notificaciones de oportunidades formativas",default=True)
+    uso_datos_per = models.BooleanField(verbose_name="Fines de gestión académica y administrativa",default=False)
+    term_per = models.BooleanField(verbose_name="Términos y condiciones",default=False)
+    noti_per = models.BooleanField(verbose_name="Notificaciones de oportunidades formativas",default=False)
     def __str__(self):
         return f"{self.nom_per}"
     class Meta:
@@ -64,7 +64,7 @@ class Inf_Prof(models.Model):
         choices=Titulo, 
         default=''
         )  
-    tit_esp_inf_pro = models.CharField(max_length=30, verbose_name="Especifique tit_inf_pro")
+    tit_esp_inf_pro = models.CharField(max_length=15, verbose_name="Especifique título")
 
     esp_inf_pro = models.CharField(max_length=15,verbose_name="¿En qué área está tu especialización principal?")  
 
@@ -94,7 +94,7 @@ class Inf_Prof(models.Model):
         choices=Formacion,
         default='')  
     
-    for_imp_esp_inf_pro = models.CharField(  max_length=255, verbose_name="Especifique que for_imp_inf_pro ha impartido")
+    for_imp_esp_inf_pro = models.CharField(  max_length=255, verbose_name="Especifique que formación ha impartido")
     
     #cv_adj_inf_pro = models.CharField(max_length=15,verbose_name="Adjunta tu currículum en formato PDF.")  
     cv_adj_inf_pro = models.FileField(upload_to='pdfs/',verbose_name="Adjunta tu currículum en formato PDF.")
@@ -103,14 +103,13 @@ class Inf_Prof(models.Model):
     opcion = [
         ('', 'Seleccione una opción'),
         ('1', 'Sí'),
-        ('2', 'No'),
-        ('3', 'Especificar')
+        ('2', 'No')
     ]
     cert_inf_pro = models.IntegerField(
         verbose_name="¿Tienes alguna certificación docente?",
         choices=opcion,
         default = '')  
-    cert_esp_inf_pro = models.CharField(max_length=30, verbose_name="Especifique su cert_inf_pro")  
+    cert_esp_inf_pro = models.CharField(max_length=15, verbose_name="Especifique su certificación")  
 
     herramientas = [
         ('', 'Seleccione una opción'),
@@ -124,7 +123,7 @@ class Inf_Prof(models.Model):
         verbose_name="¿Qué herramientas tecnológicas utilizas en tus clases?",
         choices=herramientas, 
         default= '')  
-    herr_esp_inf_pro = models.CharField(max_length=15, verbose_name="Especifique otra herr_inf_pro")
+    herr_esp_inf_pro = models.CharField(max_length=15, verbose_name="Especifique otra herramienta tecnológica")
 
     comp_dig_inf_pro = models.IntegerField(
         verbose_name="¿Posees competencias digitales específicas (ej. DigCompEdu)?",
@@ -157,7 +156,7 @@ class Inf_Prof(models.Model):
         choices=alumno,
         default='')  
     
-    tipo_alu_esp_inf_pro = models.CharField(max_length=15, verbose_name="Especifique tipo_alu_inf_pro")  
+    tipo_alu_esp_inf_pro = models.CharField(max_length=15, verbose_name="Especifique el tipo de alumnos")  
     
     franja = [
         ('', 'Seleccione una opción'),
@@ -171,7 +170,7 @@ class Inf_Prof(models.Model):
         default=''
         )  
 
-    fk_per_inf_pro =  models.ForeignKey(Dat_Per, on_delete=models.CASCADE,verbose_name="es la fk de Datos de personas")
+    fk_per_inf_pro =  models.ForeignKey(Dat_Per, on_delete=models.CASCADE,verbose_name="fk de Datos de personas")
 
     def __str__(self):
         return f"{self.pk_inf_pro}"
@@ -186,44 +185,45 @@ class Comarca(models.Model):
         verbose_name="id de Comarca",
         primary_key=True
         ) 
-    nom_com =  models.CharField(max_length=30, verbose_name="nombre de la Comarca")
+    nom_com =  models.CharField(max_length=30, verbose_name="Nombre de la Comarca")
     def __str__(self):
         return f"{self.nom_com}"
     class Meta:
         db_table = "Comarca" 
 
-#2 tabla de la Provincias
+#2 tabla de los Municipios
 class Municipios(models.Model):
     pk_mun = models.SmallAutoField(
         verbose_name="id de Municipios", 
         primary_key=True
         ) 
-    nom_mun =  models.CharField(max_length=30, verbose_name="nombre de la Municipios")
+    nom_mun =  models.CharField(max_length=30, verbose_name="Nombre del Municipio")
     fk_com = models.ForeignKey(Comarca, on_delete=models.CASCADE, related_name='Municipios')
     def __str__(self):
         return f"{self.nom_mun}"
     class Meta:
         db_table = "Municipios" 
 
-#3 tabla de la Provincias
+#3 tabla de las Provincias
 class Provincias(models.Model):
     pk_pro = models.SmallAutoField(
         verbose_name="id de Provincias", 
         primary_key=True
         ) 
-    nom_pro =  models.CharField(max_length=30, verbose_name="nombre de la Provincia")
+    nom_pro =  models.CharField(max_length=30, verbose_name="Nombre de la Provincia")
     def __str__(self):
         return f"{self.pk_pro}"
     class Meta:
         db_table = "Provincias" 
 
-#4 tabla de la Provincias
+#4 tabla relación Comarcas con Provincias
 class Comarca_provincias(models.Model):
     pk_cam_pro = models.SmallAutoField(
         verbose_name="id de Comarca_provincias", 
         primary_key=True
         ) 
-    nom_cam_pro =  models.CharField(max_length=30, verbose_name="nombre de la Comarca_provincias")
+    fk_com = models.ForeignKey(Comarca, on_delete=models.CASCADE, related_name='Comarca_provincias')
+    fk_pro = models.ForeignKey(Provincias, on_delete=models.CASCADE, related_name='Comarca_provincias')
     def __str__(self):
         return f"{self.pk_pro}"
     class Meta:
@@ -261,21 +261,21 @@ class Familia_Profesion(models.Model):
 ##7 Entidad Formadora -> Ent_For 
 class Ent_For(models.Model):
     pk_ent_for= models.CharField(max_length=20,verbose_name="id de Entidad Formadora",primary_key=True)
-    nom_ent_for= models.CharField(max_length=44, verbose_name="nombre de Entidad Formadora")
-    Area_for_ent_for= models.CharField(max_length=44,verbose_name="area de formacion de Entidad Formadora")
-    email_ent_for= models.EmailField(verbose_name="correo de la entidad")
-    nif_ent_for= models.CharField(max_length=20,verbose_name="NIF de Entidad Formadora")
+    nom_ent_for= models.CharField(max_length=44, verbose_name="Nombre")
+    Area_for_ent_for= models.CharField(max_length=44,verbose_name="Area de formacion")
+    email_ent_for= models.EmailField(verbose_name="Email")
+    nif_ent_for= models.CharField(max_length=20,verbose_name="NIF")
     fec_fin_ent_for= models.DateField(verbose_name="Fecha de fin")
     fec_ini_ent_for= models.DateField(verbose_name="Fecha de inicio")
-    area_prof_ent_for= models.CharField(max_length=44,verbose_name="Area Porfecional de Entidad Formadora")
-    cm_ent_for= models.CharField(max_length=5,verbose_name="Codigo del municipio de Entidad Formadora")
-    web_ent_for =models.CharField (max_length=100,verbose_name="link de la web de Entidad Formadora") 
-    horas_ent_for= models.IntegerField(verbose_name="horas de la Entidad Formadora")
-    idt_ent_for= models.IntegerField(verbose_name="identificador de la Entiad Formadora")
-    den_ent_for= models.CharField (max_length=100,verbose_name="Denominacion de Entidad Formadora")
-    amb_ent_for= models.CharField (max_length=100,verbose_name="Ambito de Entidad Formadora")
-    mod_ent_for= models.CharField (max_length=50,verbose_name="Modalidad de Entidad Formadora")
-    num_grupo= models.IntegerField(verbose_name="Numero de grupo de la Entidad Formadora")
+    area_prof_ent_for= models.CharField(max_length=44,verbose_name="Area Porfesional")
+    cp_ent_for= models.CharField(max_length=5,verbose_name="Codigo postal")
+    web_ent_for =models.URLField (max_length=100,verbose_name="URL de la web") 
+    horas_ent_for= models.IntegerField(verbose_name="Horas")
+    idt_ent_for= models.IntegerField(verbose_name="Identificador")
+    den_ent_for= models.CharField (max_length=100,verbose_name="Denominacion")
+    amb_ent_for= models.CharField (max_length=100,verbose_name="Ambito")
+    mod_ent_for= models.CharField (max_length=50,verbose_name="Modalidad")
+    num_grupo= models.IntegerField(verbose_name="Numero de grupo")
     telefono= models.CharField (
         max_length=15,
         validators=[validar_longitud_nueve],
