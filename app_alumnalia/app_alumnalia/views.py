@@ -11,7 +11,6 @@ class InicioView(TemplateView):
     context_object_name = ""
 
 
-
 class datos_personales_view(TemplateView):
     template_name = "alumnalia/datospersonalesform.html"
     
@@ -40,6 +39,9 @@ class datos_formador_view(TemplateView):
             form.save() 
             return redirect('alumnalia:inicio') # Redirigir después de guardar 
         return self.render_to_response({'form': form})
+     
+
+
 
 # class success_view(TemplateView):
 #     return render(request, 'success.html')

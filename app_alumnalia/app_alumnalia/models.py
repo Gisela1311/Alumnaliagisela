@@ -254,7 +254,7 @@ class Familia_Profesion(models.Model):
     def __str__(self):
         return f"{self.pk_fm_pro}"
     class Meta:
-        db_table = "Familia_Profecional" 
+        db_table = "Familia_Profesional" 
 
 
 ######## Entidad Formadora ###### tabla Origen de datos foap2024
@@ -267,7 +267,7 @@ class Ent_For(models.Model):
     nif_ent_for= models.CharField(max_length=20,verbose_name="NIF de Entidad Formadora")
     fec_fin_ent_for= models.DateField(verbose_name="Fecha de fin")
     fec_ini_ent_for= models.DateField(verbose_name="Fecha de inicio")
-    area_prof_ent_for= models.CharField(max_length=44,verbose_name="Area Porfecional de Entidad Formadora")
+    area_prof_ent_for= models.CharField(max_length=44,verbose_name="Area Pofesional de Entidad Formadora")
     cm_ent_for= models.CharField(max_length=5,verbose_name="Codigo del municipio de Entidad Formadora")
     web_ent_for =models.CharField (max_length=100,verbose_name="link de la web de Entidad Formadora") 
     horas_ent_for= models.IntegerField(verbose_name="horas de la Entidad Formadora")
