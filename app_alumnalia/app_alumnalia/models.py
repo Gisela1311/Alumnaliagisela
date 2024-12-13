@@ -1,9 +1,10 @@
 from django.core.exceptions import ValidationError
 from django.db import models
 
+# controles de los campos
 def validar_dni(value): 
     if not value.isalnum() or len(value) != 9: 
-        raise ValidationError("El DNI debe tener 9 caracteres alfanuméricos.")
+        raise ValidationError("El DNI debe tener 9 caracteres alfanuméricos.") # Tambien puede controla NIF, NIE Nacionalida española
 
 def validar_longitud_nueve(value): 
     if len(str(value)) != 9: 
@@ -95,7 +96,8 @@ class Inf_Prof(models.Model):
     
     for_imp_esp_inf_pro = models.CharField(  max_length=255, verbose_name="Especifique que for_imp_inf_pro ha impartido")
     
-    cv_adj_inf_pro = models.CharField(max_length=15,verbose_name="Adjunta tu currículum en formato PDF.")  
+    #cv_adj_inf_pro = models.CharField(max_length=15,verbose_name="Adjunta tu currículum en formato PDF.")  
+    cv_adj_inf_pro = models.FileField(upload_to='pdfs/',verbose_name="Adjunta tu currículum en formato PDF.")
     
     # COMPETENCIAS Y CERTIFICACIONES
     opcion = [
@@ -177,5 +179,113 @@ class Inf_Prof(models.Model):
     class Meta:
         db_table = "Inf_Prof" 
 
+######## Direcciones ######
+#1 tabla de la Comarca
+class Comarca(models.Model):
+    pk_com = models.SmallAutoField(
+        verbose_name="id de Comarca",
+        primary_key=True
+        ) 
+    nom_com =  models.CharField(max_length=30, verbose_name="nombre de la Comarca")
+    def __str__(self):
+        return f"{self.nom_com}"
+    class Meta:
+        db_table = "Comarca" 
 
-    
+#2 tabla de la Provincias
+class Municipios(models.Model):
+    pk_mun = models.SmallAutoField(
+        verbose_name="id de Municipios", 
+        primary_key=True
+        ) 
+    nom_mun =  models.CharField(max_length=30, verbose_name="nombre de la Municipios")
+    fk_com = models.ForeignKey(Comarca, on_delete=models.CASCADE, related_name='Municipios')
+    def __str__(self):
+        return f"{self.nom_mun}"
+    class Meta:
+        db_table = "Municipios" 
+
+#3 tabla de la Provincias
+class Provincias(models.Model):
+    pk_pro = models.SmallAutoField(
+        verbose_name="id de Provincias", 
+        primary_key=True
+        ) 
+    nom_pro =  models.CharField(max_length=30, verbose_name="nombre de la Provincia")
+    def __str__(self):
+        return f"{self.pk_pro}"
+    class Meta:
+        db_table = "Provincias" 
+
+#4 tabla de la Provincias
+class Comarca_provincias(models.Model):
+    pk_cam_pro = models.SmallAutoField(
+        verbose_name="id de Comarca_provincias", 
+        primary_key=True
+        ) 
+    nom_cam_pro =  models.CharField(max_length=30, verbose_name="nombre de la Comarca_provincias")
+    def __str__(self):
+        return f"{self.pk_pro}"
+    class Meta:
+        db_table = "Comarca_provincias" 
+
+
+######### Area de Vistas de las Drecciones ##################
+"""
+class Domicilio(models.Model): #Domicilio o direccion donde vive
+    class Meta: managed = False # No crear esta tabla en la base de datos 
+    db_table = 'Domicilio'  #view_consultar_recetas
+    pk_dom = models.AutoField(primary_key=True) 
+    Domicilio = models.CharField(max_length=40) 
+    tiempo = models.IntegerField(default=0) 
+    dificultad = models.CharField(max_length=10) 
+    categoria = models.CharField(max_length=10)  
+    def __str__(self):
+        return f"{self.pk_dom}"
+    class Meta:
+        db_table = "Domicilio" 
+ 
+    pk_com, nom_com, pk_pro, nom_pro, pk_cam_pro, nom_cam_pro
+"""
+######## familia porfesional ######
+class Familia_Profesion(models.Model):
+    pk_fm_pro= models.CharField(max_length=20,verbose_name="id de Entidad Formadora",primary_key=True)
+    desc_fm_pro= models.CharField(max_length=200, verbose_name="Descripcion de la Familia Profesional")
+    def __str__(self):
+        return f"{self.pk_fm_pro}"
+    class Meta:
+        db_table = "Familia_Profecional" 
+
+
+######## Entidad Formadora ###### tabla Origen de datos foap2024
+##7 Entidad Formadora -> Ent_For 
+class Ent_For(models.Model):
+    pk_ent_for= models.CharField(max_length=20,verbose_name="id de Entidad Formadora",primary_key=True)
+    nom_ent_for= models.CharField(max_length=44, verbose_name="nombre de Entidad Formadora")
+    Area_for_ent_for= models.CharField(max_length=44,verbose_name="area de formacion de Entidad Formadora")
+    email_ent_for= models.EmailField(verbose_name="correo de la entidad")
+    nif_ent_for= models.CharField(max_length=20,verbose_name="NIF de Entidad Formadora")
+    fec_fin_ent_for= models.DateField(verbose_name="Fecha de fin")
+    fec_ini_ent_for= models.DateField(verbose_name="Fecha de inicio")
+    area_prof_ent_for= models.CharField(max_length=44,verbose_name="Area Porfecional de Entidad Formadora")
+    cm_ent_for= models.CharField(max_length=5,verbose_name="Codigo del municipio de Entidad Formadora")
+    web_ent_for =models.CharField (max_length=100,verbose_name="link de la web de Entidad Formadora") 
+    horas_ent_for= models.IntegerField(verbose_name="horas de la Entidad Formadora")
+    idt_ent_for= models.IntegerField(verbose_name="identificador de la Entiad Formadora")
+    den_ent_for= models.CharField (max_length=100,verbose_name="Denominacion de Entidad Formadora")
+    amb_ent_for= models.CharField (max_length=100,verbose_name="Ambito de Entidad Formadora")
+    mod_ent_for= models.CharField (max_length=50,verbose_name="Modalidad de Entidad Formadora")
+    num_grupo= models.IntegerField(verbose_name="Numero de grupo de la Entidad Formadora")
+    telefono= models.CharField (
+        max_length=15,
+        validators=[validar_longitud_nueve],
+        verbose_name="telefono de Entidad Formadora"
+        )
+    fk_mun_ent_for = models.ForeignKey(Municipios, on_delete=models.CASCADE, related_name='Municipios') #cod_municipo (nom_municipio,) ok
+    fk_com_ent_for = models.ForeignKey(Comarca, on_delete=models.CASCADE, related_name='Comarca') #cd_comarca (nom_comarca) ok
+    fk_fam_pro =models.ForeignKey(Familia_Profesion, on_delete=models.CASCADE, related_name='Familia_Profesion')
+
+    def __str__(self):
+        return f"{self.nom_ent_for}"
+    class Meta:
+        db_table = "Ent_For" 
