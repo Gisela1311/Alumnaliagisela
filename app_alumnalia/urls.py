@@ -5,7 +5,7 @@ from django.urls import path, include, get_resolver
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('__debug__/', include('debug_toolbar.urls')),
+#    path('__debug__/', include('debug_toolbar.urls')),
     path('app_alumnalia/', include('app_alumnalia.urls', namespace='app_alumnalia')),
 ]
 
