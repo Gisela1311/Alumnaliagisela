@@ -25,9 +25,9 @@ print(f"calculo de ruta es -->{os.path.join(BASE_DIR, 'app_alumnalia', 'template
 SECRET_KEY = "django-insecure-cr4u+3qr$nm8d8(-o%zd2_a2c=ut%t(&h)mg6tro7p4+dtwkyn"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1"]
+ALLOWED_HOSTS = ["127.0.0.1", 'localhost']
 
 
 # Application definition
@@ -122,7 +122,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR / "app_alumnalia/static"]
-
+print(f"staticfilesdir = {STATICFILES_DIRS}")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
