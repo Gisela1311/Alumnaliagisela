@@ -19,22 +19,21 @@
     <div class="container fondo1"> <!-- encabezado tipo barra-->
       <header class="d-flex flex-wrap align-items-center justify-content-between py-3 mb-4 border-bottom">
         
-        <div class="col-md-5 d-flex align-items-center" > 
+        <div class="col-md-3 d-flex align-items-center" > 
           <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
             <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
           </a>
             <img src="{% static '/img/Logo3/Logo.jpg' %}" alt="Logo Alumnalia" height="200" width="200"> 
         </div>
         <!--opciones de navegación-->
-        <div class="col-md-7 d-flex align-items-center" > 
-          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0" style=" font-size: 20px;"> 
-            <li><a href="{% static url 'app_alumnalia:inicio' %}" class="nav-link px-2 link-secondary">Inicio</a></li>
-            <li><a href="#" class="nav-link px-2 link-secondary">Oferta formativa</a></li> 
-            <li><a href="#" class="nav-link px-2 link-secondary">Trabaja con nosotros</a></li> 
-            <li><a href="#" class="nav-link px-2 link-secondary">¿Quienes somos?</a></li>    
+        <div class="col-md-9 d-flex align-items-center" > 
+          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0" style=" font-size: 25px;"> 
+            <li><a href="{% url 'inicio' %}" class="nav-link px-2 link-secondary">Inicio</a></li>
+            <li><a href="{% url 'datos_personales' %}" class="nav-link px-2 link-secondary">F. Datos Generales</a></li> 
+            <li><a href="{% url 'datos_formador' %}" class="nav-link px-2 link-secondary">F. Datos Formador</a></li> 
+            <li><a href="#" class="nav-link px-2 link-secondary">F. Datos Estudiante</a></li>    
           </ul>
-        </div>
-    
+        </div>   
         </header>
     </div>  
     <hr> 
@@ -50,24 +49,33 @@
           <div class="nav justify-content-center">
               <a href="mailto:formacio@iveaempa.info" class="text-body-secondary text-decoration-none lh-1">
                 
-                formacio@iveamepa.info </a>
+                info@alumnalia.edu </a>
               <span class="mb-3 mb-md-0 text-body-secondary"></span>
           </div>       
           <br> 
           <div class="nav justify-content-center">
             
-            <span class="mb-3 mb-md-0 text-body-secondary">+34 933 23 12 12</span>
+            <span class="mb-3 mb-md-0 text-body-secondary">teléfono 1</span>
           
             <a href="/" class="mb-3 me-2 mb-md-1 text-body-secondary text-decoration-none lh-1">
               <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
             </a>
-            <span class="mb-3 mb-md-0 text-body-secondary">+34 608 28 88 60</span>
+            <span class="mb-3 mb-md-0 text-body-secondary">teléfono 2</span>
           </div>
           <div id="comp-jisqlg3q4" class="comp-jisqlg3q4 WzbAF8">
               <ul class="nav justify-content-center">
-                  <li >
-                      <a class="text-body-secondary"  href="https://www.instagram.com/iveaempa/" target="_blank">
-                          <img src="{% static '\img\logo_insta.png' %}" alt="Instagram" width="40" height="40">
+                  <li > <!-- enlaces a redes sociales -->
+                      <a class="text-body-secondary"  href="#" target="_blank">
+                          <img src="{% static '\img\instagram.png' %}" alt="Instagram" width="40" height="40">
+                      </a>
+                      <a class="text-body-secondary"  href="#" target="_blank">
+                        <img src="{% static '\img\gorjeo.png' %}" alt="Instagram" width="40" height="40">
+                      </a>
+                      <a class="text-body-secondary"  href="#" target="_blank">
+                        <img src="{% static '\img\linkedin.png' %}" alt="Instagram" width="40" height="40">
+                      </a>
+                      <a class="text-body-secondary"  href="#" target="_blank">
+                        <img src="{% static '\img\whatsapp.png' %}" alt="Instagram" width="40" height="40">
                       </a>
                   </li>
               </ul>
@@ -78,7 +86,7 @@
                   <li class="nav-item"><a href="https://www.iveaempa.org/pol%C3%ADtica-de-privacidad" class="nav-link px-2 text-body-secondary">Política de Privacidad</a></li>               
               </ul>
           </div>
-          <p class="text-center text-body-secondary">© 2024 Creado por los becarios del SEPE para IVEAEMPA</p>
+          <p class="text-center text-body-secondary">© 2024 Creado por Alumnalia</p>
         </footer>
       </div>
   </body>

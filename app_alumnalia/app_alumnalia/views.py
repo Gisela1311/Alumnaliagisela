@@ -1,34 +1,34 @@
 
 from django.shortcuts import render, redirect
+from django.http import HttpResponseRedirect
 from .forms import *
 from .models import *
-from django.views.generic import FormView, TemplateView
+from django.views.generic import FormView, TemplateView, View
 
 
                   
 class InicioView(TemplateView):
-    template_name = "alumnalia/inicio.html"
+    template_name = "app_alumnalia/inicio.html"
     context_object_name = ""
 
 
 
-class datos_personales_view(TemplateView):
-    template_name = "alumnalia/datospersonalesform.html"
+class datos_personales_view(View):
+    template_name = "app_alumnalia/datospersonalesform.html"
     
-    def get(self, request, *args, **kwargs): 
+    def get(self, request): 
         form = DatPerForm() 
-        return self.render_to_response({'form': form}) 
+        return render(request, self.template_name, {'form': form}) 
     
-    def post(self, request, *args, **kwargs): 
+    def post(self, request): 
         form = DatPerForm(request.POST) 
         if form.is_valid(): 
             form.save() 
-            return redirect('alumnalia:inicio') # Redirigir después de guardar 
-        return self.render_to_response({'form': form})
+            return redirect('inicio') # Redirige a la vista de inicio u otra vista de tu elección 
+        return render(request, self.template_name, {'form': form})
     
-    
-class datos_formador_view(TemplateView):
-    template_name = "alumnalia/formadoresform.html"
+class datos_formador_view(FormView):
+    template_name = "app_alumnalia/formadoresform.html"
     
     def get(self, request, *args, **kwargs): 
         form = FormadoresForm() 
@@ -38,7 +38,7 @@ class datos_formador_view(TemplateView):
         form = FormadoresForm(request.POST) 
         if form.is_valid(): 
             form.save() 
-            return redirect('alumnalia:inicio') # Redirigir después de guardar 
+            return redirect('app_alumnalia:inicio') # Redirigir después de guardar 
         return self.render_to_response({'form': form})
 
 # class success_view(TemplateView):

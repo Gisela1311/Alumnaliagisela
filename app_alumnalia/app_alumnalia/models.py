@@ -24,10 +24,10 @@ class Dat_Per(models.Model):
     
     genero=[
         ('', 'Seleccione una opción'),
-        ('1', 'Mujer'),
-        ('2', 'Hombre'),
-        ('3', 'Prefiero no específicar'),
-        ('4','Otro')
+        (1, 'Mujer'),
+        (2, 'Hombre'),
+        (3, 'Prefiero no específicar'),
+        (4,'Otro')
     ]
     sex_per = models.IntegerField(
         verbose_name="Género de la persona",
