@@ -23,7 +23,7 @@ class datos_personales_view(TemplateView):
         form = DatPerForm(request.POST) 
         if form.is_valid(): 
             form.save() 
-            return redirect('alumnalia:inicio') # Redirigir después de guardar 
+            return redirect('inicio') # Redirigir después de guardar 
         return self.render_to_response({'form': form})
     
     

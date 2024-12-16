@@ -1,5 +1,7 @@
 from django.core.exceptions import ValidationError
 from django.db import models
+from .encryption_utils import encrypt_data, decrypt_data
+from datetime import datetime
 
 # controles de los campos
 def validar_dni(value): 
@@ -16,7 +18,7 @@ class Dat_Per(models.Model):
     pk_per = models.SmallAutoField(verbose_name="id de la Dat_Per", primary_key=True) 
     nom_per = models.CharField(max_length=150, verbose_name="Nombre", null=False)    
     dni_per = models.CharField(max_length=15, unique=True, verbose_name="DNI/NIE", validators=[validar_dni], null=False)
-    fn_per = models.DateField(max_length=10,verbose_name="Fecha de nacimiento", null=True)
+    fn_per = models.DateField(verbose_name="Fecha de nacimiento", null=True)
     cn_per = models.CharField(max_length=150, verbose_name="Nacionalidad", null=False)    
     tel_per = models.IntegerField(verbose_name="Teléfono", validators=[validar_longitud_nueve], null=True)
     email_per = models.EmailField(verbose_name="Email")
@@ -29,16 +31,55 @@ class Dat_Per(models.Model):
         ('3', 'Prefiero no responder'),
         ('4','Otro')
     ]
-    sex_per = models.IntegerField(
+    sex_per = models.CharField(
         verbose_name="Género de la persona",
         choices=genero,
-        default=''
+        default='', 
+        max_length=1
         )
        
     # Si se acepta o no la Declaraciones y Consentimientos de sus datos
     uso_datos_per = models.BooleanField(verbose_name="Fines de gestión académica y administrativa",default=False)
     term_per = models.BooleanField(verbose_name="Términos y condiciones",default=False)
     noti_per = models.BooleanField(verbose_name="Notificaciones de oportunidades formativas",default=False)
+    
+    # Sobrescribir el método save para encriptar datos antes de guardar 
+    def save(self, *args, **kwargs): 
+        self.nom_per = encrypt_data(self.nom_per) 
+        self.dni_per = encrypt_data(self.dni_per)
+        #self.fn_per = encrypt_data(self.fn_per)
+        self.cn_per = encrypt_data(self.cn_per) 
+        #self.tel_per = encrypt_data(self.tel_per)
+        self.email_per = encrypt_data(self.email_per) 
+        self.dir_per = encrypt_data(self.dir_per)
+        self.sex_per = encrypt_data(self.sex_per)
+        super(Dat_Per, self).save(*args, **kwargs) 
+        
+    # Método para desencriptar datos sensibles 
+    def get_nom_per(self): 
+        return decrypt_data(self.nom_per) 
+    
+    def get_dni_per(self): 
+        return decrypt_data(self.dni_per)
+
+    def get_fn_per(self): 
+        return self.fn_per
+    
+    def get_cn_per(self): 
+        return decrypt_data(self.cn_per) 
+    
+    def get_tel_per(self): 
+        return self.tel_per
+    
+    def get_email_per(self): 
+        return decrypt_data(self.email_per) 
+    
+    def get_dir_per(self): 
+        return decrypt_data(self.dir_per)
+    
+    def get_sex_per(self): 
+        return decrypt_data(self.sex_per)
+    
     def __str__(self):
         return f"{self.nom_per}"
     class Meta:
@@ -276,10 +317,10 @@ class Ent_For(models.Model):
     amb_ent_for= models.CharField (max_length=100,verbose_name="Ambito")
     mod_ent_for= models.CharField (max_length=50,verbose_name="Modalidad")
     num_grupo= models.IntegerField(verbose_name="Numero de grupo")
-    telefono= models.CharField (
-        max_length=15,
+    tel_ent_for= models.IntegerField (
+        max_length=9,
         validators=[validar_longitud_nueve],
-        verbose_name="telefono de Entidad Formadora"
+        verbose_name="Telefono"
         )
     fk_mun_ent_for = models.ForeignKey(Municipios, on_delete=models.CASCADE, related_name='Municipios') #cod_municipo (nom_municipio,) ok
     fk_com_ent_for = models.ForeignKey(Comarca, on_delete=models.CASCADE, related_name='Comarca') #cd_comarca (nom_comarca) ok
