@@ -1,0 +1,21 @@
+{% extends "app_alumnalia/base.html" %}
+
+{% block titulo %}
+Perfil de usuario
+{% endblock titulo %}
+
+{% block contenido %} 
+
+
+<div>
+Elige tu perfil de usuario.
+Quieres formarte? Te orientamos para que encuentres la mejor formación adapta a tu perfil académico. 
+Un espacio para el estudiante. Somos la plataforma de referencia donde encontrar toda la oferta formativa de Catalunya. 
+Regístrate <a href="{% url 'datos_personales_estudiantes' %}"><button>aquí</button></a> para acceder a la plataforma para estudiantes.
+</div>
+<div>
+Eres formador? En Alumnalia actuamos como intermediaros entre los centros formadores y los formadores, ofreciendote las ofertas de trabajo que más encajan con tu perfil profesional. 
+Regístrate <a href="{% url 'datos_personales_formadores' %}"><button>aquí</button></a> para acceder a la plataforma para formadores.
+</div>
+
+{% endblock contenido %}

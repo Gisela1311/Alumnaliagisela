@@ -11,10 +11,16 @@ class InicioView(TemplateView):
     template_name = "app_alumnalia/inicio.html"
     context_object_name = ""
 
+class PerfilusuarioView(TemplateView):
+    template_name = "app_alumnalia/perfilusuario.html"
+    context_object_name = ""
 
+class oferta_personalizada(TemplateView):
+    template_name= "app_alumnalia/ofertassugeridas.html"
+    context_object_name = ""
 
-class datos_personales_view(View):
-    template_name = "app_alumnalia/datospersonalesform.html"
+class datos_personales_estudiantes_view(View):
+    template_name = "app_alumnalia/datospersonalesestudiantesform.html"
     
     def get(self, request): 
         form = DatPerForm() 
@@ -24,8 +30,22 @@ class datos_personales_view(View):
         form = DatPerForm(request.POST) 
         if form.is_valid(): 
             form.save() 
-            return redirect('inicio') # Redirige a la vista de inicio u otra vista de tu elección 
+            return redirect('oferta_personalizada') # Modificar al formulario datos estudiante cuando este el modelo hecho
         return render(request, self.template_name, {'form': form})
+    
+class datos_personales_formadores_view(View):
+    template_name = "app_alumnalia/datospersonalesformadoresform.html"
+    
+    def get(self, request): 
+        form = DatPerForm() 
+        return render(request, self.template_name, {'form': form}) 
+    
+    def post(self, request): 
+        form = DatPerForm(request.POST) 
+        if form.is_valid(): 
+            form.save() 
+            return redirect('datos_formador')
+        return render(request, self.template_name, {'form': form})    
     
 class datos_formador_view(FormView):
     template_name = "app_alumnalia/formadoresform.html"
@@ -33,13 +53,16 @@ class datos_formador_view(FormView):
     def get(self, request, *args, **kwargs): 
         form = FormadoresForm() 
         return self.render_to_response({'form': form}) 
-    
+      
     def post(self, request, *args, **kwargs): 
-        form = FormadoresForm(request.POST) 
+        form = FormadoresForm(request.POST, request.FILES)  # Asegúrate de incluir request.FILES
         if form.is_valid(): 
             form.save() 
-            return redirect('app_alumnalia:inicio') # Redirigir después de guardar 
+            return redirect('oferta_personalizada')  # Redirigir después de guardar 
         return self.render_to_response({'form': form})
+
+
+
 
 # Archivo
 #cod_Arc,tipo_arc,B64_arc

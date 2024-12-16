@@ -1,7 +1,7 @@
 {% extends "app_alumnalia/base.html" %}
 
 {% block titulo %}
-Formulario de Datos Personales
+Formulario de Datos Personales Formadores
 {% endblock titulo %}
 
 {% block contenido %}
@@ -16,7 +16,7 @@ Formulario de Datos Personales
 </div> -->
 
 <div class="container mt-5">
-    <h2>Formulario de Datos Personales</h2>
+    <h2>Formulario de Datos Personales Formadores</h2>
     <form method="post"> 
         {% csrf_token %} 
         {{ form.as_p }} 
