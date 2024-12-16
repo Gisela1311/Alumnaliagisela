@@ -5,12 +5,15 @@ Formularios de Datos para Formadores
 {% endblock titulo %}
 
 {% block contenido %}
-
-<form method="post"> 
-  {% csrf_token %} 
-  {{ form.as_p }} 
-  <button type="submit">Guardar</button> 
-</form>
+<div class="container mt-5">
+  <h2>Formulario datos del formador</h2>
+  <form method="post" enctype="multipart/form-data"> 
+      {% csrf_token %} 
+      {{ form.as_p }} 
+      <button type="submit">Guardar</button> 
+    </form> 
+</div>
 
 
 {% endblock contenido %}
+
