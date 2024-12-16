@@ -1,4 +1,4 @@
-
+import base64
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from .forms import *
@@ -40,6 +40,12 @@ class datos_formador_view(FormView):
             form.save() 
             return redirect('app_alumnalia:inicio') # Redirigir después de guardar 
         return self.render_to_response({'form': form})
+
+# Archivo
+#cod_Arc,tipo_arc,B64_arc
+#1,pdf,Base64:Pdf
+#2,img,Base64:img
+
 
 # class success_view(TemplateView):
 #     return render(request, 'success.html')

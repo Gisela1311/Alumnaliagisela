@@ -25,9 +25,9 @@ print(f"calculo de ruta es -->{os.path.join(BASE_DIR, 'app_alumnalia', 'template
 SECRET_KEY = "django-insecure-cr4u+3qr$nm8d8(-o%zd2_a2c=ut%t(&h)mg6tro7p4+dtwkyn"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True # False # 
 
-ALLOWED_HOSTS = ["127.0.0.1", 'localhost']
+ALLOWED_HOSTS = ["127.0.0.1", 'localhost', '192.168.1.53','siwat.es']
 
 
 # Application definition
