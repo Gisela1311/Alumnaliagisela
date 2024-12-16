@@ -1,6 +1,6 @@
 from cryptography.fernet import Fernet
 from django.conf import settings
-from datetime import date
+from datetime import date, datetime
 
 
 # Función de encriptación
@@ -11,15 +11,16 @@ def encrypt_data(data) -> str:
     """
     fernet = settings.FERNET
     
-    # Si es una fecha, la convertimos a cadena en formato 'YYYY-MM-DD'
-    if isinstance(data, date):  # Si es una instancia de 'date'
-        data = data.strftime('%Y-%m-%d')  # Convertimos a cadena
+    # Si es una fecha, convertirla a cadena en formato ISO
+    if isinstance(data, (date, datetime)):  # Detectar fechas
+        data = data.isoformat()
     
-    # Si es un número, lo convertimos a cadena
-    elif isinstance(data, (int, float)):  # Si es un número entero o flotante
-        data = str(data)  # Convertimos a cadena
+    # Si es un número, convertirlo a cadena
+    elif isinstance(data, (int, float)):  # Detectar números
+        data = str(data)
     
-    return fernet.encrypt(data.encode()).decode()  # Encriptamos y devolvemos como cadena
+    # Encriptar siempre como cadena
+    return fernet.encrypt(data.encode()).decode()
 
 # Función de desencriptación
 def decrypt_data(data: str):
@@ -41,11 +42,15 @@ def decrypt_data(data: str):
     try:
         return int(decrypted_data)  # Si se puede, convertimos a entero
     except ValueError:
-        try:
-            return float(decrypted_data)  # Si no, lo intentamos convertir a flotante
-        except ValueError:
-            pass  # Si no es número, lo dejamos como cadena
+        pass  # No es entero, continuar
     
-    return decrypted_data  # Si no es ni fecha ni número, devolvemos la cadena tal cual
+    # Detectar si es un número flotante
+    try:
+        return float(decrypted_data)  # Si es un número flotante, convertir
+    except ValueError:
+        pass  # No es flotante, continuar
+    
+    # Si no es fecha ni número, devolver como cadena
+    return decrypted_data
 
 
