@@ -1,5 +1,4 @@
 
-
 ## Tabla de Datos Personales
 
 | Campo            | Tipo de Dato        | Descripción                                                                                 |
