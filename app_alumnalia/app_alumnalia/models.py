@@ -1,7 +1,12 @@
 from django.core.exceptions import ValidationError
 from django.db import models
+
+from .encryption_utils import encrypt_data, decrypt_data
+from datetime import datetime, date
+
 from .modelos.modelAdmin import Tipo_Usuario
 from .modelos.modelDir import Comarca, Provincias, Comarca_provincias, Municipios
+
 
 # controles de los campos
 def validar_dni(value): 
@@ -16,31 +21,77 @@ def validar_longitud_nueve(value):
 
 class Dat_Per(models.Model):
     pk_per = models.SmallAutoField(verbose_name="id de la Dat_Per", primary_key=True) 
-    nom_per = models.CharField(max_length=150, verbose_name="Nombre de la Persona", null=False)    
-    dni_per = models.CharField(max_length=15, unique=True, verbose_name="Nombre de la autoridad", validators=[validar_dni], null=False)
-    fn_per = models.CharField(max_length=10,verbose_name="fecha de nacimiento de la persona", null=True)
-    cn_per = models.CharField(max_length=150, verbose_name="Naciuonalidad de la persona", null=False)    
-    tel_per = models.IntegerField(verbose_name="Teléfono de la persona", validators=[validar_longitud_nueve], null=True)
-    email_per = models.EmailField(verbose_name="email de la persona")
-    dir_per = models.CharField(max_length=150, verbose_name="Dirección de la persona", null=False) #models.ForeignKey(  on_delete=models.CASCADE, verbose_name="Dirección de la persona", default=0) #Direcciones
+    nom_per = models.CharField(max_length=150, verbose_name="Nombre", null=False)    
+    dni_per = models.CharField(max_length=15, unique=True, verbose_name="DNI/NIE", validators=[validar_dni], null=False)
+    fn_per = models.DateField(verbose_name="Fecha de nacimiento")
+    fn_per_enc = models.CharField(max_length=15, verbose_name="Fecha de nacimiento encriptada", default="")
+    cn_per = models.CharField(max_length=150, verbose_name="Nacionalidad", null=False)    
+    tel_per = models.IntegerField(verbose_name="Teléfono", validators=[validar_longitud_nueve])
+    tel_per_enc = models.CharField(max_length=10, verbose_name="Teléfono encriptada", default="")
+    email_per = models.EmailField(verbose_name="Email")
+    dir_per = models.CharField(max_length=150, verbose_name="Dirección", null=False) #models.ForeignKey(  on_delete=models.CASCADE, verbose_name="Dirección de la persona", default=0) #Direcciones
     
     genero=[
         ('', 'Seleccione una opción'),
-        (1, 'Mujer'),
-        (2, 'Hombre'),
-        (3, 'Prefiero no específicar'),
-        (4,'Otro')
+
+        ('1', 'Mujer'),
+        ('2', 'Hombre'),
+        ('3', 'Prefiero no especificar'),
+        ('4','Otro')
+
     ]
-    sex_per = models.IntegerField(
+    sex_per = models.CharField(
         verbose_name="Género de la persona",
         choices=genero,
-        default=''
+        default='', 
+        max_length=1
         )
        
     # Si se acepta o no la Declaraciones y Consentimientos de sus datos
-    uso_datos_per = models.BooleanField(verbose_name="fines de gestión académica y administrativa",default=True)
-    term_per = models.BooleanField(verbose_name="términos y condiciones",default=True)
-    noti_per = models.BooleanField(verbose_name="notificaciones de oportunidades formativas",default=True)
+    uso_datos_per = models.BooleanField(verbose_name="Fines de gestión académica y administrativa",default=False)
+    term_per = models.BooleanField(verbose_name="Términos y condiciones",default=False)
+    noti_per = models.BooleanField(verbose_name="Notificaciones de oportunidades formativas",default=False)
+    
+    # Sobrescribir el método save para encriptar datos antes de guardar 
+    def save(self, *args, **kwargs): 
+        
+        self.nom_per = encrypt_data(self.nom_per) 
+        self.dni_per = encrypt_data(self.dni_per)
+        self.fn_per_enc = encrypt_data(self.fn_per.isoformat())
+        self.cn_per = encrypt_data(self.cn_per) 
+        self.tel_per_enc = encrypt_data(str(self.tel_per))
+        self.email_per = encrypt_data(self.email_per) 
+        self.dir_per = encrypt_data(self.dir_per)
+        self.sex_per = encrypt_data(self.sex_per)
+        self.fn_per = date(2001, 1, 1)
+        self.tel_per = 666666666
+        super(Dat_Per, self).save(*args, **kwargs) 
+        
+    # Método para desencriptar datos sensibles 
+    def get_nom_per(self): 
+        return decrypt_data(self.nom_per) 
+    
+    def get_dni_per(self): 
+        return decrypt_data(self.dni_per)
+
+    def get_fn_per(self): 
+        return decrypt_data(self.fn_per_enc)
+    
+    def get_cn_per(self): 
+        return decrypt_data(self.cn_per) 
+    
+    def get_tel_per(self): 
+        return decrypt_data(self.tel_per_enc)
+    
+    def get_email_per(self): 
+        return decrypt_data(self.email_per) 
+    
+    def get_dir_per(self): 
+        return decrypt_data(self.dir_per)
+    
+    def get_sex_per(self): 
+        return decrypt_data(self.sex_per)
+    
     def __str__(self):
         return f"{self.nom_per}"
     class Meta:
@@ -60,13 +111,14 @@ class Inf_Prof(models.Model):
         (4, 'Doctorado'),  
         (5, 'Otros'), 
         ]    
-    #Otro (especificar)
-    tit_inf_pro = models.IntegerField(
+
+    tit_inf_pro = models.CharField(
+
         verbose_name="Título académico más alto obtenido",
         choices=Titulo, 
-        default=''
+        default='', max_length=1
         )  
-    tit_esp_inf_pro = models.CharField(max_length=30, verbose_name="Especifique tit_inf_pro")
+    tit_esp_inf_pro = models.CharField(max_length=15, verbose_name="Especifique título")
 
     esp_inf_pro = models.CharField(max_length=15,verbose_name="¿En qué área está tu especialización principal?")  
 
@@ -77,10 +129,10 @@ class Inf_Prof(models.Model):
             (3, 'De 4 a 6 años'), 
             (4, 'Más de 6 años'),  
             ]   
-    exp_inf_pro = models.IntegerField(
+    exp_inf_pro = models.CharField(
         verbose_name="¿Cuántos años de experiencia tienes como formador/a?",
         choices=Experiencia,
-        default=''
+        default='', max_length=1
         )  
 
     Formacion = [
@@ -91,13 +143,12 @@ class Inf_Prof(models.Model):
         (4, 'Cursos en línea'),
         (5, 'Otros')
     ]
-    for_imp_inf_pro = models.IntegerField(
+    for_imp_inf_pro = models.CharField(
         verbose_name="Qué tipo de formación has impartido",
         choices=Formacion,
-        default=''
-        )
-    
-    for_imp_esp_inf_pro = models.CharField(  max_length=255, verbose_name="Especifique que for_imp_inf_pro ha impartido")
+        default='', max_length=1)  
+            
+    for_imp_esp_inf_pro = models.CharField(  max_length=255, verbose_name="Especifique que formación ha impartido")
     
     #cv_adj_inf_pro = models.CharField(max_length=15,verbose_name="Adjunta tu currículum en formato PDF.")  
     cv_adj_inf_pro = models.FileField(upload_to='pdfs/',verbose_name="Adjunta tu currículum en formato PDF.")
@@ -105,16 +156,15 @@ class Inf_Prof(models.Model):
     # COMPETENCIAS Y CERTIFICACIONES
     opcion = [
         ('', 'Seleccione una opción'),
-        (1, 'Sí'),
-        (2, 'No'),
-        (3, 'Especificar')
+        ('1', 'Sí'),
+        ('2', 'No')
     ]
-    cert_inf_pro = models.IntegerField(
+    cert_inf_pro = models.CharField(
         verbose_name="¿Tienes alguna certificación docente?",
         choices=opcion,
-        default = '')  
-    cert_esp_inf_pro = models.CharField(max_length=30, verbose_name="Especifique su cert_inf_pro")  
-    #1,2,3,4,5 o 1,2,3,4 o 1,4,5
+        default = '', max_length=1)  
+    cert_esp_inf_pro = models.CharField(max_length=15, verbose_name="Especifique su certificación")  
+
     herramientas = [
         ('', 'Seleccione una opción'),
         (1, 'Moodle'),
@@ -123,16 +173,16 @@ class Inf_Prof(models.Model):
         (4, 'Google Classroom'),
         (5, 'Otros')
     ]
-    herr_inf_pro = models.IntegerField(
+    herr_inf_pro = models.CharField(
         verbose_name="¿Qué herramientas tecnológicas utilizas en tus clases?",
         choices=herramientas, 
-        default= '')  
-    herr_esp_inf_pro = models.CharField(max_length=15, verbose_name="Especifique otra herr_inf_pro")
+        default= '', max_length=1)  
+    herr_esp_inf_pro = models.CharField(max_length=15, verbose_name="Especifique otra herramienta tecnológica")
 
-    comp_dig_inf_pro = models.IntegerField(
+    comp_dig_inf_pro = models.CharField(
         verbose_name="¿Posees competencias digitales específicas (ej. DigCompEdu)?",
         choices=opcion,
-        default= "")  
+        default= "", max_length=1) 
     
     comp_dig_esp_inf_pro = models.CharField(max_length=15, verbose_name="Especifique cuales")
 
@@ -143,10 +193,10 @@ class Inf_Prof(models.Model):
         (2, 'En línea'),
         (3, 'Mixta')
     ]
-    mod_inf_pro = models.IntegerField(
+    mod_inf_pro = models.CharField(
         verbose_name="Qué modalidades de enseñanza prefieres impartir",
         choices= modalidad,
-        default= '1')
+        default= '', max_length=1)
     
     alumno= [
         ('', 'Seleccione una opción'),
@@ -155,12 +205,12 @@ class Inf_Prof(models.Model):
         (3, 'Empresas'),
         (4, 'Otros')
     ]  
-    tipo_alu_inf_pro = models.IntegerField(
+    tipo_alu_inf_pro = models.CharField(
         verbose_name="Qué tipo de alumnado prefieres formar",
         choices=alumno,
-        default='')  
+        default='', max_length=1)  
     
-    tipo_alu_esp_inf_pro = models.CharField(max_length=15, verbose_name="Especifique tipo_alu_inf_pro")  
+    tipo_alu_esp_inf_pro = models.CharField(max_length=15, verbose_name="Especifique el tipo de alumnos")  
     
     franja = [
         ('', 'Seleccione una opción'),
@@ -168,50 +218,19 @@ class Inf_Prof(models.Model):
         (2, 'Tarde (14:00-20:00)'),
         (3, 'Noche (20:00-23:00)')
     ]
-    franja_inf_pro = models.IntegerField(
+    franja_inf_pro = models.CharField(
         verbose_name="En qué franjas horarias estás disponible para impartir clases?",
         choices= franja, 
-        default=''
+        default='', max_length=1
         )  
 
-    fk_per_inf_pro =  models.ForeignKey(Dat_Per, on_delete=models.CASCADE,verbose_name="es la fk de Datos de personas")
+    fk_per_inf_pro =  models.ForeignKey(Dat_Per, on_delete=models.CASCADE,verbose_name="fk de Datos de personas")
 
     def __str__(self):
         return f"{self.pk_inf_pro}"
     
     class Meta:
         db_table = "Inf_Prof" 
-
-
-
-
-## tablas para el estudiante al ver una oferta
-
-class OfertaEstudio(models.Model):
-    TITULOS_CHOICES = [
-        ('BACH', 'Bachillerato'),
-        ('LIC', 'Licenciatura'),
-        ('MAST', 'Máster'),
-        ('DOC', 'Doctorado'),
-    ]
-
-    MODALIDADES_CHOICES = [
-        ('PRESENCIAL', 'Presencial'),
-        ('ONLINE', 'Online'),
-        ('MIXTO', 'Mixto'),
-    ]
-
-    nom_Ofe_est = models.CharField(max_length=200)  # Nombre del curso/programa
-    inst_Ofe_est = models.CharField(max_length=200)  # Nombre de la institución
-    niv_Ofe_est = models.CharField(max_length=5, choices=TITULOS_CHOICES)  # Nivel de estudio
-    mod_Ofe_est = models.CharField(max_length=10, choices=MODALIDADES_CHOICES)  # Modalidad de estudio
-    dur_Ofe_est = models.IntegerField(help_text='Duración en meses')  # Duración del programa
-    desc_Ofe_est = models.TextField(blank=True, null=True)  # Descripción del curso/programa
-    fecha_inicio = models.DateField()  # Fecha de inicio
-    fecha_fin = models.DateField()  # Fecha de finalización
-    url_Ofe_est = models.URLField(blank=True, null=True)  # Enlace para más información
-    def __str__(self):
-        return f"{self.nom_Ofe_est} en {self.inst_Ofe_est}"
 
 
 ######### Area de Vistas de las Drecciones ##################
@@ -231,4 +250,5 @@ class Domicilio(models.Model): #Domicilio o direccion donde vive
  
     pk_com, nom_com, pk_pro, nom_pro, pk_cam_pro, nom_cam_pro
 """
+
 

@@ -31,11 +31,13 @@ class datos_personales_estudiantes_view(View):
         form = DatPerForm(request.POST) 
         if form.is_valid(): 
             form.save() 
+
             return redirect('oferta_personalizada') # Modificar al formulario datos estudiante cuando este el modelo hecho
         return render(request, self.template_name, {'form': form})
     
 class datos_personales_formadores_view(View):
     template_name = "app_alumnalia/datospersonalesformadoresform.html"
+
     
     def get(self, request): 
         form = DatPerForm() 
