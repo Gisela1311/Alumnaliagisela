@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect
 from .forms import *
 from .models import *
 from django.views.generic import FormView, TemplateView, View
+from django.shortcuts import render, get_object_or_404, redirect 
 
 
                   
@@ -88,9 +89,30 @@ class datos_formador_view(FormView):
 #     return render(request, 'app_alumnalia/nuevo_inf_prof.html', {'form': form})
 
 
+# Metodos de actualizacion de datos
+# Eliminar
+"""
+def eliminar_fila(request, id): 
+    fila = get_object_or_404(Dat_Per, id = id) 
+    if request.method == 'POST': 
+        fila.delete() 
+        return redirect('lista_filas') # Redirige a una página de lista de filas o donde desees 
+    return render(request, 'confirmar_eliminacion.html', {'fila': fila})
 
-
-
-
+def lista_filas(request): 
+    filas = Dat_Per.objects.all() 
+    return render(request, 'lista_filas.html', {'filas': filas})
+"""
+"""
+def eliminar_documento(request, id): 
+    documento = get_object_or_404(Dat_Per, id=id) 
+    if request.method == 'POST': 
+        documento.delete() 
+        return redirect('lista_documentos') # Redirige a una página de lista de documentos o donde desees 
+    return render(request, 'confirmar_eliminacion.html', {'documento': documento})
+def lista_documentos(request): 
+    documentos = Dat_Per.objects.all() 
+    return render(request, 'lista_documentos.html', {'documentos': documentos})
+"""
 
 
