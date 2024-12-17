@@ -45,8 +45,8 @@ class Comarca_provincias(models.Model):
         verbose_name="id de Comarca_provincias", 
         primary_key=True
         )     
-    fk_com = models.ForeignKey(Comarca, on_delete=models.CASCADE, related_name='Comarca_provincias')
-    fk_pro = models.ForeignKey(Provincias, on_delete=models.CASCADE, related_name='Comarca_provincias')
+    fk_com = models.ForeignKey(Comarca, on_delete=models.CASCADE, related_name='Comarca_provincias', default=True)
+    fk_pro = models.ForeignKey(Provincias, on_delete=models.CASCADE, related_name='Comarca_provincias', default=True)
     def __str__(self):
         return f"{self.pk_pro}"
     class Meta:
