@@ -3,7 +3,7 @@ from .models import *
 
 admin.site.register(Dat_Per)
 admin.site.register(Inf_Prof)
-admin.site.register(OfertaEstudio)
+# admin.site.register(OfertaEstudio)
 admin.site.register(Tipo_Usuario)
 admin.site.register(Comarca)
 admin.site.register(Municipios)
