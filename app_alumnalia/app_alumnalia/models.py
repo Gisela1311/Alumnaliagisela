@@ -33,7 +33,6 @@ class Dat_Per(models.Model):
     
     genero=[
         ('', 'Seleccione una opción'),
-
         ('1', 'Mujer'),
         ('2', 'Hombre'),
         ('3', 'Prefiero no especificar'),
@@ -105,11 +104,11 @@ class Inf_Prof(models.Model):
     # INFORMACIÓN PROFESIONAL
     Titulo = [ 
         ('', 'Seleccione una opción'),
-        (1, 'Técnico/a'), 
-        (2, 'Grado universitario'), 
-        (3, 'Máster'), 
-        (4, 'Doctorado'),  
-        (5, 'Otros'), 
+        ('1', 'Técnico/a'), 
+        ('2', 'Grado universitario'), 
+        ('3', 'Máster'), 
+        ('4', 'Doctorado'),  
+        ('5', 'Otros'), 
         ]    
 
     tit_inf_pro = models.CharField(
@@ -124,10 +123,10 @@ class Inf_Prof(models.Model):
 
     Experiencia = [ 
             ('', 'Seleccione una opción'),
-            (1, 'Menos de 1 año'), 
-            (2, 'De 1 a 3 años'), 
-            (3, 'De 4 a 6 años'), 
-            (4, 'Más de 6 años'),  
+            ('1', 'Menos de 1 año'), 
+            ('2', 'De 1 a 3 años'), 
+            ('3', 'De 4 a 6 años'), 
+            ('4', 'Más de 6 años'),  
             ]   
     exp_inf_pro = models.CharField(
         verbose_name="¿Cuántos años de experiencia tienes como formador/a?",
@@ -137,11 +136,11 @@ class Inf_Prof(models.Model):
 
     Formacion = [
         ('', 'Seleccione una opción'),
-        (1, 'Formación profesional'),
-        (2, 'Formación universitaria'),
-        (3, 'Formación empresarial'),
-        (4, 'Cursos en línea'),
-        (5, 'Otros')
+        ('1', 'Formación profesional'),
+        ('2', 'Formación universitaria'),
+        ('3', 'Formación empresarial'),
+        ('4', 'Cursos en línea'),
+        ('5', 'Otros')
     ]
     for_imp_inf_pro = models.CharField(
         verbose_name="Qué tipo de formación has impartido",
@@ -167,11 +166,11 @@ class Inf_Prof(models.Model):
 
     herramientas = [
         ('', 'Seleccione una opción'),
-        (1, 'Moodle'),
-        (2, 'Microsoft Teams'),
-        (3, 'Zoom'),
-        (4, 'Google Classroom'),
-        (5, 'Otros')
+        ('1', 'Moodle'),
+        ('2', 'Microsoft Teams'),
+        ('3', 'Zoom'),
+        ('4', 'Google Classroom'),
+        ('5', 'Otros')
     ]
     herr_inf_pro = models.CharField(
         verbose_name="¿Qué herramientas tecnológicas utilizas en tus clases?",
@@ -189,9 +188,9 @@ class Inf_Prof(models.Model):
     # PREFERENCIAS DE FORMACIÓN
     modalidad = [
         ('', 'Seleccione una opción'),
-        (1, 'Presencial'),
-        (2, 'En línea'),
-        (3, 'Mixta')
+        ('1', 'Presencial'),
+        ('2', 'En línea'),
+        ('3', 'Mixta')
     ]
     mod_inf_pro = models.CharField(
         verbose_name="Qué modalidades de enseñanza prefieres impartir",
@@ -200,10 +199,10 @@ class Inf_Prof(models.Model):
     
     alumno= [
         ('', 'Seleccione una opción'),
-        (1, 'Jóvenes'),
-        (2, 'Adultos'),
-        (3, 'Empresas'),
-        (4, 'Otros')
+        ('1', 'Jóvenes'),
+        ('2', 'Adultos'),
+        ('3', 'Empresas'),
+        ('4', 'Otros')
     ]  
     tipo_alu_inf_pro = models.CharField(
         verbose_name="Qué tipo de alumnado prefieres formar",
@@ -214,9 +213,9 @@ class Inf_Prof(models.Model):
     
     franja = [
         ('', 'Seleccione una opción'),
-        (1, 'Mañana (8:00-14:00)'),
-        (2, 'Tarde (14:00-20:00)'),
-        (3, 'Noche (20:00-23:00)')
+        ('1', 'Mañana (8:00-14:00)'),
+        ('2', 'Tarde (14:00-20:00)'),
+        ('3', 'Noche (20:00-23:00)')
     ]
     franja_inf_pro = models.CharField(
         verbose_name="En qué franjas horarias estás disponible para impartir clases?",
