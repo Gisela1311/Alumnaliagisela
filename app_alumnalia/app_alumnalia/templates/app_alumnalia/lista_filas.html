@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Filas</title>
+</head>
+<body>
+    <h1>Lista de Filas</h1>
+    <ul>
+        {% for fila in filas %}
+            <li>
+                {{ fila.dni_per }}  <!-- Ajusta esto según los campos de tu modelo -->
+                <a href="{% url 'eliminar_fila' fila.pk_per %}">Eliminar</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>

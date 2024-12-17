@@ -22,14 +22,15 @@
         <div class="col-md-3 d-flex align-items-center" > 
           <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
             <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
-          </a>
             <img src="{% static '/img/Logo3/Logo.jpg' %}" alt="Logo Alumnalia" height="200" width="200"> 
+          </a>          
         </div>
         <!--opciones de navegación-->
         <div class="col-md-9 d-flex align-items-center" > 
           <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0" style=" font-size: 25px;"> 
             <li><a href="{% url 'inicio' %}" class="nav-link px-2 link-secondary">Inicio</a></li>
-            <li><a href="{% url 'datos_personales' %}" class="nav-link px-2 link-secondary">F. Datos Generales</a></li> 
+            <li><a href="{% url 'datos_personales_estudiantes' %}" class="nav-link px-2 link-secondary">F. Datos Generales Estudiantes</a></li> 
+            <li><a href="{% url 'datos_personales_formadores' %}" class="nav-link px-2 link-secondary">F. Datos Generales Formadores</a></li> 
             <li><a href="{% url 'datos_formador' %}" class="nav-link px-2 link-secondary">F. Datos Formador</a></li> 
             <li><a href="#" class="nav-link px-2 link-secondary">F. Datos Estudiante</a></li>    
           </ul>
