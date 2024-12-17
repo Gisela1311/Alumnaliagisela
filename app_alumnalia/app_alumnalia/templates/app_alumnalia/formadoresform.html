@@ -1,0 +1,19 @@
+{% extends "app_alumnalia/base.html" %}
+
+{% block titulo %}
+Formularios de Datos para Formadores
+{% endblock titulo %}
+
+{% block contenido %}
+<div class="container mt-5">
+  <h2>Formulario datos del formador</h2>
+  <form method="post" enctype="multipart/form-data"> 
+      {% csrf_token %} 
+      {{ form.as_p }} 
+      <button type="submit">Guardar</button> 
+    </form> 
+</div>
+
+
+{% endblock contenido %}
+

@@ -1,7 +1,12 @@
 from django.core.exceptions import ValidationError
 from django.db import models
+
 from .encryption_utils import encrypt_data, decrypt_data
 from datetime import datetime, date
+
+from .modelos.modelAdmin import Tipo_Usuario
+from .modelos.modelDir import Comarca, Provincias, Comarca_provincias, Municipios
+
 
 # controles de los campos
 def validar_dni(value): 
@@ -28,10 +33,12 @@ class Dat_Per(models.Model):
     
     genero=[
         ('', 'Seleccione una opción'),
+
         ('1', 'Mujer'),
         ('2', 'Hombre'),
-        ('3', 'Prefiero no responder'),
+        ('3', 'Prefiero no especificar'),
         ('4','Otro')
+
     ]
     sex_per = models.CharField(
         verbose_name="Género de la persona",
@@ -98,14 +105,15 @@ class Inf_Prof(models.Model):
     # INFORMACIÓN PROFESIONAL
     Titulo = [ 
         ('', 'Seleccione una opción'),
-        ('1', 'Técnico/a'), 
-        ('2', 'Grado universitario'), 
-        ('3', 'Máster'), 
-        ('4', 'Doctorado'),  
-        ('5', 'Otros'), #Otro (especificar)
+        (1, 'Técnico/a'), 
+        (2, 'Grado universitario'), 
+        (3, 'Máster'), 
+        (4, 'Doctorado'),  
+        (5, 'Otros'), 
         ]    
 
     tit_inf_pro = models.CharField(
+
         verbose_name="Título académico más alto obtenido",
         choices=Titulo, 
         default='', max_length=1
@@ -116,10 +124,10 @@ class Inf_Prof(models.Model):
 
     Experiencia = [ 
             ('', 'Seleccione una opción'),
-            ('1', 'Menos de 1 año'), 
-            ('2', 'De 1 a 3 años'), 
-            ('3', 'De 4 a 6 años'), 
-            ('4', 'Más de 6 años'),  
+            (1, 'Menos de 1 año'), 
+            (2, 'De 1 a 3 años'), 
+            (3, 'De 4 a 6 años'), 
+            (4, 'Más de 6 años'),  
             ]   
     exp_inf_pro = models.CharField(
         verbose_name="¿Cuántos años de experiencia tienes como formador/a?",
@@ -129,17 +137,17 @@ class Inf_Prof(models.Model):
 
     Formacion = [
         ('', 'Seleccione una opción'),
-        ('1', 'Formación profesional'),
-        ('2', 'Formación universitaria'),
-        ('3', 'Formación empresarial'),
-        ('4', 'Cursos en línea'),
-        ('5', 'Otros')
+        (1, 'Formación profesional'),
+        (2, 'Formación universitaria'),
+        (3, 'Formación empresarial'),
+        (4, 'Cursos en línea'),
+        (5, 'Otros')
     ]
     for_imp_inf_pro = models.CharField(
         verbose_name="Qué tipo de formación has impartido",
         choices=Formacion,
         default='', max_length=1)  
-    
+            
     for_imp_esp_inf_pro = models.CharField(  max_length=255, verbose_name="Especifique que formación ha impartido")
     
     #cv_adj_inf_pro = models.CharField(max_length=15,verbose_name="Adjunta tu currículum en formato PDF.")  
@@ -159,11 +167,11 @@ class Inf_Prof(models.Model):
 
     herramientas = [
         ('', 'Seleccione una opción'),
-        ('1', 'Moodle'),
-        ('2', 'Microsoft Teams'),
-        ('3', 'Zoom'),
-        ('4', 'Google Classroom'),
-        ('5', 'Otros')
+        (1, 'Moodle'),
+        (2, 'Microsoft Teams'),
+        (3, 'Zoom'),
+        (4, 'Google Classroom'),
+        (5, 'Otros')
     ]
     herr_inf_pro = models.CharField(
         verbose_name="¿Qué herramientas tecnológicas utilizas en tus clases?",
@@ -181,9 +189,9 @@ class Inf_Prof(models.Model):
     # PREFERENCIAS DE FORMACIÓN
     modalidad = [
         ('', 'Seleccione una opción'),
-        ('1', 'Presencial'),
-        ('2', 'En línea'),
-        ('3', 'Mixta')
+        (1, 'Presencial'),
+        (2, 'En línea'),
+        (3, 'Mixta')
     ]
     mod_inf_pro = models.CharField(
         verbose_name="Qué modalidades de enseñanza prefieres impartir",
@@ -192,10 +200,10 @@ class Inf_Prof(models.Model):
     
     alumno= [
         ('', 'Seleccione una opción'),
-        ('1', 'Jóvenes'),
-        ('2', 'Adultos'),
-        ('3', 'Empresas'),
-        ('4', 'Otros')
+        (1, 'Jóvenes'),
+        (2, 'Adultos'),
+        (3, 'Empresas'),
+        (4, 'Otros')
     ]  
     tipo_alu_inf_pro = models.CharField(
         verbose_name="Qué tipo de alumnado prefieres formar",
@@ -206,9 +214,9 @@ class Inf_Prof(models.Model):
     
     franja = [
         ('', 'Seleccione una opción'),
-        ('1', 'Mañana (8:00-14:00)'),
-        ('2', 'Tarde (14:00-20:00)'),
-        ('3', 'Noche (20:00-23:00)')
+        (1, 'Mañana (8:00-14:00)'),
+        (2, 'Tarde (14:00-20:00)'),
+        (3, 'Noche (20:00-23:00)')
     ]
     franja_inf_pro = models.CharField(
         verbose_name="En qué franjas horarias estás disponible para impartir clases?",
@@ -223,57 +231,6 @@ class Inf_Prof(models.Model):
     
     class Meta:
         db_table = "Inf_Prof" 
-
-######## Direcciones ######
-#1 tabla de la Comarca
-class Comarca(models.Model):
-    pk_com = models.SmallAutoField(
-        verbose_name="id de Comarca",
-        primary_key=True
-        ) 
-    nom_com =  models.CharField(max_length=30, verbose_name="Nombre de la Comarca")
-    def __str__(self):
-        return f"{self.nom_com}"
-    class Meta:
-        db_table = "Comarca" 
-
-#2 tabla de los Municipios
-class Municipios(models.Model):
-    pk_mun = models.SmallAutoField(
-        verbose_name="id de Municipios", 
-        primary_key=True
-        ) 
-    nom_mun =  models.CharField(max_length=30, verbose_name="Nombre del Municipio")
-    fk_com = models.ForeignKey(Comarca, on_delete=models.CASCADE, related_name='Municipios')
-    def __str__(self):
-        return f"{self.nom_mun}"
-    class Meta:
-        db_table = "Municipios" 
-
-#3 tabla de las Provincias
-class Provincias(models.Model):
-    pk_pro = models.SmallAutoField(
-        verbose_name="id de Provincias", 
-        primary_key=True
-        ) 
-    nom_pro =  models.CharField(max_length=30, verbose_name="Nombre de la Provincia")
-    def __str__(self):
-        return f"{self.pk_pro}"
-    class Meta:
-        db_table = "Provincias" 
-
-#4 tabla relación Comarcas con Provincias
-class Comarca_provincias(models.Model):
-    pk_cam_pro = models.SmallAutoField(
-        verbose_name="id de Comarca_provincias", 
-        primary_key=True
-        ) 
-    fk_com = models.ForeignKey(Comarca, on_delete=models.CASCADE, related_name='Comarca_provincias', default=1)
-    fk_pro = models.ForeignKey(Provincias, on_delete=models.CASCADE, related_name='Comarca_provincias', default=1)
-    def __str__(self):
-        return f"{self.pk_pro}"
-    class Meta:
-        db_table = "Comarca_provincias" 
 
 
 ######### Area de Vistas de las Drecciones ##################
@@ -293,44 +250,5 @@ class Domicilio(models.Model): #Domicilio o direccion donde vive
  
     pk_com, nom_com, pk_pro, nom_pro, pk_cam_pro, nom_cam_pro
 """
-######## familia porfesional ######
-class Familia_Profesion(models.Model):
-    pk_fm_pro= models.CharField(max_length=20,verbose_name="id de Entidad Formadora",primary_key=True)
-    desc_fm_pro= models.CharField(max_length=200, verbose_name="Descripcion de la Familia Profesional")
-    def __str__(self):
-        return f"{self.pk_fm_pro}"
-    class Meta:
-        db_table = "Familia_Profecional" 
 
 
-######## Entidad Formadora ###### tabla Origen de datos foap2024
-##7 Entidad Formadora -> Ent_For 
-class Ent_For(models.Model):
-    pk_ent_for= models.CharField(max_length=20,verbose_name="id de Entidad Formadora",primary_key=True)
-    nom_ent_for= models.CharField(max_length=44, verbose_name="Nombre")
-    Area_for_ent_for= models.CharField(max_length=44,verbose_name="Area de formacion")
-    email_ent_for= models.EmailField(verbose_name="Email")
-    nif_ent_for= models.CharField(max_length=20,verbose_name="NIF")
-    fec_fin_ent_for= models.DateField(verbose_name="Fecha de fin")
-    fec_ini_ent_for= models.DateField(verbose_name="Fecha de inicio")
-    area_prof_ent_for= models.CharField(max_length=44,verbose_name="Area Porfesional")
-    cp_ent_for= models.CharField(max_length=5,verbose_name="Codigo postal", default="")
-    web_ent_for =models.URLField (max_length=100,verbose_name="URL de la web") 
-    horas_ent_for= models.IntegerField(verbose_name="Horas")
-    idt_ent_for= models.IntegerField(verbose_name="Identificador")
-    den_ent_for= models.CharField (max_length=100,verbose_name="Denominacion")
-    amb_ent_for= models.CharField (max_length=100,verbose_name="Ambito")
-    mod_ent_for= models.CharField (max_length=50,verbose_name="Modalidad")
-    num_grupo= models.IntegerField(verbose_name="Numero de grupo")
-    tel_ent_for= models.IntegerField (
-        validators=[validar_longitud_nueve],
-        verbose_name="Telefono", default=0
-        )
-    fk_mun_ent_for = models.ForeignKey(Municipios, on_delete=models.CASCADE, related_name='Municipios') #cod_municipo (nom_municipio,) ok
-    fk_com_ent_for = models.ForeignKey(Comarca, on_delete=models.CASCADE, related_name='Comarca') #cd_comarca (nom_comarca) ok
-    fk_fam_pro =models.ForeignKey(Familia_Profesion, on_delete=models.CASCADE, related_name='Familia_Profesion')
-
-    def __str__(self):
-        return f"{self.nom_ent_for}"
-    class Meta:
-        db_table = "Ent_For" 
