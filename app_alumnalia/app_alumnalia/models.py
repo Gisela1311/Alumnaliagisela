@@ -24,10 +24,10 @@ class Dat_Per(models.Model):
     
     genero=[
         ('', 'Seleccione una opción'),
-        ('1', 'Mujer'),
-        ('2', 'Hombre'),
-        ('3', 'Prefiero no específicar'),
-        ('4','Otro')
+        (1, 'Mujer'),
+        (2, 'Hombre'),
+        (3, 'Prefiero no específicar'),
+        (4,'Otro')
     ]
     sex_per = models.IntegerField(
         verbose_name="Género de la persona",
@@ -52,13 +52,13 @@ class Inf_Prof(models.Model):
     # INFORMACIÓN PROFESIONAL
     Titulo = [ 
         ('', 'Seleccione una opción'),
-        ('1', 'Técnico/a'), 
-        ('2', 'Grado universitario'), 
-        ('3', 'Máster'), 
-        ('4', 'Doctorado'),  
-        ('5', 'Otros'), #Otro (especificar)
+        (1, 'Técnico/a'), 
+        (2, 'Grado universitario'), 
+        (3, 'Máster'), 
+        (4, 'Doctorado'),  
+        (5, 'Otros'), 
         ]    
-
+    #Otro (especificar)
     tit_inf_pro = models.IntegerField(
         verbose_name="Título académico más alto obtenido",
         choices=Titulo, 
@@ -70,10 +70,10 @@ class Inf_Prof(models.Model):
 
     Experiencia = [ 
             ('', 'Seleccione una opción'),
-            ('1', 'Menos de 1 año'), 
-            ('2', 'De 1 a 3 años'), 
-            ('3', 'De 4 a 6 años'), 
-            ('4', 'Más de 6 años'),  
+            (1, 'Menos de 1 año'), 
+            (2, 'De 1 a 3 años'), 
+            (3, 'De 4 a 6 años'), 
+            (4, 'Más de 6 años'),  
             ]   
     exp_inf_pro = models.IntegerField(
         verbose_name="¿Cuántos años de experiencia tienes como formador/a?",
@@ -83,16 +83,17 @@ class Inf_Prof(models.Model):
 
     Formacion = [
         ('', 'Seleccione una opción'),
-        ('1', 'Formación profesional'),
-        ('2', 'Formación universitaria'),
-        ('3', 'Formación empresarial'),
-        ('4', 'Cursos en línea'),
-        ('5', 'Otros')
+        (1, 'Formación profesional'),
+        (2, 'Formación universitaria'),
+        (3, 'Formación empresarial'),
+        (4, 'Cursos en línea'),
+        (5, 'Otros')
     ]
     for_imp_inf_pro = models.IntegerField(
         verbose_name="Qué tipo de formación has impartido",
         choices=Formacion,
-        default='')  
+        default=''
+        )
     
     for_imp_esp_inf_pro = models.CharField(  max_length=255, verbose_name="Especifique que for_imp_inf_pro ha impartido")
     
@@ -102,23 +103,23 @@ class Inf_Prof(models.Model):
     # COMPETENCIAS Y CERTIFICACIONES
     opcion = [
         ('', 'Seleccione una opción'),
-        ('1', 'Sí'),
-        ('2', 'No'),
-        ('3', 'Especificar')
+        (1, 'Sí'),
+        (2, 'No'),
+        (3, 'Especificar')
     ]
     cert_inf_pro = models.IntegerField(
         verbose_name="¿Tienes alguna certificación docente?",
         choices=opcion,
         default = '')  
     cert_esp_inf_pro = models.CharField(max_length=30, verbose_name="Especifique su cert_inf_pro")  
-
+    #1,2,3,4,5 o 1,2,3,4 o 1,4,5
     herramientas = [
         ('', 'Seleccione una opción'),
-        ('1', 'Moodle'),
-        ('2', 'Microsoft Teams'),
-        ('3', 'Zoom'),
-        ('4', 'Google Classroom'),
-        ('5', 'Otros')
+        (1, 'Moodle'),
+        (2, 'Microsoft Teams'),
+        (3, 'Zoom'),
+        (4, 'Google Classroom'),
+        (5, 'Otros')
     ]
     herr_inf_pro = models.IntegerField(
         verbose_name="¿Qué herramientas tecnológicas utilizas en tus clases?",
@@ -136,9 +137,9 @@ class Inf_Prof(models.Model):
     # PREFERENCIAS DE FORMACIÓN
     modalidad = [
         ('', 'Seleccione una opción'),
-        ('1', 'Presencial'),
-        ('2', 'En línea'),
-        ('3', 'Mixta')
+        (1, 'Presencial'),
+        (2, 'En línea'),
+        (3, 'Mixta')
     ]
     mod_inf_pro = models.IntegerField(
         verbose_name="Qué modalidades de enseñanza prefieres impartir",
@@ -147,10 +148,10 @@ class Inf_Prof(models.Model):
     
     alumno= [
         ('', 'Seleccione una opción'),
-        ('1', 'Jóvenes'),
-        ('2', 'Adultos'),
-        ('3', 'Empresas'),
-        ('4', 'Otros')
+        (1, 'Jóvenes'),
+        (2, 'Adultos'),
+        (3, 'Empresas'),
+        (4, 'Otros')
     ]  
     tipo_alu_inf_pro = models.IntegerField(
         verbose_name="Qué tipo de alumnado prefieres formar",
@@ -161,9 +162,9 @@ class Inf_Prof(models.Model):
     
     franja = [
         ('', 'Seleccione una opción'),
-        ('1', 'Mañana (8:00-14:00)'),
-        ('2', 'Tarde (14:00-20:00)'),
-        ('3', 'Noche (20:00-23:00)')
+        (1, 'Mañana (8:00-14:00)'),
+        (2, 'Tarde (14:00-20:00)'),
+        (3, 'Noche (20:00-23:00)')
     ]
     franja_inf_pro = models.IntegerField(
         verbose_name="En qué franjas horarias estás disponible para impartir clases?",
@@ -230,6 +231,36 @@ class Comarca_provincias(models.Model):
         db_table = "Comarca_provincias" 
 
 
+
+## tablas para el estudiante al ver una oferta
+
+class OfertaEstudio(models.Model):
+    TITULOS_CHOICES = [
+        ('BACH', 'Bachillerato'),
+        ('LIC', 'Licenciatura'),
+        ('MAST', 'Máster'),
+        ('DOC', 'Doctorado'),
+    ]
+
+    MODALIDADES_CHOICES = [
+        ('PRESENCIAL', 'Presencial'),
+        ('ONLINE', 'Online'),
+        ('MIXTO', 'Mixto'),
+    ]
+
+    nom_Ofe_est = models.CharField(max_length=200)  # Nombre del curso/programa
+    inst_Ofe_est = models.CharField(max_length=200)  # Nombre de la institución
+    niv_Ofe_est = models.CharField(max_length=5, choices=TITULOS_CHOICES)  # Nivel de estudio
+    mod_Ofe_est = models.CharField(max_length=10, choices=MODALIDADES_CHOICES)  # Modalidad de estudio
+    dur_Ofe_est = models.IntegerField(help_text='Duración en meses')  # Duración del programa
+    desc_Ofe_est = models.TextField(blank=True, null=True)  # Descripción del curso/programa
+    fecha_inicio = models.DateField()  # Fecha de inicio
+    fecha_fin = models.DateField()  # Fecha de finalización
+    url_Ofe_est = models.URLField(blank=True, null=True)  # Enlace para más información
+    def __str__(self):
+        return f"{self.nom_Ofe_est} en {self.inst_Ofe_est}"
+
+
 ######### Area de Vistas de las Drecciones ##################
 """
 class Domicilio(models.Model): #Domicilio o direccion donde vive
@@ -256,6 +287,13 @@ class Familia_Profesion(models.Model):
     class Meta:
         db_table = "Familia_Profesional" 
 
+class Estudio_Profesion(models.Model):
+    pk_est_pro= models.CharField(max_length=20,verbose_name="id de Estudio Profecional",primary_key=True)
+    desc_est_pro= models.CharField(max_length=220, verbose_name="Descripcion de la Estudio Profesional")
+    def __str__(self):
+        return f"{self.pk_est_pro}"
+    class Meta:
+        db_table = "Estudio_Profesional" 
 
 ######## Entidad Formadora ###### tabla Origen de datos foap2024
 ##7 Entidad Formadora -> Ent_For 

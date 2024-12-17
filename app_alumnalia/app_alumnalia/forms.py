@@ -48,7 +48,8 @@ class FormadoresForm(forms.ModelForm):
             'esp_inf_pro',
             'exp_inf_pro',
             'for_imp_inf_pro',
-            'cv_adj_inf_pro',
+            'for_imp_esp_inf_pro',
+            
             'mod_inf_pro',
             'tipo_alu_inf_pro',
             'tipo_alu_esp_inf_pro',
@@ -59,7 +60,8 @@ class FormadoresForm(forms.ModelForm):
             'herr_esp_inf_pro',
             'comp_dig_inf_pro',
             'comp_dig_esp_inf_pro',
-            'fk_per_inf_pro'
+            'fk_per_inf_pro',
+            'cv_adj_inf_pro'
         ]
         labels = {
             'tit_inf_pro': 'Título académico más alto obtenido',
@@ -67,7 +69,8 @@ class FormadoresForm(forms.ModelForm):
             'esp_inf_pro': 'Área de especialización principal',
             'exp_inf_pro': 'Años de experiencia como formador/a',
             'for_imp_inf_pro': 'Tipo de formación impartida',
-            'cv_adj_inf_pro': 'Adjunta tu currículum en formato PDF',
+            'for_imp_esp_inf_pro':'especificar el tipo de formación impartida',
+            
             'mod_inf_pro': 'Modalidades de enseñanza preferidas',
             'tipo_alu_inf_pro': 'Tipo de alumnado preferido',
             'tipo_alu_esp_inf_pro': 'Especificar tipo de alumnado',
@@ -78,7 +81,8 @@ class FormadoresForm(forms.ModelForm):
             'herr_esp_inf_pro': 'Especificar herramientas',
             'comp_dig_inf_pro': 'Competencias digitales específicas (ej. DigCompEdu)',
             'comp_dig_esp_inf_pro': 'Especificar competencias digitales',
-            'fk_per_inf_pro': 'Datos de personas'
+            'fk_per_inf_pro': 'Datos de personas',
+            'cv_adj_inf_pro': 'Adjunta tu currículum en formato PDF'
         }
         widgets = {
             'tit_inf_pro': forms.Select(),

@@ -43,7 +43,25 @@ def list_tables_and_columns(db_file):
     conn.close()
 
 
+
+
+#06 insertar Estudio Profecional en la DB de alumnalia
+def inserta_Estudio_Profecional(conn, cursor):
+    sqlsentence = f"""INSERT INTO Estudio_Profesional
+    (pk_est_pro, desc_est_pro) 
+    VALUES (?, ?)"""
+    filename = "06_estudis.csv"
+    with open(prefix + filename, "r", encoding='utf-8') as file:
+        for line in file:
+            data = line.strip().replace('"','').split(";")            
+            print(data[0],data[1])
+            cursor.execute(sqlsentence, (data[0],data[1]))
+            conn.commit()
+
+
+
 # insertar paises en la DB de alumnalia
+
 def inserta_countries(conn, cursor):
     sqlsentence = f"""INSERT INTO countries 
     (cou_iso_pk, cou_nam_esp, cou_nam_fra, cou_nam_eng, cou_ddi) 
@@ -55,8 +73,6 @@ def inserta_countries(conn, cursor):
             print(data[4],data[0],data[1],data[2],data[5])
             cursor.execute(sqlsentence, (data[4],data[0],data[1],data[2],data[5]))
             conn.commit()
-
-
 
 # insertar Comarca en la DB Alumnalia
 def inserta_Comarca(conn, cursor):
@@ -274,8 +290,8 @@ inserta_roles_puertos(conn, cursor)
 inserta_subcategorias(conn, cursor)
 inserta_categorias(conn, cursor)
 """
-inserta_numericos(conn, cursor)
-
+#inserta_numericos(conn, cursor)
+inserta_Estudio_Profecional(conn, cursor)
 conn.close()
 
 
