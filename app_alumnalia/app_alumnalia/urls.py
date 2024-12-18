@@ -16,6 +16,7 @@ urlpatterns = [
     path('datos_formador/', views.datos_formador_view.as_view(), name='datos_formador'),
     #path('datos_estudiante/', view., name='datos_estudiante'),
     path("oferta_personalizada/", views.oferta_personalizada.as_view(), name= 'oferta_personalizada'),
+    path("iniciarsesion/", views.login_view.as_view(), name= 'iniciarsesion'),
     path('admin/', admin.site.urls),
 
     #path('eliminar/<int:id>/', views.eliminar_fila, name='eliminar_fila'), # elimina un Dato de Dat_Per

@@ -107,3 +107,6 @@ class FormadoresForm(forms.ModelForm):
             'cv_adj_inf_pro': forms.FileInput(attrs={'accept': '.pdf'}),
         }
 
+class LoginForm(forms.Form):
+    username = forms.CharField(max_length=20, label='Usuario')
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Contraseña'}), label='Contraseña')
