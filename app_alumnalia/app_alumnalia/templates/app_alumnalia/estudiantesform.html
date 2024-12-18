@@ -6,11 +6,13 @@ Formulario de Datos para Estudiantes
 
 {% block contenido %}
 
-<form method="post"> 
-  {% csrf_token %} 
-  {{ form.as_p }} 
-  <button type="submit">Guardar</button> 
-</form>
-
+<div class="container mt-5"> 
+  <h2>Formulario de Información del Estudiante</h2> 
+  <form method="post" enctype="multipart/form-data"> 
+    {% csrf_token %} 
+    {{ form.as_p }} 
+    <button type="submit" >Enviar</button> 
+  </form> 
+</div>
 
 {% endblock contenido %}

@@ -1,12 +1,9 @@
 from django.core.exceptions import ValidationError
 from django.db import models
-
 from .encryption_utils import encrypt_data, decrypt_data
 from datetime import datetime, date
-
 from .modelos.modelAdmin import Tipo_Usuario
-from .modelos.modelDir import Comarca, Provincias, Comarca_provincias, Municipios
-
+from .modelos.modelDir import Comarca, Provincias, Comarca_provincias, Municipios, TipoVia
 
 # controles de los campos
 def validar_dni(value): 
@@ -29,15 +26,19 @@ class Dat_Per(models.Model):
     tel_per = models.IntegerField(verbose_name="Teléfono", validators=[validar_longitud_nueve])
     tel_per_enc = models.CharField(max_length=10, verbose_name="Teléfono encriptada", default="")
     email_per = models.EmailField(verbose_name="Email")
+    fk_nom_via = models.ForeignKey(TipoVia, on_delete=models.CASCADE, verbose_name="Tipo de via", null=True)
     dir_per = models.CharField(max_length=150, verbose_name="Dirección", null=False) #models.ForeignKey(  on_delete=models.CASCADE, verbose_name="Dirección de la persona", default=0) #Direcciones
+    fk_nom_pro = models.ForeignKey(Provincias, on_delete=models.CASCADE, verbose_name="Provincia", null=True) 
+    fk_nom_mun = models.ForeignKey(Municipios, on_delete=models.CASCADE, verbose_name="Municipio", null=True)
     
+   
+    #multiple choice para el género
     genero=[
         ('', 'Seleccione una opción'),
         ('1', 'Mujer'),
         ('2', 'Hombre'),
         ('3', 'Prefiero no especificar'),
         ('4','Otro')
-
     ]
     sex_per = models.CharField(
         verbose_name="Género de la persona",
@@ -247,7 +248,6 @@ class Info_Estu(models.Model):
         return f"{self.pk_inf_est}"
     class Meta:
         db_table = "Info_Estu" 
-
 
 ######### Area de Vistas de las Drecciones ##################
 """

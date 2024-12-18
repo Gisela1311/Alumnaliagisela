@@ -1,0 +1,12 @@
+{% extends "app_alumnalia/base.html" %}
+
+{% block titulo %}
+¡Éxito!
+{% endblock titulo %}
+
+{% block contenido %}
+<div class="container mt-5"> 
+    <h2>¡Formulario enviado con éxito!</h2> 
+    <a href="{% url 'app_alumnalia:info_estu_create' %}" class="btn btn-primary">Rellenar otro formulario</a> 
+</div>
+{% endblock contenido %}
