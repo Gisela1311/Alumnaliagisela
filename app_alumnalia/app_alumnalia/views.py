@@ -61,38 +61,30 @@ class datos_formador_view(FormView):
         form = FormadoresForm(request.POST, request.FILES)  # Asegúrate de incluir request.FILES
         if form.is_valid(): 
             form.save() 
-            return redirect('oferta_personalizada')  # Redirigir después de guardar 
+            return redirect('exito')  # Redirigir después de guardar 
         return self.render_to_response({'form': form})
 
 
+class datos_estudiante_view(FormView):
+    template_name = 'app_alumnalia/estudiantesform.html'
+
+    def get(self, request, *args, **kwargs):
+        form = InfoEstuForm()
+        return self.render_to_response({'form': form}) 
+
+    def post(self, request, *args, **kwargs):
+        form = InfoEstuForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('exito')
+        return self.render_to_response({'form': form})
+
+class exito_view(View): 
+    template_name = 'app_alumnalia/exito.html' 
+    def get(self, request): 
+        return render(request, self.template_name)
 
 
-# Archivo
-#cod_Arc,tipo_arc,B64_arc
-#1,pdf,Base64:Pdf
-#2,img,Base64:img
-
-
-# class success_view(TemplateView):
-#     return render(request, 'success.html')
-
-
-#form = Inf_ProfForm():
-#    return render(request, 'app_alumnalia/.html', {'form': form})
-
-# def nuevo_estudiante(request):
-#     if request.method == "POST":
-#         form = InfProfForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('app_alumnalia:lista_inf_prof')
-#     else:
-#         form = InfProfForm()
-#     return render(request, 'app_alumnalia/nuevo_inf_prof.html', {'form': form})
-
-
-# Metodos de actualizacion de datos
-# Eliminar
 """
 def eliminar_fila(request, id): 
     fila = get_object_or_404(Dat_Per, id = id) 

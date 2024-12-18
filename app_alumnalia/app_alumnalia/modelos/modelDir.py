@@ -52,6 +52,10 @@ class Comarca_provincias(models.Model):
     class Meta:
         db_table = "Comarca_provincias" 
 
+class TipoVia(models.Model): 
+    nom_via = models.CharField(max_length=100) 
+    def __str__(self): return self.nombre
+
 ######### Area de Vistas de las Direciones ##################
 
 class MisDirecciones(models.Model): 
@@ -63,3 +67,8 @@ class MisDirecciones(models.Model):
     nom_pro = models.CharField(max_length=30, verbose_name="nombre de la Provincia")
     pk_mun = models.IntegerField(verbose_name="id de Municipios") 
     nom_mun = models.CharField(max_length=30, verbose_name="nombre de la Municipios")
+
+    def __str__(self):
+        return f"{self.pk_cam_pro}"
+    class Meta:
+        db_table = "MisDirecciones" 
