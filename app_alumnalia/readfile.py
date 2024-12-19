@@ -103,7 +103,7 @@ def inserta_vias(conn, cursor, nombre_archivo):
     directorio_actual = os.getcwd()
     ruta_archivo = os.path.join(directorio_actual, nombre_archivo)
     # TipoVia estamal declarado en el modelo
-    sqlsentence = f"""INSERT INTO Tipo_via
+    sqlsentence = f"""INSERT INTO TipoVia
     (pk_via, nom_via) 
     VALUES (?, ?)"""    
     try: # Código que puede generar un error ... 
@@ -141,7 +141,7 @@ nombre_archivo = "05_tipo_via.csv"
 inserta_vias(conn, cursor, nombre_archivo)
 
 
-os.system("pause")
+#os.system("pause")
 conn.close()
 
 #

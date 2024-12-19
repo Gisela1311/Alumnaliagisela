@@ -57,11 +57,14 @@ class TipoVia(models.Model):
         verbose_name="id de Tipo de Via", 
         primary_key=True        
         ) 
-    nom_via = models.CharField(max_length=100, verbose_name="Tipo de via"
-                               ) 
-    def __str__(self): return self.nombre
+    nom_via = models.CharField(
+            max_length=100, 
+            verbose_name="Tipo de via"
+        ) 
+    def __str__(self): 
+        return self.nom_via
     class Meta:
-        db_table= "Tipo_via"
+        db_table= "TipoVia"
 
 ######### Area de Vistas de las Direciones ##################
 
