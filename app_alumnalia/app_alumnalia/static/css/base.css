@@ -141,9 +141,9 @@ img {
  
 }
 button {
-  background-color: #31b0b5; 
-  border: none;
-  color: white;
+  background-color: #ffc464; 
+  border: 2px solid #0736f8;
+  color: #0736f8;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
