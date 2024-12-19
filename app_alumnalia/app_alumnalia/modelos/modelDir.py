@@ -35,7 +35,7 @@ class Provincias(models.Model):
         ) 
     nom_pro =  models.CharField(max_length=30, verbose_name="nombre de la Provincia")
     def __str__(self):
-        return f"{self.pk_pro}"
+        return f"{self.nom_pro}"
     class Meta:
         db_table = "Provincias" 
 
