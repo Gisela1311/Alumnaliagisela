@@ -26,10 +26,10 @@ class Dat_Per(models.Model):
     tel_per = models.IntegerField(verbose_name="Teléfono", validators=[validar_longitud_nueve])
     tel_per_enc = models.CharField(max_length=10, verbose_name="Teléfono encriptada", default="")
     email_per = models.EmailField(verbose_name="Email")
-    fk_nom_via = models.ForeignKey(TipoVia, on_delete=models.CASCADE, verbose_name="Tipo de via", null=True)
+    fk_via = models.ForeignKey(TipoVia, on_delete=models.CASCADE, verbose_name="Tipo de via", null=True)
     dir_per = models.CharField(max_length=150, verbose_name="Dirección", null=False) #models.ForeignKey(  on_delete=models.CASCADE, verbose_name="Dirección de la persona", default=0) #Direcciones
-    nom_pro = models.ForeignKey(Provincias, on_delete=models.CASCADE, verbose_name="Provincia", null=True) 
-    nom_mun = models.ForeignKey(Municipios, on_delete=models.CASCADE, verbose_name="Municipio", null=True)
+    fk_pro = models.ForeignKey(Provincias, on_delete=models.CASCADE, verbose_name="Provincia", null=True) 
+    fk_mun = models.ForeignKey(Municipios, on_delete=models.CASCADE, verbose_name="Municipio", null=True)
     
     #multiple choice para el género
     genero=[

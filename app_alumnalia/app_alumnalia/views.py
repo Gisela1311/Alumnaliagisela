@@ -32,7 +32,7 @@ class datos_personales_estudiantes_view(View):
         if form.is_valid(): 
             form.save() 
 
-            return redirect('oferta_personalizada') # Modificar al formulario datos estudiante cuando este el modelo hecho
+            return redirect('datos_especificos_estudiante') # Modificar al formulario datos estudiante cuando este el modelo hecho
         return render(request, self.template_name, {'form': form})
     
 class datos_personales_formadores_view(View):
@@ -47,7 +47,7 @@ class datos_personales_formadores_view(View):
         form = DatPerForm(request.POST) 
         if form.is_valid(): 
             form.save() 
-            return redirect('datos_formador')
+            return redirect('datos_especificos_formador')
         return render(request, self.template_name, {'form': form})    
     
 class datos_formador_view(FormView):
@@ -61,7 +61,7 @@ class datos_formador_view(FormView):
         form = FormadoresForm(request.POST, request.FILES)  # Asegúrate de incluir request.FILES
         if form.is_valid(): 
             form.save() 
-            return redirect('exito')  # Redirigir después de guardar 
+            return redirect('inicio')  # Redirigir después de guardar 
         return self.render_to_response({'form': form})
 
 
@@ -76,13 +76,12 @@ class datos_estudiante_view(FormView):
         form = InfoEstuForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('exito')
+            return redirect('inicio')
         return self.render_to_response({'form': form})
 
 class exito_view(View): 
     template_name = 'app_alumnalia/exito.html' 
-    def get(self, request): 
-        return render(request, self.template_name)
+    context_object_name = ""
 
 
 """
