@@ -5,6 +5,8 @@ from .forms import *
 from .models import *
 from django.views.generic import FormView, TemplateView, View
 from django.shortcuts import render, get_object_or_404, redirect 
+from django.contrib import messages
+from .encryption_utils import decrypt_data
 
 
                   
@@ -64,6 +66,56 @@ class datos_formador_view(FormView):
             return redirect('inicio')  # Redirigir después de guardar 
         return self.render_to_response({'form': form})
 
+class login_view(FormView):
+    template_name = "app_alumnalia/iniciarsesion.html"
+    
+    def get(self, request, *args, **kwargs): 
+        form = LoginForm() 
+        return self.render_to_response({'form': form}) 
+      
+    def post(self, request, *args, **kwargs): 
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            usuario = form.cleaned_data['username']
+            contraseña = form.cleaned_data['password']
+
+            persona = None  # Variable para almacenar el usuario encontrado
+            try:
+                # Iteramos sobre todos los usuarios en la base de datos
+                for user in Dat_Per.objects.all():
+                    # Desencriptamos el username almacenado
+                    decrypted_username = user.get_username()
+
+                    # Comparamos el username desencriptado con el valor ingresado
+                    if decrypted_username == usuario:
+                        persona = user  # Guardamos el usuario encontrado
+                        break  # Salimos del bucle una vez encontrado
+
+                if persona is None:
+                    # Si no encontramos al usuario, mostramos el error
+                    messages.error(request, "Usuario no existe.")
+                    return redirect('iniciarsesion')
+
+            except Exception as e:
+                messages.error(request, f"Error al intentar desencriptar el usuario: {str(e)}")
+                return redirect('iniciarsesion')
+
+            try:
+                # Desencriptamos la contraseña almacenada en la base de datos
+                decrypted_password = persona.get_password()
+            except Exception as e:
+                messages.error(request, f"Error al intentar desencriptar la contraseña: {str(e)}")
+                return redirect('iniciarsesion')
+
+            # Comparamos la contraseña proporcionada con la almacenada (desencriptada)
+            if decrypted_password == contraseña:
+                # Si la contraseña es correcta, redirigimos a la página de inicio
+                return redirect('oferta_personalizada')
+            else:
+                messages.error(request, "Contraseña incorrecta.")
+                return redirect('iniciarsesion')
+
+        return self.render_to_response({'form': form})
 
 class datos_estudiante_view(FormView):
     template_name = 'app_alumnalia/estudiantesform.html'

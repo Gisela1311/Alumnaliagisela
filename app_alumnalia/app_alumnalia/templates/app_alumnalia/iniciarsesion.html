@@ -1,0 +1,32 @@
+{% extends "app_alumnalia/base.html" %}
+
+{% block titulo %}
+Inicio de Sesión 
+{% endblock titulo %}
+
+{% block contenido %}
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div style="width: 400px;">
+        <h2 class="text-center mb-4">Inicio de sesión</h2>
+        <form method="post" enctype="multipart/form-data"> 
+            {% csrf_token %} 
+            <fieldset class="p-3" style="background-color: #dbdbdb; border: 3px solid rgb(0, 0, 0); border-radius: 15px;">
+                {{ form.as_p }} 
+                <div class="d-flex justify-content-between align-items-center mt-4">
+                    <a href="#" class="text-primary text-decoration-none">¿Olvidó su contraseña?</a>
+                    <button>Iniciar</button>
+                </div>
+            </fieldset>
+        </form>
+        {% if messages %}
+            <div class="alert alert-danger mt-3">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %} 
+    </div>
+</div>
+
+{% endblock contenido %}
