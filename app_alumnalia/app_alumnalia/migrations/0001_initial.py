@@ -218,7 +218,7 @@ class Migration(migrations.Migration):
                 ),
             ],
             options={
-                "db_table": "TipoVia",
+                "db_table": "Tipo_via",
             },
         ),
         migrations.CreateModel(
@@ -522,7 +522,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AddField(
             model_name="dat_per",
-            name="fk_nom_mun",
+            name="nom_mun",
             field=models.ForeignKey(
                 null=True,
                 on_delete=django.db.models.deletion.CASCADE,
@@ -532,7 +532,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AddField(
             model_name="dat_per",
-            name="fk_nom_pro",
+            name="nom_pro",
             field=models.ForeignKey(
                 null=True,
                 on_delete=django.db.models.deletion.CASCADE,
@@ -573,15 +573,5 @@ class Migration(migrations.Migration):
             options={
                 "db_table": "Comarca_provincias",
             },
-        ),
-        migrations.AddField(
-            model_name="dat_per",
-            name="fk_nom_via",
-            field=models.ForeignKey(
-                null=True,
-                on_delete=django.db.models.deletion.CASCADE,
-                to="app_alumnalia.tipovia",
-                verbose_name="Tipo de via",
-            ),
         ),
     ]

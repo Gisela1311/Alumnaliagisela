@@ -66,6 +66,7 @@ class TipoVia(models.Model):
     class Meta:
         db_table= "TipoVia"
 
+
 ######### Area de Vistas de las Direciones ##################
 
 class MisDirecciones(models.Model): 
