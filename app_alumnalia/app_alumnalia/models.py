@@ -104,11 +104,15 @@ class Inf_Prof(models.Model):
     # INFORMACIÓN PROFESIONAL
     Titulo = [ 
         ('', 'Seleccione una opción'),
-        ('1', 'Técnico/a'), 
-        ('2', 'Grado universitario'), 
-        ('3', 'Máster'), 
-        ('4', 'Doctorado'),  
-        ('5', 'Otros'), 
+        ('1', 'Sin estudios'), 
+        ('2', 'Primaria'),  
+        ('3', 'Secundaria'),
+        ('4', 'Bachillerato'), 
+        ('5', 'Técnico/a'), 
+        ('6', 'Grado universitario'),  
+        ('7', 'Máster'), 
+        ('8', 'Doctorado'),  
+        ('9', 'Otros'),
         ]    
 
     tit_inf_pro = models.CharField(
