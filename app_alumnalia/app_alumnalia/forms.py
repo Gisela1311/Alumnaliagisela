@@ -11,7 +11,7 @@ class DatPerForm(forms.ModelForm):
             'cn_per',
             'tel_per',
             'email_per',
-            # 'fk_nom_via', 
+            'fk_nom_via', 
             'dir_per',
             'nom_pro',  
             'nom_mun',  
@@ -27,7 +27,7 @@ class DatPerForm(forms.ModelForm):
             'cn_per': 'Nacionalidad',
             'tel_per': 'Teléfono',
             'email_per': 'Correo Electrónico',
-            # 'fk_nom_via': 'Tipo de Vía', 
+            'fk_nom_via': 'Tipo de Vía', 
             'dir_per': 'Dirección',
             'nom_pro': 'Provincia',  
             'nom_mun': 'Municipio',  
@@ -42,8 +42,8 @@ class DatPerForm(forms.ModelForm):
             'term_per': forms.CheckboxInput(),
             'noti_per': forms.CheckboxInput(),
             'nom_pro': forms.Select(),
-            'nom_mun': forms.Select()
-            # 'fk_nom_via': forms.Select()
+            'nom_mun': forms.Select(),
+            'fk_nom_via': forms.Select()
         }
 
 class FormadoresForm(forms.ModelForm):
