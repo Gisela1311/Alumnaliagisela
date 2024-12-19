@@ -126,16 +126,16 @@ conn = sqlite3.connect('db.sqlite3')
 cursor = conn.cursor()
 
 nombre_archivo = "01_comarques.csv"
-#inserta_Comarca(conn, cursor,nombre_archivo)
+inserta_Comarca(conn, cursor,nombre_archivo)
 
-nombre_archivo = "01_comarques.csv"
-#inserta_Provicias(conn, cursor,nombre_archivo)
+nombre_archivo = "03_provincias.csv"
+inserta_Provicias(conn, cursor,nombre_archivo)
 
 nombre_archivo = "04_Comarca_provincias.csv"
 #inserta_Comarca_provincias(conn, cursor,nombre_archivo)
 
 nombre_archivo = "02_municipis.csv"
-#inserta_Municipios(conn, cursor,nombre_archivo)
+inserta_Municipios(conn, cursor,nombre_archivo)
 
 nombre_archivo = "05_tipo_via.csv"
 inserta_vias(conn, cursor, nombre_archivo)
