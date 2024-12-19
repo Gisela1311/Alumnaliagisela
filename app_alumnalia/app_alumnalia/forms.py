@@ -11,10 +11,10 @@ class DatPerForm(forms.ModelForm):
             'cn_per',
             'tel_per',
             'email_per',
-            'fk_nom_via', 
+            # 'fk_nom_via', 
             'dir_per',
-            'fk_nom_pro',  
-            'fk_nom_mun',  
+            'nom_pro',  
+            'nom_mun',  
             'sex_per',
             'uso_datos_per',
             'term_per',
@@ -27,10 +27,10 @@ class DatPerForm(forms.ModelForm):
             'cn_per': 'Nacionalidad',
             'tel_per': 'Teléfono',
             'email_per': 'Correo Electrónico',
-            'fk_nom_via': 'Tipo de Vía', 
+            # 'fk_nom_via': 'Tipo de Vía', 
             'dir_per': 'Dirección',
-            'fk_nom_pro': 'Provincia',  
-            'fk_nom_mun': 'Municipio',  
+            'nom_pro': 'Provincia',  
+            'nom_mun': 'Municipio',  
             'sex_per': 'Género',
             'uso_datos_per': 'Consentimiento para Uso de Datos',
             'term_per': 'Aceptación de Términos y Condiciones',
@@ -41,9 +41,9 @@ class DatPerForm(forms.ModelForm):
             'uso_datos_per': forms.CheckboxInput(),
             'term_per': forms.CheckboxInput(),
             'noti_per': forms.CheckboxInput(),
-            'fk_nom_pro': forms.Select(),
-            'fk_nom_mun': forms.Select(),
-            'fk_nom_via': forms.Select()
+            'nom_pro': forms.Select(),
+            'nom_mun': forms.Select()
+            # 'fk_nom_via': forms.Select()
         }
 
 class FormadoresForm(forms.ModelForm):
