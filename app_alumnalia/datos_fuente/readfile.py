@@ -62,7 +62,7 @@ def inserta_Comarca(conn, cursor):
     (pk_com, nom_com) 
     VALUES (?, ?)"""
     filename =  "01_comarques.csv"    
-    with open("01_comarques.csv", "r", encoding='utf-8') as file:
+    with open(prefix + filename, "r", encoding='utf-8') as file:
         for line in file:
             data = line.strip().replace('"','').split(";")
             print(data[0],data[1])
@@ -110,6 +110,7 @@ def inserta_Comarca_provincias(conn, cursor):
             conn.commit()
 
 
+
 # insertar paises en la DB de alumnalia
 
 def inserta_countries(conn, cursor):
@@ -140,7 +141,7 @@ print(f"Directorio actual: {directorio_actual}")
 conn = sqlite3.connect('db.sqlite3')
 cursor = conn.cursor()
 
-base="../datos_fuente"
+base="./datos_fuente"
 if os.name == 'nt':
     prefix = base + "\\"
 else:

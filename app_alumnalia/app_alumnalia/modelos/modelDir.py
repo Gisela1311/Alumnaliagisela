@@ -55,7 +55,7 @@ class Comarca_provincias(models.Model):
 class TipoVia(models.Model): 
     pk_via = models.SmallIntegerField( #SmallAutoField
         verbose_name="id de Tipo de Via", 
-        primary_key=True
+        primary_key=True        
         ) 
     nom_via = models.CharField(max_length=100, verbose_name="Tipo de via"
                                ) 
