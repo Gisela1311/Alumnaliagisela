@@ -80,6 +80,6 @@ class MisDirecciones(models.Model):
     nom_mun = models.CharField(max_length=30, verbose_name="nombre de la Municipios")
 
     def __str__(self):
-        return f"{self.pk_cam_pro}"
+        return f"{self.pk_com}"
     class Meta:
         db_table = "MisDirecciones" 

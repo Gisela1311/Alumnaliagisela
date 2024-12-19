@@ -150,7 +150,7 @@ class Inf_Prof(models.Model):
     for_imp_esp_inf_pro = models.CharField(  max_length=255, verbose_name="Especifique que formación ha impartido")
     
     #cv_adj_inf_pro = models.CharField(max_length=15,verbose_name="Adjunta tu currículum en formato PDF.")  
-    cv_adj_inf_pro = models.FileField(upload_to='pdfs/',verbose_name="Adjunta tu currículum en formato PDF.")
+    cv_adj_inf_pro = models.FileField(upload_to='pdfs/',verbose_name="Adjunta tu currículum en formato PDF.",null=True, blank=True)
     
     # COMPETENCIAS Y CERTIFICACIONES
     opcion = [
@@ -240,7 +240,7 @@ class Info_Estu(models.Model):
     de_que_han_trab= models.CharField(max_length=15,verbose_name="de qué han trabajado")
     de_que_que_trab= models.CharField(max_length=15,verbose_name="de qué querrían trabajar")
     rang_sal_des= models.FloatField(max_length=2,verbose_name="rango salarial deseado")
-    cv_adj_inf_est = models.FileField(upload_to='pdfs/',verbose_name="Adjunta tu currículum en formato PDF.")
+    cv_adj_inf_est = models.FileField(upload_to='pdfs/',verbose_name="Adjunta tu currículum en formato PDF.",null=True, blank=True)
     fk_per_inf_est= models.ForeignKey(Dat_Per, on_delete=models.CASCADE,verbose_name="fk de Datos de personas")
 
     def __str__(self):
