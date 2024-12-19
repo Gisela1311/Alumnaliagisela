@@ -52,16 +52,16 @@ class Comarca_provincias(models.Model):
     class Meta:
         db_table = "Comarca_provincias" 
 
-class TipoVia(models.Model): 
-    pk_via = models.SmallIntegerField( #SmallAutoField
-        verbose_name="id de Tipo de Via", 
-        primary_key=True        
-        ) 
-    nom_via = models.CharField(max_length=100, verbose_name="Tipo de via"
-                               ) 
-    def __str__(self): return self.nombre
-    class Meta:
-        db_table= "Tipo_via"
+# class TipoVia(models.Model): 
+#     pk_via = models.SmallIntegerField( #SmallAutoField
+#         verbose_name="id de Tipo de Via", 
+#         primary_key=True        
+#         ) 
+#     nom_via = models.CharField(max_length=100, verbose_name="Tipo de via"
+#                                ) 
+#     def __str__(self): return self.nombre
+#     class Meta:
+#         db_table= "Tipo_via"
 
 ######### Area de Vistas de las Direciones ##################
 
