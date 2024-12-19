@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Inicializa el entorno
 env = environ.Env()
-environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+environ.Env.read_env(os.path.join(BASE_DIR,'.env'))
 
 # Accede a la clave de encriptación
 ENCRYPTION_KEY = env('ENCRYPTION_KEY')
@@ -137,7 +137,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR / "app_alumnalia/static"]
-print(f"staticfilesdir = {STATICFILES_DIRS}")
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
