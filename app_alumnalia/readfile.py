@@ -93,7 +93,7 @@ def inserta_Municipios(conn, cursor,nombre_archivo):
     VALUES (?, ?, ?)"""
     with open(ruta_archivo, "r", encoding='utf-8') as file:
         for line in file:
-            data = line.strip().replace('"','').split(",")            
+            data = line.strip().replace('"','').split(";")            
             print(data[0],data[1],data[2])
             cursor.execute(sqlsentence, (data[0],data[1],data[2]))
             conn.commit()
