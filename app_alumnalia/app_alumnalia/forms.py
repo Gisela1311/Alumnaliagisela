@@ -2,6 +2,10 @@ from django import forms
 from .models import Inf_Prof, Dat_Per, Info_Estu
 
 class DatPerForm(forms.ModelForm):
+    confirm_password = forms.CharField(
+        widget=forms.PasswordInput(attrs={'placeholder': 'Confirmar Contraseña'}),
+        label="Confirmar Contraseña"
+    )
     class Meta:
         model = Dat_Per
         fields = [
@@ -18,7 +22,9 @@ class DatPerForm(forms.ModelForm):
             'sex_per',
             'uso_datos_per',
             'term_per',
-            'noti_per'
+            'noti_per',
+            'username',
+            'password'
         ]
         labels = {
             'nom_per': 'Nombre de la Persona',
@@ -34,10 +40,13 @@ class DatPerForm(forms.ModelForm):
             'sex_per': 'Género',
             'uso_datos_per': 'Consentimiento para Uso de Datos',
             'term_per': 'Aceptación de Términos y Condiciones',
-            'noti_per': 'Desea Recibir Notificaciones'
+            'noti_per': 'Desea Recibir Notificaciones',
+            'username':'Usuario',
+            'password':'Contraseña'
         }
         widgets = {
             'fn_per': forms.DateInput(attrs={'type': 'date'}),
+            'password': forms.PasswordInput(attrs={'placeholder': 'Contraseña'}),
             'uso_datos_per': forms.CheckboxInput(),
             'term_per': forms.CheckboxInput(),
             'noti_per': forms.CheckboxInput(),
@@ -45,6 +54,18 @@ class DatPerForm(forms.ModelForm):
             'fk_mun': forms.Select(),
             'fk_via': forms.Select()
         }
+    def clean(self):
+        cleaned_data = super().clean()
+        password = cleaned_data.get('password')
+        confirm_password = cleaned_data.get('confirm_password')
+
+
+        if password and confirm_password and password != confirm_password:
+            self.add_error('confirm_password', "Las contraseñas no coinciden.")
+            raise forms.ValidationError("Por favor, corrige los errores en el formulario.")
+
+        return cleaned_data
+        
 
 class FormadoresForm(forms.ModelForm):
     class Meta:
@@ -93,6 +114,11 @@ class FormadoresForm(forms.ModelForm):
             # 'tit_inf_pro': forms.Select(),
             'cv_adj_inf_pro': forms.FileInput(attrs={'accept': '.pdf'}),
         }
+
+
+class LoginForm(forms.Form):
+    username = forms.CharField(max_length=20, label='Usuario')
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Contraseña'}), label='Contraseña')
 
 
 

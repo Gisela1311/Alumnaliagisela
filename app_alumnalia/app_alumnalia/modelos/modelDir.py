@@ -10,9 +10,10 @@ class Comarca(models.Model):
         ) 
     nom_com =  models.CharField(max_length=30, verbose_name="nombre de la Comarca")
     def __str__(self):
-        return f"{self.nom_com}"
+        return f" {self.pk_com} : {self.nom_com}"
     class Meta:
         db_table = "Comarca" 
+        ordering = ['pk_com']
 
 #2 tabla de la Provincias
 class Municipios(models.Model):
@@ -23,7 +24,7 @@ class Municipios(models.Model):
     nom_mun =  models.CharField(max_length=30, verbose_name="nombre de la Municipios")
     fk_com = models.ForeignKey(Comarca, on_delete=models.CASCADE, related_name='Municipios')
     def __str__(self):
-        return f"{self.nom_mun}"
+        return f"id: {self.pk_mun} nombre: {self.nom_mun}"
     class Meta:
         db_table = "Municipios" 
 
@@ -45,12 +46,13 @@ class Comarca_provincias(models.Model):
         verbose_name="id de Comarca_provincias", 
         primary_key=True
         )     
-    fk_com = models.ForeignKey(Comarca, on_delete=models.CASCADE, related_name='Comarca_provincias', default=True)
-    fk_pro = models.ForeignKey(Provincias, on_delete=models.CASCADE, related_name='Comarca_provincias', default=True)
+    fk_com = models.ForeignKey(Comarca, on_delete=models.CASCADE, verbose_name="id de la Comarca", related_name='Comarca_provincias', default=True)
+    fk_pro = models.ForeignKey(Provincias, on_delete=models.CASCADE,  verbose_name="id de la Provicia", related_name='Comarca_provincias', default=True)
     def __str__(self):
-        return f"{self.pk_cam_pro}"
+        return f"{self.pk_cam_pro} : {self.fk_com} : {self.fk_pro}"
     class Meta:
         db_table = "Comarca_provincias" 
+        ordering = ['fk_com']
 
 class TipoVia(models.Model): 
     pk_via = models.SmallIntegerField( #SmallAutoField
@@ -80,6 +82,6 @@ class MisDirecciones(models.Model):
     nom_mun = models.CharField(max_length=30, verbose_name="nombre de la Municipios")
 
     def __str__(self):
-        return f"{self.pk_cam_pro}"
+        return f"{self.pk_com}"
     class Meta:
         db_table = "MisDirecciones" 

@@ -19,21 +19,26 @@
     <div class="container fondo1"> <!-- encabezado tipo barra-->
       <header class="d-flex flex-wrap align-items-center justify-content-between py-3 mb-4 border-bottom">
         
-        <div class="col-md-3 d-flex align-items-center" > 
+        <div class="col-md-4 d-flex align-items-center" > 
           <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
             <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
             <img src="{% static '/img/Logo2/Logo_pantalla_y_birrete.jpg' %}" alt="Logo Alumnalia" height="200" width="230"> 
           </a>          
         </div>
         <!--opciones de navegación-->
-        <div class="col-md-9 d-flex align-items-center" > 
-          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0" style=" font-size: 25px;"> 
-            <li><a href="{% url 'inicio' %}" class="nav-link px-2 link-secondary">Inicio</a></li>
-            <li><a href="{% url 'datos_personales_estudiantes' %}" class="nav-link px-2 link-secondary">F. D. Generales Estudiante</a></li> 
-            <li><a href="{% url 'datos_personales_formadores' %}" class="nav-link px-2 link-secondary">F. D. Generales Formadore</a></li> 
-            <li><a href="{% url 'datos_especificos_formador' %}" class="nav-link px-2 link-secondary">F. D. Específicos Formador</a></li> 
-            <li><a href="{% url 'datos_especificos_estudiante' %}" class="nav-link px-2 link-secondary">F. D. Específicos Estudiante</a></li>    
+        <div class="col-md-6 d-flex align-items-center" > 
+          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0" style=" font-size: 15px"> 
+            <li><a href="{% url 'inicio' %}" class="nav-link px-2 link-secondary; color: #0736f8">Inicio</a></li>
+            <li><a href="{% url 'datos_personales_estudiantes' %}" class="nav-link px-2 link-secondary; color: #0736f8">F. D. Generales Estudiante</a></li> 
+            <li><a href="{% url 'datos_personales_formadores' %}" class="nav-link px-2 link-secondary; color: #0736f8">F. D. Generales Formadores</a></li> 
+            <li><a href="{% url 'datos_especificos_formador' %}" class="nav-link px-2 link-secondary; color: #0736f8">F. D. Específicos Formador</a></li> 
+            <li><a href="{% url 'datos_especificos_estudiante' %}" class="nav-link px-2 link-secondary; color: #0736f8">F. D. Específicos Estudiante</a></li>    
           </ul>
+        </div>
+        <div class="col-md-2 d-flex justify-content-end" > 
+          <button>
+            <a href="{% url 'iniciarsesion' %}" >Iniciar sesión</a>
+          </button>
         </div>   
         </header>
     </div>  

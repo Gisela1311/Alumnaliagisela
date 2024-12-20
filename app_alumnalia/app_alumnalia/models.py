@@ -3,7 +3,9 @@ from django.db import models
 from .encryption_utils import encrypt_data, decrypt_data
 from datetime import datetime, date
 from .modelos.modelAdmin import Tipo_Usuario
+from .modelos.modelFormacion import Estudio_Profesion, Familia_Profesion
 from .modelos.modelDir import Comarca, Provincias, Comarca_provincias, Municipios, TipoVia
+
 
 # controles de los campos
 def validar_dni(value): 
@@ -51,6 +53,9 @@ class Dat_Per(models.Model):
     term_per = models.BooleanField(verbose_name="Términos y condiciones",default=False)
     noti_per = models.BooleanField(verbose_name="Notificaciones de oportunidades formativas",default=False)
     
+    username = models.CharField(max_length=20, verbose_name="Usuario", unique=True, null=False)
+    password = models.CharField(max_length=30, verbose_name="Contraseña", null=False)
+    
     # Sobrescribir el método save para encriptar datos antes de guardar 
     def save(self, *args, **kwargs): 
         
@@ -62,6 +67,8 @@ class Dat_Per(models.Model):
         self.email_per = encrypt_data(self.email_per) 
         self.dir_per = encrypt_data(self.dir_per)
         self.sex_per = encrypt_data(self.sex_per)
+        self.username = encrypt_data(self.username)
+        self.password = encrypt_data(self.password)
         self.fn_per = date(2001, 1, 1)
         self.tel_per = 666666666
         super(Dat_Per, self).save(*args, **kwargs) 
@@ -90,6 +97,12 @@ class Dat_Per(models.Model):
     
     def get_sex_per(self): 
         return decrypt_data(self.sex_per)
+    
+    def get_username(self): 
+        return decrypt_data(self.username)
+    
+    def get_password(self): 
+        return decrypt_data(self.password)
     
     def __str__(self):
         return f"{self.nom_per}"
@@ -154,7 +167,7 @@ class Inf_Prof(models.Model):
     for_imp_esp_inf_pro = models.CharField(  max_length=255, verbose_name="Especifique que formación ha impartido")
     
     #cv_adj_inf_pro = models.CharField(max_length=15,verbose_name="Adjunta tu currículum en formato PDF.")  
-    cv_adj_inf_pro = models.FileField(upload_to='pdfs/',verbose_name="Adjunta tu currículum en formato PDF.")
+    cv_adj_inf_pro = models.FileField(upload_to='pdfs/',verbose_name="Adjunta tu currículum en formato PDF.",null=True, blank=True)
     
     # COMPETENCIAS Y CERTIFICACIONES
     opcion = [
@@ -244,7 +257,7 @@ class Info_Estu(models.Model):
     de_que_han_trab= models.CharField(max_length=15,verbose_name="de qué han trabajado")
     de_que_que_trab= models.CharField(max_length=15,verbose_name="de qué querrían trabajar")
     rang_sal_des= models.FloatField(max_length=2,verbose_name="rango salarial deseado")
-    cv_adj_inf_est = models.FileField(upload_to='pdfs/',verbose_name="Adjunta tu currículum en formato PDF.")
+    cv_adj_inf_est = models.FileField(upload_to='pdfs/',verbose_name="Adjunta tu currículum en formato PDF.",null=True, blank=True)
     fk_per_inf_est= models.ForeignKey(Dat_Per, on_delete=models.CASCADE,verbose_name="fk de Datos de personas")
 
     def __str__(self):
