@@ -1,0 +1,204 @@
+
+"Dat_per"
+
+"Pk_per";	"nom_per";	    "dni_per";	  "fn_per";	"cn_per";    "tel_per";   "email_per";            "dir_per";            		"Género/sex_per"
+"1";	"Paula Rodriguez Busquets"; "56897641K";  "14/06/1979";  "Española";  "654897526"; "paularobu@gmail.com";  "Av. Aiguas de Llobregat 89 2-4";            "1"
+"2";    "Juan Alberto Flores Díaz"; "65898579P";  "25/12/1985";  "Colombiano";"715893645"; "jalbertfd@gmail.com";  "Av. Diagonal 115 At 02";			"2"
+"3";	"Gisela Conde Posada";	    "26369570L";  "23/08/2002";  "Española";  "614875235"; "giscoposada@gmail.com"; "C. Masnou 89 8-3";				"1"
+
+"Dat_inf"
+
+"pk_inf_pro"; "nom_per";		"dni_per";  "fn_per";	   "cn_per";	"tel_per";	"email_per";		"dir_per";		"Género/sex_per"
+"01";	      "Fernando Soto Vazques";	"25897254J"; "05/05/2000"; "Español";	"758962516";	"fersova@gmail.com";	"C. Ibiza 25 2-1";		"2"
+"02";	      "Victoria Secret Molina";	"26897725P"; "09/08/1985"; "Honduras";  "658962589";    "vicsemo@gmail.com";    "C. Lepant 79 3-2";		"1"
+"03";	      "Richard Gómez Méndez";	"75894254S"; "10/12/1988"; "Perú";      "758962135";    "rgomendez@gmail.com";  "C. Cruz Roja 87 At 02";	"2"
+
+
+"Información Profesional"
+
+"pk_inf_pro";"tit_inf_pro";"esp_inf_pro";		   "exp_inf_pro";	"for_imp_inf_pro";" cv_adj_inf_pro" 
+"01";		"2";	    "Ingeniería Informatica";		"4";			"1";		"CV.pdf"
+"02";		"3";	    "Administración de Empresas";	"3";			"3";		"CV.pdf"
+"03";		"4";	    "Bioquímica";			"4";			"2";		"CV.pdf"
+
+
+"Competencias y Certificaciones"
+
+"pk_inf_pro";"cert_inf_pro";"opcion 1 Sí"; "cert_esp_inf_pro";		"opción 2 No"
+"1";		"1";		"1";	   	"Ingeniería Informatica"				
+"2";	        "2";		"2";	 
+"3";		"1";		"1";	  	 "Bioquímica"
+
+
+"Herramientas Tecnologicas"
+"pk_inf_pro";"herr_inf_pro"
+"1";		"2";
+"2";		"3";
+"3";		"4";
+
+
+"Preferencias de Formación"
+
+"pk_inf_pro";"mod_inf_pro";"tipo_alu_inf_pro";"franja_inf_pro"
+"1";		"2"		"3"		"1"
+"2";		"3"		"1"		"2"
+"3";		"1";		"2";		"3"
+
+
+
+UNIDOS CON SUS TABLAS
+
+"Dat_per"
+
+"Pk_per";	"nom_per";	    "dni_per";	  "fn_per";	"cn_per";    "tel_per";    "email_per";             "dir_per";            		"Género/sex_per"
+"1";	"Paula Rodriguez Busquets"; "56897641K";  "14/06/1979";  "Española";  "654897526"; "paularobu@gmail.com";   "Av. Aiguas de Llobregat 89 2-4";            "1"
+"2";    "Juan Alberto Flores Díaz"; "65898579P";  "25/12/1985";  "Colombiano";"715893645"; "jalbertfd@gmail.com";   "Av. Diagonal 115 At 02";			"2"
+"3";	"Gisela Conde Posada";	    "26369570L";  "23/08/2002";  "Española";  "614875235"; "giscopoda@gmail.com"; "C. Masnou 89 8-3";				"1"
+
+| Pk_per | nom_per                  | dni_per   | fn_per      | cn_per     | tel_per   | email_per           | dir_per                         | Género/sex_per |
+|--------|--------------------------|-----------|-------------|------------|-----------|---------------------|---------------------------------|----------------|
+| 1      | Paula Rodriguez Busquets | 56897641K | 14/06/1979  | Española   | 654897526 | paularobu@gmail.com | Av. Aiguas de Llobregat 89 2-4  | 1              |
+| 2      | Juan Alberto Flores Díaz | 65898579P | 25/12/1985  | Colombiano | 715893645 | jalbertfd@gmail.com | Av. Diagonal 115 At 02          | 2              |
+| 3      | Gisela Conde Posada      | 26369570L | 23/08/2002  | Española   | 614875235 | giscopoda@gmail.com | C. Masnou 89 8-3                | 1              |
+
+
+
+"Dat_inf"
+
+"pk_inf_pro";"nom_per";"dni_per";"fn_per";"cn_per";"tel_per";"email_per";"dir_per";"Género/sex_per"
+"01";"Fernando Soto Vazques";"25897254J";"05/05/2000";"Español";"758962516";"fersova@gmail.com";"C. Ibiza 25 2-1";"2"
+"02";"Victoria Secret Molina";"26897725P";"09/08/1985";"Honduras";"658962589";"vicsemo@gmail.com";"C. Lepant 79 3-2";"1"
+"03";"Richard Gómez Méndez";"75894254S";"10/12/1988";"Perú";"758962135";"rgomendez@gmail.com";"C. Cruz Roja 87 At 02";"2"
+
+
+| pk_inf_pro | nom_per                | dni_per   | fn_per      | cn_per   | tel_per   | email_per           | dir_per                | Género/sex_per |
+|------------|------------------------|-----------|-------------|----------|-----------|---------------------|------------------------|----------------|
+| 01         | Fernando Soto Vazques  | 25897254J | 05/05/2000  | Español  | 758962516 | fersova@gmail.com   | C. Ibiza 25 2-1        | 2              |
+| 02         | Victoria Secret Molina | 26897725P | 09/08/1985  | Honduras | 658962589 | vicsemo@gmail.com   | C. Lepant 79 3-2       | 1              |
+| 03         | Richard Gómez Méndez   | 75894254S | 10/12/1988  | Perú     | 758962135 | rgomendez@gmail.com | C. Cruz Roja 87 At 02  | 2              |
+
+"Información Profesional"
+
+"pk_inf_pro";" tit_inf_pro";"esp_inf_pro";"exp_inf_pro";"for_imp_inf_pro";" cv_adj_inf_pro"
+"01";"2";"Ingeniería Informática";"4";"1";"CV.pdf"
+"02";"3";"Administración de Empresas";"3";"3";"CV.pdf"
+"03";"4";"Bioquímica";"4";"2";"CV.pdf"
+
+
+| pk_inf_pro | tit_inf_pro | esp_inf_pro               | exp_inf_pro | for_imp_inf_pro | cv_adj_inf_pro |
+|------------|-------------|---------------------------|-------------|-----------------|----------------|
+| 01         | 2           | Ingeniería Informática    | 4           | 1               | CV.pdf         |
+| 02         | 3           | Administración de Empresas| 3           | 3               | CV.pdf         |
+| 03         | 4           | Bioquímica                | 4           | 2               | CV.pdf         |
+
+
+"Competencias y Certificaciones"
+
+"pk_inf_pro";"cert_inf_pro";"opcion Sí";"cert_esp_inf_pro No"
+"1";"1";"Ingeniería Informática"
+"2";"2";				      "No"
+"3";"1";"Bioquímica"
+
+| pk_inf_pro | cert_inf_pro | opcion Sí               | cert_esp_inf_pro No |
+|------------|--------------|-------------------------|---------------------|
+| 1          | 1            | Ingeniería Informática  |                     |
+| 2          | 2            |                         | No                  |
+| 3          | 1            | Bioquímica              |                     |
+
+
+"Herramientas Tecnologicas"
+"pk_inf_pro";"herr_inf_pro"
+"1";"2"
+"2";"3"
+"3";"4"
+
+| pk_inf_pro | herr_inf_pro |
+|------------|--------------|
+| 1          | 2            |
+| 2          | 3            |
+| 3          | 4            |
+
+
+"Preferencias de Formación"
+
+"pk_inf_pro";"mod_inf_pro";"tipo_alu_inf_pro";"franja_inf_pro"
+"1";"2";"3";"1"
+"2";"3";"1";"2"
+"3";"1";"2";"3"
+
+| pk_inf_pro | mod_inf_pro | tipo_alu_inf_pro | franja_inf_pro |
+|------------|-------------|------------------|----------------|
+| 1          | 2           | 3                | 1              |
+| 2          | 3           | 1                | 2              |
+| 3          | 1           | 2                | 3              |
+
+
+
+
+       
+
+Preguntas para el Registro de Formadores
+
+Datos Personales
+
+	1.	Nombre completo
+	2.	DNI/NIE
+	3.	Fecha de nacimiento
+	4.	Nacionalidad
+	5.	Número de contacto (teléfono móvil y/o fijo)
+	6.	Correo electrónico
+	7.	Dirección completa
+	8.	¿Cuál es tu género?
+		('1', 'Mujer'),
+        	('2', 'Hombre'),
+        	('3', 'Prefiero no especificar'),
+        	('4','Otro')
+
+Información Profesional
+	1.	Título académico más alto obtenido
+		(1, 'Técnico/a'), 
+        	(2, 'Grado universitario'), 
+        	(3, 'Máster'), 
+        	(4, 'Doctorado'),  
+       	 	(5, 'Otros'), 
+	2.	¿En qué área está tu especialización principal?
+	3.	¿Cuántos años de experiencia tienes como formador/a?
+		 (1, 'Menos de 1 año'), 
+            	(2, 'De 1 a 3 años'), 
+            	(3, 'De 4 a 6 años'), 
+            	(4, 'Más de 6 años'),
+	4.	¿Qué tipo de formación has impartido?
+		(1, 'Formación profesional'),
+        	(2, 'Formación universitaria'),
+        	(3, 'Formación empresarial'),
+        	(4, 'Cursos en línea'),
+        	(5, 'Otros')
+	5.	Adjunta tu currículum en formato PDF
+
+Preferencias de Formación
+
+	1.	¿Qué modalidades de enseñanza prefieres impartir?
+	•	(1, 'Presencial'),
+        	(2, 'En línea'),
+        	(3, 'Mixta')
+	2.	¿Qué tipo de alumnado prefieres formar?
+	•	(1, 'Jóvenes'),
+        	(2, 'Adultos'),
+        	(3, 'Empresas'),
+        	(4, 'Otros')
+	3.	¿En qué franjas horarias estás disponible para impartir clases?
+	•	(1, 'Mañana (8:00-14:00)'),
+        	(2, 'Tarde (14:00-20:00)'),
+       	 	(3, 'Noche (20:00-23:00)')
+    
+
+Declaraciones y Consentimientos
+	1.	¿Autorizas el uso de tus datos con fines de gestión académica y administrativa?
+	•	Sí
+	•	No
+	2.	¿Aceptas los términos y condiciones del portal ALUMNALIA?
+	•	Sí
+	•	No
+	3.	¿Quieres recibir notificaciones sobre nuevas oportunidades formativas?
+	•	Sí
+	•	No

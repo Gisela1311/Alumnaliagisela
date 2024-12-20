@@ -1,0 +1,224 @@
+0,011,Producció agrícola,01
+1,012,Producció ramadera,01
+2,013,Producció agrícola combinada amb la producció ramadera,01
+3,014,Activitats dels serveis relacionats amb l'agricultura i la ramaderia i el manteniment de jardins, excepte les activitats veterinàries,01
+4,015,Caça, captura d'animals i repoblació cinegètica, incloses les activitats dels serveis que s'hi relacionen,01
+5,020,Silvicultura, explotació forestal i activitats dels serveis que s'hi relacionen,02
+6,050,Pesca, aqüicultura i activitats dels serveis que s'hi relacionen,05
+7,101,Extracció i aglomeració d'antracita i hulla,10
+8,102,Extracció i aglomeració de lignit bru,10
+9,103,Extracció i aglomeració de torba,10
+10,111,Extracció de petroli brut i de gas natural,11
+11,112,Activitats dels serveis relacionats amb les explotacions petrolíferes i de gas, excepte les activitats de prospecció,11
+12,120,Extracció de minerals d'urani i de tori,12
+13,131,Extracció de minerals de ferro,13
+14,132,Extracció de minerals metàl·lics no fèrrics, excepte els minerals d'urani i de tori,13
+15,141,Extracció de pedra,14
+16,142,Extracció de sorres i argiles,14
+17,143,Extracció de minerals per a adobs i productes químics,14
+18,144,Producció de sal,14
+19,145,Extracció d'altres minerals no metàl·lics ni energètics,14
+20,151,Indústries càrnies,15
+21,152,Elaboració i conservació de peix i productes a base de peix,15
+22,153,Preparació i conservació de fruites i hortalisses,15
+23,154,Fabricació de greixos i olis (vegetals i animals),15
+24,155,Indústries làcties,15
+25,156,Fabricació de productes de molineria, midons i productes amilacis,15
+26,157,Fabricació de productes per a l'alimentació animal,15
+27,158,Fabricació d'altres productes alimentaris,15
+28,159,Elaboració de begudes,15
+29,160,Indústries del tabac,16
+30,171,Preparació i filatura de fibres tèxtils,17
+31,172,Fabricació de teixits tèxtils,17
+32,173,Acabament de tèxtils,17
+33,174,Fabricació d'altres articles confeccionats amb tèxtils, excepte la roba de vestir,17
+34,175,Altres indústries tèxtils,17
+35,176,Fabricació de teixits de punt,17
+36,177,Fabricació d'articles amb teixits de punt,17
+37,181,Confecció de peces de vestir de cuir,18
+38,182,Confecció de peces de vestir amb tèxtils i accessoris,18
+39,183,Preparació i tenyiment de pells de pelleteria; fabricació d'articles de pelleteria,18
+40,191,Preparació, adob i acabament del cuir,19
+41,192,Fabricació d'articles de marroquineria i viatge; articles de guarnicioneria i talabarderia,19
+42,193,Fabricació de calçat,19
+43,201,Serrada i planejament de la fusta; preparació industrial de la fusta,20
+44,202,Fabricació de fulloles, taulers contraplacats, enllistonats, de partícules aglomerades, de fibres i altres taulers i plafons,20
+45,203,Fabricació d'estructures de fusta i peces de fusteria i ebenisteria per a la construcció,20
+46,204,Fabricació d'envasos i embalatges de fusta,20
+47,205,Fabricació d'altres productes de fusta; fabricació de productes de suro, cistelleria i esparteria,20
+48,211,Fabricació de pasta de paper, paper i cartó,21
+49,212,Fabricació d'articles de paper i de cartó,21
+50,221,Edició,22
+51,222,Arts gràfiques i activitats dels serveis que s'hi relacionen,22
+52,223,Reproducció de suports enregistrats,22
+53,231,Coqueries,23
+54,232,Refinació de petroli,23
+55,233,Tractament de combustibles nuclears i residus radioactius,23
+56,241,Fabricació de productes químics bàsics,24
+57,242,Fabricació de plaguicides i altres productes agroquímics,24
+58,243,Fabricació de pintures, vernissos i revestiments similars; tintes d'impremta i màstics,24
+59,244,Fabricació de productes farmacèutics,24
+60,245,Fabricació de sabons, detergents i altres articles de neteja i abrillantament; fabricació de perfums i productes de bellesa i higiene,24
+61,246,Fabricació d'altres productes químics,24
+62,247,Fabricació de fibres artificials i sintètiques,24
+63,251,Fabricació de productes de cautxú,25
+64,252,Fabricació de productes de matèries plàstiques,25
+65,261,Fabricació de vidre i productes de vidre,26
+66,262,Fabricació de productes ceràmics no refractaris excepte els destinats a la construcció; fabricació de productes ceràmics refractaris,26
+67,263,Fabricació de rajoles de València i rajoles de ceràmica,26
+68,264,Fabricació de maons, teules i productes de terra cuita per a la construcció,26
+69,265,Fabricació de ciment, calç i guix,26
+70,266,Fabricació d'elements de formigó, guix i ciment,26
+71,267,Indústries de la pedra ornamental i per a la construcció,26
+72,268,Fabricació de productes minerals no metàl·lics diversos,26
+73,271,Fabricació de productes bàsics de ferro, acer i ferroaliatges,27
+74,272,Fabricació de tubs,27
+75,273,Altres activitats de la transformació del ferro i de l'acer,27
+76,274,Producció i primera transformació de metalls preciosos i d'altres metalls no fèrrics,27
+77,275,Fosa de metalls,27
+78,281,Fabricació d'elements metàl·lics per a la construcció,28
+79,282,Fabricació de cisternes, grans dipòsits i contenidors de metall; fabricació de radiadors i calderes per a calefacció central,28
+80,283,Fabricació de generadors de vapor,28
+81,284,Forja, estampació, embotició de metalls; pulverimetal·lúrgia,28
+82,285,Tractament i revestiment de metalls; enginyeria mecànica general per compte d'altri,28
+83,286,Fabricació d'articles de ganiveteria i coberts, eines i ferreteria,28
+84,287,Fabricació de productes metàl·lics diversos, excepte mobles,28
+85,291,Fabricació de màquines, equips i materials mecànics,29
+86,292,Fabricació d'altres tipus de maquinària, equips i materials mecànics d'ús general,29
+87,293,Fabricació de maquinària agrària,29
+88,294,Fabricació de màquines eina,29
+89,295,Fabricació de maquinària diversa per a usos específics,29
+90,296,Fabricació d'armes i municions,29
+91,297,Fabricació d'aparells domèstics,29
+92,300,Fabricació de màquines d'oficina i equips informàtics,30
+93,311,Fabricació de motors elèctrics, transformadors i generadors,31
+94,312,Fabricació d'aparells de distribució i control elèctrics,31
+95,313,Fabricació de fils i cables elèctrics aïllats,31
+96,314,Fabricació d'acumuladors i piles elèctriques,31
+97,315,Fabricació de llums elèctrics i aparells d'il·luminació,31
+98,316,Fabricació d'altres tipus d'equips elèctrics,31
+99,321,Fabricació de vàlvules, tubs i altres components electrònics,32
+100,322,Fabricació de transmissors de radiodifusió i televisió, i d'aparells per a la radiotelefonia i radiotelegrafia amb fils,32
+101,323,Fabricació d'aparells de recepció, enregistrament i reproducció de so i imatge,32
+102,331,Fabricació d'equips i instruments medicoquirúrgics i d'aparells ortopèdics,33
+103,332,Fabricació d'instruments i aparells de mesura, verificació, control, navegació i altres fins, excepte equips de control per a processos industrials,33
+104,333,Fabricació d'equips de control per a processos industrials,33
+105,334,Fabricació d'instruments d'òptica i d'equips fotogràfics,33
+106,335,Fabricació de rellotges,33
+107,341,Fabricació de vehicles de motor,34
+108,342,Fabricació de carrosseries per a vehicles de motor, remolcs i semiremolcs,34
+109,343,Fabricació de components, peces i accessoris no elèctrics per a vehicles de motor i els seus motors,34
+110,351,Construcció i reparació naval,35
+111,352,Fabricació de material ferroviari,35
+112,353,Construcció aeronàutica i espacial,35
+113,354,Fabricació de motocicletes i bicicletes,35
+114,355,Fabricació d'altres materials de transport,35
+115,361,Fabricació de mobles,36
+116,362,Fabricació d'articles de joieria, orfebreria, argenteria i articles similars,36
+117,363,Fabricació d'instruments musicals,36
+118,364,Fabricació d'articles d'esport,36
+119,365,Fabricació de jocs i joguines,36
+120,366,Altres indústries manufactureres diverses,36
+121,371,Reciclatge de ferralla i residus de metall,37
+122,372,Reciclatge de residus no metàl·lics,37
+123,401,Producció i distribució d'energia elèctrica,40
+124,402,Producció de gas; distribució de combustibles gasosos per conductes urbans, excepte gasoductes,40
+125,403,Producció i distribució de vapor i aigua calenta,40
+126,410,Captació, potabilització i distribució d'aigua,41
+127,451,Preparació d'obres,45
+128,452,Construcció general d'immobles i obres d'enginyeria civil,45
+129,453,Instal·lacions d'edificis i obres,45
+130,454,Acabament d'edificis i obres,45
+131,455,Lloguer d'equips de construcció o demolició amb operari,45
+132,501,Venda de vehicles de motor,50
+133,502,Manteniment i reparació de vehicles de motor,50
+134,503,Venda de recanvis i accessoris de vehicles de motor,50
+135,504,Venda, manteniment i reparació de motocicletes i ciclomotors, i dels seus recanvis i accessoris,50
+136,505,Venda al detall de carburants per a l'automoció,50
+137,511,Intermediaris del comerç,51
+138,512,Comerç a l'engròs de primeres matèries agràries i d'animals vius,51
+139,513,Comerç a l'engròs de productes alimentaris, begudes i tabac,51
+140,514,Comerç a l'engròs de productes de consum, diferents dels alimentaris,51
+141,515,Comerç a l'engròs de productes no agraris semielaborats, ferralla i productes de rebuig,51
+142,516,Comerç a l'engròs de maquinària i equips,51
+143,517,Altres tipus de comerç a l'engròs,51
+144,521,Comerç al detall en establiments no especialitzats,52
+145,522,Comerç al detall d'aliments, begudes i tabac en establiments especialitzats,52
+146,523,Comerç al detall de productes farmacèutics, articles mèdics, bellesa i higiene,52
+147,524,Altres tipus de comerç al detall d'articles nous en establiments especialitzats,52
+148,525,Comerç al detall de béns de segona mà, en establiments,52
+149,526,Comerç al detall fora d'establiments,52
+150,527,Reparació d'efectes personals i efectes domèstics,52
+151,551,Hotels,55
+152,552,Càmpings i altres tipus d'allotjament de curta durada,55
+153,553,Restaurants,55
+154,554,Establiments de begudes,55
+155,555,Menjadors col·lectius i provisió de menjars preparats,55
+156,601,Transport per ferrocarril,60
+157,602,Altres tipus de transport terrestre,60
+158,603,Transport per canonada,60
+159,611,Transport marítim,61
+160,612,Transport per vies de navegació interiors,61
+161,621,Transport aeri regular,62
+162,622,Transport aeri discrecional,62
+163,623,Transport espacial,62
+164,631,Manipulació i dipòsit de mercaderies,63
+165,632,Altres activitats afins al transport,63
+166,633,Activitats de les agències de viatges, operadors turístics, i altres activitats d'ajut al sector turístic,63
+167,634,Organització del transport de mercaderies,63
+168,641,Activitats postals i de correus,64
+169,642,Telecomunicacions,64
+170,651,Mediació monetària,65
+171,652,Altres tipus de mediació financera,65
+172,660,Assegurances i plans de pensions, excepte la Seguretat Social obligatòria,66
+173,671,Activitats auxiliars de la mediació financera, excepte assegurances i plans de pensions,67
+174,672,Activitats auxiliars d'assegurances i plans de pensions,67
+175,701,Activitats immobiliàries per compte propi,70
+176,702,Lloguer de béns immobiliaris per compte propi,70
+177,703,Activitats immobiliàries per compte d'altri,70
+178,711,Lloguer d'automòbils,71
+179,712,Lloguer d'altres mitjans de transport,71
+180,713,Lloguer de maquinària i equips,71
+181,714,Lloguer d'efectes personals i efectes domèstics,71
+182,721,Consulta d'equips informàtics,72
+183,722,Consulta d'aplicacions informàtiques i subministrament de programes informàtics,72
+184,723,Processament de dades,72
+185,724,Activitats relacionades amb bases de dades,72
+186,725,Manteniment i reparació de màquines d'oficina, comptabilitat i equips informàtics,72
+187,726,Altres activitats relacionades amb la informàtica,72
+188,731,Recerca i desenvolupament sobre ciències naturals i tècniques,73
+189,732,Recerca i desenvolupament sobre ciències socials i humanitats,73
+190,741,Activitats jurídiques, de comptabilitat, tenidoria de llibres, auditoria, assessoria fiscal, estudis de mercat i enquestes d'opinió pública; consulta i assessorament sobre direcció i gestió empresarial, gestió de societats de cartera,74
+191,742,Serveis tècnics d'arquitectura i enginyeria, i altres activitats relacionades amb l'assessorament tècnic,74
+192,743,Assaigs i anàlisis tècnics,74
+193,744,Publicitat,74
+194,745,Selecció i col·locació de personal,74
+195,746,Serveis d'investigació i de seguretat,74
+196,747,Activitats industrials de neteja,74
+197,748,Activitats empresarials diverses,74
+198,751,Administració pública,75
+199,752,Prestació pública de serveis a la comunitat en general,75
+200,753,Seguretat Social obligatòria,75
+201,801,Ensenyament primari,80
+202,802,Ensenyament secundari,80
+203,803,Ensenyament superior,80
+204,804,Formació permanent i altres activitats d'ensenyament,80
+205,851,Activitats sanitàries,85
+206,852,Activitats veterinàries,85
+207,853,Activitats de serveis socials,85
+208,900,Activitats de sanejament públic,90
+209,911,Activitats d'organitzacions empresarials, professionals i patronals,91
+210,912,Activitats sindicals,91
+211,913,Activitats associatives diverses,91
+212,921,Activitats cinematogràfiques i de vídeo,92
+213,922,Activitats de ràdio i televisió,92
+214,923,Altres activitats artístiques i d'espectacles,92
+215,924,Activitats d'agències de notícies,92
+216,925,Activitats de biblioteques, arxius, museus i altres institucions culturals,92
+217,926,Activitats esportives,92
+218,927,Activitats recreatives diverses,92
+219,930,Activitats diverses de serveis personals,93
+220,950,Activitats de les llars que ocupen personal domèstic,95
+221,960,Activitats de les llars que produeixen béns per a ús propi,96
+222,970,Activitats de les llars que produeixen serveis per a ús propi,97
+223,990,Organismes extraterritorials,99

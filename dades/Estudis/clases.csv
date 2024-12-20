@@ -1,0 +1,514 @@
+0,0111,"Conreu de cereals i altres conreus",011
+1,0112,"Conreu d'hortalisses, especialitats d'horticultura i productes de planter",011
+2,0113,"Conreu de fruites, fruita seca, espècies i conreus per a begudes",011
+3,0121,"Explotació de bestiar boví i producció de llet crua",012
+4,0122,"Explotació de bestiar oví, cabrum i equí",012
+5,0123,"Explotació de bestiar porcí",012
+6,0124,"Avicultura",012
+7,0125,"Altres explotacions de bestiar",012
+8,0130,"Producció agrícola combinada amb la producció ramadera",013
+9,0141,"Activitats dels serveis relacionats amb l'agricultura i el manteniment de jardins",014
+10,0142,"Activitats dels serveis relacionats amb la ramaderia, excepte les activitats veterinàries",014
+11,0150,"Caça, captura d'animals i repoblació cinegètica, incloses les activitats dels serveis que s'hi relacionen",015
+12,0201,"Silvicultura i explotació forestal",020
+13,0202,"Activitats dels serveis relacionats amb la silvicultura i l'explotació forestal",020
+14,0501,"Pesca",050
+15,0502,"Aqüicultura",050
+16,1010,"Extracció i aglomeració d'antracita i hulla",101
+17,1020,"Extracció i aglomeració de lignit bru",102
+18,1030,"Extracció i aglomeració de torba",103
+19,1110,"Extracció de petroli brut i de gas natural",111
+20,1120,"Activitats dels serveis relacionats amb les explotacions petrolíferes i de gas, excepte les activitats de prospecció",112
+21,1200,"Extracció de minerals d'urani i de tori",120
+22,1310,"Extracció de minerals de ferro",131
+23,1320,"Extracció de minerals metàl·lics no fèrrics, excepte els minerals d'urani i de tori",132
+24,1411,"Extracció de pedra ornamental i per a la construcció",141
+25,1412,"Extracció de pedra calcària, guix i creta",141
+26,1413,"Extracció de pissarres",141
+27,1421,"Extracció de graves i sorres",142
+28,1422,"Extracció d'argila i caolí",142
+29,1430,"Extracció de minerals per a adobs i productes químics",143
+30,1440,"Producció de sal",144
+31,1450,"Extracció d'altres minerals no metàl·lics ni energètics",145
+32,1511,"Sacrifici de bestiar i conservació de carn",151
+33,1512,"Sacrifici i conservació de volateria",151
+34,1513,"Fabricació de productes carnis",151
+35,1520,"Elaboració i conservació de peix i productes a base de peix",152
+36,1531,"Preparació i conservació de patates",153
+37,1532,"Fabricació de sucs de fruites i hortalisses",153
+38,1533,"Fabricació de conserves de fruites i hortalisses",153
+39,1541,"Fabricació d'olis i greixos sense refinar",154
+40,1542,"Fabricació d'olis i greixos refinats",154
+41,1543,"Fabricació de margarina i greixos comestibles similars",154
+42,1551,"Fabricació de productes lactis",155
+43,1552,"Elaboració de gelats",155
+44,1561,"Fabricació de productes de molineria",156
+45,1562,"Fabricació de midons i productes amilacis",156
+46,1571,"Fabricació de productes per a l'alimentació d'animals de granja",157
+47,1572,"Fabricació de productes per a l'alimentació d'animals de companyia",157
+48,1581,"Fabricació de pa i de productes de fleca i pastisseria frescos",158
+49,1582,"Fabricació de galetes i productes de fleca i pastisseria de llarga durada",158
+50,1583,"Indústries del sucre",158
+51,1584,"Indústries del cacau, xocolata i confiteria",158
+52,1585,"Fabricació de pastes alimentàries",158
+53,1586,"Elaboració de cafè, te i infusions",158
+54,1587,"Elaboració d'espècies, salses i condiments",158
+55,1588,"Elaboració de preparats per a l'alimentació infantil i preparats dietètics",158
+56,1589,"Elaboració d'altres productes alimentaris",158
+57,1591,"Destil·lació de begudes alcohòliques",159
+58,1592,"Destil·lació d'alcohol etílic procedent de fermentació",159
+59,1593,"Elaboració de vins",159
+60,1594,"Elaboració de sidra i altres begudes fermentades a partir de fruites",159
+61,1595,"Elaboració d'altres begudes no destil·lades, procedents de fermentació",159
+62,1596,"Fabricació de cervesa",159
+63,1597,"Fabricació de malt",159
+64,1598,"Producció d'aigües minerals i de begudes analcohòliques",159
+65,1600,"Indústries del tabac",160
+66,1711,"Preparació i filatura de fibres de cotó i les seves mescles",171
+67,1712,"Preparació i filatura de fibres de llana cardada i les seves mescles",171
+68,1713,"Preparació i filatura de fibres de llana pentinada i les seves mescles",171
+69,1714,"Preparació i filatura de fibres de lli i les seves mescles",171
+70,1715,"Retorciment i preparació de la seda; retorciment i texturació de filaments sintètics i artificials",171
+71,1716,"Fabricació de fil de cosir",171
+72,1717,"Preparació i filatura d'altres fibres tèxtils",171
+73,1721,"Fabricació de teixits de cotó i les seves mescles",172
+74,1722,"Fabricació de teixits de llana cardada i les seves mescles",172
+75,1723,"Fabricació de teixits de llana pentinada i les seves mescles",172
+76,1724,"Fabricació de teixits de seda",172
+77,1725,"Fabricació d'altres teixits tèxtils",172
+78,1730,"Acabament de tèxtils",173
+79,1740,"Fabricació d'altres articles confeccionats amb tèxtils, excepte la roba de vestir",174
+80,1751,"Fabricació de catifes i moquetes",175
+81,1752,"Fabricació de cordes, cordills, caramells i xarxes",175
+82,1753,"Fabricació de teles no teixides i articles confeccionats amb aquestes teles, excepte la roba de vestir",175
+83,1754,"Fabricació d'altres articles tèxtils",175
+84,1760,"Fabricació de teixits de punt",176
+85,1771,"Fabricació de calceteria",177
+86,1772,"Fabricació d'altres articles amb teixits de punt",177
+87,1810,"Confecció de peces de vestir de cuir",181
+88,1821,"Confecció de roba de treball",182
+89,1822,"Confecció d'altres peces de vestir exteriors",182
+90,1823,"Confecció de roba interior",182
+91,1824,"Confecció d'altres tipus de peces de vestir i accessoris",182
+92,1830,"Preparació i tenyiment de pells de pelleteria; fabricació d'articles de pelleteria",183
+93,1910,"Preparació, adob i acabament del cuir",191
+94,1920,"Fabricació d'articles de marroquineria i viatge; articles de guarnicioneria i talabarderia",192
+95,1930,"Fabricació de calçat",193
+96,2010,"Serrada i planejament de la fusta; preparació industrial de la fusta",201
+97,2020,"Fabricació de fulloles, taulers contraplacats, enllistonats, de partícules aglomerades, de fibres i altres taulers i plafons",202
+98,2030,"Fabricació d'estructures de fusta i peces de fusteria i ebenisteria per a la construcció",203
+99,2040,"Fabricació d'envasos i embalatges de fusta",204
+100,2051,"Fabricació d'altres productes de fusta",205
+101,2052,"Fabricació de productes de suro, cistelleria i esparteria",205
+102,2111,"Fabricació de pasta de paper",211
+103,2112,"Fabricació de paper i de cartó",211
+104,2121,"Fabricació de paper i de cartó ondulats; fabricació d'envasos i embalatges de paper i de cartó",212
+105,2122,"Fabricació d'articles de paper i de cartó per a ús domèstic i sanitari",212
+106,2123,"Fabricació d'articles de papereria",212
+107,2124,"Fabricació de papers pintats",212
+108,2125,"Fabricació d'altres articles de paper i de cartó",212
+109,2211,"Edició de llibres",221
+110,2212,"Edició de periòdics",221
+111,2213,"Edició de revistes",221
+112,2214,"Edició de suports de so enregistrats",221
+113,2215,"Altres activitats d'edició",221
+114,2221,"Impressió de periòdics",222
+115,2222,"Altres activitats d'impressió",222
+116,2223,"Enquadernació",222
+117,2224,"Activitats de preimpressió",222
+118,2225,"Activitats auxiliars relacionades amb la impressió",222
+119,2231,"Reproducció de suports de so enregistrats",223
+120,2232,"Reproducció de suports de vídeo enregistrats",223
+121,2233,"Reproducció de suports d'informàtica enregistrats",223
+122,2310,"Coqueries",231
+123,2320,"Refinació de petroli",232
+124,2330,"Tractament de combustibles nuclears i residus radioactius",233
+125,2411,"Fabricació de gasos industrials",241
+126,2412,"Fabricació de colorants i pigments",241
+127,2413,"Fabricació de productes bàsics de química inorgànica",241
+128,2414,"Fabricació de productes bàsics de química orgànica",241
+129,2415,"Fabricació d'adobs i compostos nitrogenats fertilitzants",241
+130,2416,"Fabricació de primeres matèries plàstiques",241
+131,2417,"Fabricació de cautxú sintètic en forma primària",241
+132,2420,"Fabricació de plaguicides i altres productes agroquímics",242
+133,2430,"Fabricació de pintures, vernissos i revestiments similars; tintes d'impremta i màstics",243
+134,2441,"Fabricació de productes farmacèutics de base",244
+135,2442,"Fabricació de preparats farmacèutics i altres productes farmacèutics d'ús medicinal",244
+136,2451,"Fabricació de sabons, detergents i altres articles de neteja i abrillantament",245
+137,2452,"Fabricació de perfums i productes de bellesa i higiene",245
+138,2461,"Fabricació d'explosius i articles pirotècnics",246
+139,2462,"Fabricació de coles i gelatines",246
+140,2463,"Fabricació d'olis essencials",246
+141,2464,"Fabricació de material fotogràfic verge i preparats químics per a fotografia",246
+142,2465,"Fabricació de suports verges per a enregistrament",246
+143,2466,"Fabricació d'altres productes químics",246
+144,2470,"Fabricació de fibres artificials i sintètiques",247
+145,2511,"Fabricació de pneumàtics i cambres de cautxú",251
+146,2512,"Reconstrucció i recautxutatge de pneumàtics",251
+147,2513,"Fabricació d'altres productes de cautxú",251
+148,2521,"Fabricació de plaques, fulls, tubs i perfils de matèries plàstiques",252
+149,2522,"Fabricació d'envasos i embalatges de matèries plàstiques",252
+150,2523,"Fabricació de productes de matèries plàstiques per a la construcció",252
+151,2524,"Fabricació d'altres productes de matèries plàstiques",252
+152,2611,"Fabricació de vidre pla",261
+153,2612,"Manipulació i transformació del vidre pla",261
+154,2613,"Fabricació de vidre buit",261
+155,2614,"Fabricació de fibra de vidre",261
+156,2615,"Fabricació i manipulació d'altres vidres (inclòs el vidre tècnic)",261
+157,2621,"Fabricació d'articles ceràmics d'ús domèstic i ornamental",262
+158,2622,"Fabricació d'aparells sanitaris ceràmics",262
+159,2623,"Fabricació d'aïlladors i peces aïllants de material ceràmic",262
+160,2624,"Fabricació d'altres productes ceràmics d'ús tècnic",262
+161,2625,"Fabricació d'altres productes ceràmics",262
+162,2626,"Fabricació de productes ceràmics refractaris",262
+163,2630,"Fabricació de rajoles de València i rajoles de ceràmica",263
+164,2640,"Fabricació de maons, teules i productes de terra cuita per a la construcció",264
+165,2651,"Fabricació de ciment",265
+166,2652,"Fabricació de calç",265
+167,2653,"Fabricació de guix",265
+168,2661,"Fabricació d'elements de formigó per a la construcció",266
+169,2662,"Fabricació d'elements de guix per a la construcció",266
+170,2663,"Fabricació de formigó fresc",266
+171,2664,"Fabricació de morter",266
+172,2665,"Fabricació de fibrociment",266
+173,2666,"Fabricació d'altres productes de formigó, guix i ciment",266
+174,2670,"Indústries de la pedra ornamental i per a la construcció",267
+175,2681,"Fabricació de productes abrasius",268
+176,2682,"Fabricació d'altres productes minerals no metàl·lics",268
+177,2710,"Fabricació de productes bàsics de ferro, acer i ferroaliatges",271
+178,2721,"Fabricació de tubs de ferro",272
+179,2722,"Fabricació de tubs d'acer",272
+180,2731,"Estiratge en fred",273
+181,2732,"Laminatge en fred",273
+182,2733,"Producció de perfils en fred amb conformació per doblegament",273
+183,2734,"Trefilatge en fred",273
+184,2741,"Producció i primera transformació de metalls preciosos",274
+185,2742,"Producció i primera transformació d'alumini",274
+186,2743,"Producció i primera transformació de plom, zinc i estany",274
+187,2744,"Producció i primera transformació de coure",274
+188,2745,"Producció i primera transformació d'altres metalls no fèrrics",274
+189,2751,"Fosa de ferro",275
+190,2752,"Fosa d'acer",275
+191,2753,"Fosa de metalls lleugers",275
+192,2754,"Fosa d'altres metalls no fèrrics",275
+193,2811,"Fabricació d'estructures metàl·liques i els seus components",281
+194,2812,"Fabricació de tancaments metàl·lics",281
+195,2821,"Fabricació de cisternes, grans dipòsits i contenidors de metall",282
+196,2822,"Fabricació de radiadors i calderes per a calefacció central",282
+197,2830,"Fabricació de generadors de vapor",283
+198,2840,"Forja, estampació, embotició de metalls; pulverimetal·lúrgia",284
+199,2851,"Tractament i revestiment de metalls",285
+200,2852,"Enginyeria mecànica general per compte d'altri",285
+201,2861,"Fabricació d'articles de ganiveteria i coberts",286
+202,2862,"Fabricació d'eines i d'estris intercanviables per a màquines eina",286
+203,2863,"Fabricació de panys i ferramentes",286
+204,2871,"Fabricació de bidons i tonells de ferro o d'acer",287
+205,2872,"Fabricació d'envasos i embalatges lleugers, en metall",287
+206,2873,"Fabricació de productes de filferro",287
+207,2874,"Fabricació de perns, cargols, cadenes i molles",287
+208,2875,"Fabricació d'altres productes metàl·lics",287
+209,2911,"Fabricació de motors i turbines, excepte els destinats a aeronaus, vehicles automòbils i ciclomotors",291
+210,2912,"Fabricació de bombes, compressors i sistemes hidràulics",291
+211,2913,"Fabricació de vàlvules i aixetes",291
+212,2914,"Fabricació de coixinets, engranatges i òrgans mecànics de transmissió",291
+213,2921,"Fabricació de forns i cremadors",292
+214,2922,"Fabricació de maquinària d'elevació i manipulació",292
+215,2923,"Fabricació de maquinària de ventilació i refrigeració no domèstica",292
+216,2924,"Fabricació d'altres tipus de maquinària d'ús general",292
+217,2931,"Fabricació de tractors agrícoles",293
+218,2932,"Fabricació d'altres tipus de maquinària agrària",293
+219,2941,"Fabricació de màquines eina elèctriques portàtils",294
+220,2942,"Fabricació de màquines eina per treballar els metalls, excepte elèctriques portàtils",294
+221,2943,"Fabricació d'altres tipus de màquines eina",294
+222,2951,"Fabricació de maquinària per a les indústries metal·lúrgiques",295
+223,2952,"Fabricació de maquinària per a les indústries extractives i de la construcció",295
+224,2953,"Fabricació de maquinària per a les indústries de l'alimentació, begudes i tabac",295
+225,2954,"Fabricació de maquinària per a les indústries tèxtils, de la confecció i del cuir",295
+226,2955,"Fabricació de maquinària per a les indústries del paper i del cartó",295
+227,2956,"Fabricació d'altres tipus de maquinària per a usos específics",295
+228,2960,"Fabricació d'armes i municions",296
+229,2971,"Fabricació d'aparells electrodomèstics",297
+230,2972,"Fabricació d'aparells domèstics no elèctrics",297
+231,3001,"Fabricació de màquines d'oficina",300
+232,3002,"Fabricació d'ordinadors i altres equips informàtics",300
+233,3110,"Fabricació de motors elèctrics, transformadors i generadors",311
+234,3120,"Fabricació d'aparells de distribució i control elèctrics",312
+235,3130,"Fabricació de fils i cables elèctrics aïllats",313
+236,3140,"Fabricació d'acumuladors i piles elèctriques",314
+237,3150,"Fabricació de llums elèctrics i aparells d'il·luminació",315
+238,3161,"Fabricació de materials i equips elèctrics per a motors i vehicles",316
+239,3162,"Fabricació d'altres tipus d'equips i materials elèctrics",316
+240,3210,"Fabricació de vàlvules, tubs i altres components electrònics",321
+241,3220,"Fabricació de transmissors de radiodifusió i televisió, i d'aparells per a la radiotelefonia i radiotelegrafia amb fils",322
+242,3230,"Fabricació d'aparells de recepció, enregistrament i reproducció de so i imatge",323
+243,3310,"Fabricació d'equips i instruments medicoquirúrgics i d'aparells ortopèdics",331
+244,3320,"Fabricació d'instruments i aparells de mesura, verificació, control, navegació i altres fins, excepte equips de control per a processos industrials",332
+245,3330,"Fabricació d'equips de control per a processos industrials",333
+246,3340,"Fabricació d'instruments d'òptica i d'equips fotogràfics",334
+247,3350,"Fabricació de rellotges",335
+248,3410,"Fabricació de vehicles de motor",341
+249,3420,"Fabricació de carrosseries per a vehicles de motor, remolcs i semiremolcs",342
+250,3430,"Fabricació de components, peces i accessoris no elèctrics per a vehicles de motor i els seus motors",343
+251,3511,"Construcció i reparació de vaixells, excepte d'esbarjo i d'esport",351
+252,3512,"Construcció i reparació d'embarcacions d'esbarjo i d'esport",351
+253,3520,"Fabricació de material ferroviari",352
+254,3530,"Construcció aeronàutica i espacial",353
+255,3541,"Fabricació de motocicletes",354
+256,3542,"Fabricació de bicicletes",354
+257,3543,"Fabricació de vehicles per a persones amb discapacitat",354
+258,3550,"Fabricació d'altres materials de transport",355
+259,3611,"Fabricació de cadires i altres seients",361
+260,3612,"Fabricació de mobles d'oficina i d'establiments comercials",361
+261,3613,"Fabricació de mobles de cuina i bany",361
+262,3614,"Fabricació d'altres mobles",361
+263,3615,"Fabricació de matalassos",361
+264,3621,"Fabricació de monedes",362
+265,3622,"Fabricació d'articles de joieria, orfebreria i argenteria",362
+266,3630,"Fabricació d'instruments musicals",363
+267,3640,"Fabricació d'articles d'esport",364
+268,3650,"Fabricació de jocs i joguines",365
+269,3661,"Fabricació de bijuteria",366
+270,3662,"Fabricació d'escombres, brotxes i raspalls",366
+271,3663,"Fabricació d'altres articles",366
+272,3710,"Reciclatge de ferralla i residus de metall",371
+273,3720,"Reciclatge de residus no metàl·lics",372
+274,4011,"Producció d'energia elèctrica",401
+275,4012,"Transport d'energia elèctrica",401
+276,4013,"Distribució i comerç d'energia elèctrica",401
+277,4021,"Producció de gas",402
+278,4022,"Distribució i comerç de combustibles gasosos per conductes urbans, excepte gasoductes",402
+279,4030,"Producció i distribució de vapor i aigua calenta",403
+280,4100,"Captació, potabilització i distribució d'aigua",410
+281,4511,"Demolició i moviment de terres",451
+282,4512,"Perforacions i sondatges",451
+283,4521,"Construcció general d'edificis i obres singulars d'enginyeria civil (ponts, túnels, etc.)",452
+284,4522,"Construcció de cobertes i d'estructures de tancament",452
+285,4523,"Construcció d'autopistes, carreteres, camps d'aterratge, vies fèrries i centres esportius",452
+286,4524,"Obres hidràuliques",452
+287,4525,"Altres construccions especialitzades",452
+288,4531,"Instal·lacions elèctriques",453
+289,4532,"Aïllament tèrmic, acústic i antivibratori",453
+290,4533,"Lampisteria i instal·lacions de climatització",453
+291,4534,"Altres instal·lacions d'edificis i obres",453
+292,4541,"Arrebossada",454
+293,4542,"Instal·lacions de fusteria i tancaments metàl·lics",454
+294,4543,"Revestiments de terres i parets",454
+295,4544,"Vidrieria i pintura",454
+296,4545,"Altres treballs d'acabament d'edificis i obres",454
+297,4550,"Lloguer d'equips de construcció o demolició amb operari",455
+298,5010,"Venda de vehicles de motor",501
+299,5020,"Manteniment i reparació de vehicles de motor",502
+300,5030,"Venda de recanvis i accessoris de vehicles de motor",503
+301,5040,"Venda, manteniment i reparació de motocicletes i ciclomotors, i dels seus recanvis i accessoris",504
+302,5050,"Venda al detall de carburants per a l'automoció",505
+303,5111,"Intermediaris del comerç de primeres matèries agràries, animals vius, primeres matèries tèxtils i productes semielaborats",511
+304,5112,"Intermediaris del comerç de combustibles, minerals, metalls i productes químics industrials",511
+305,5113,"Intermediaris del comerç de la fusta i materials de construcció",511
+306,5114,"Intermediaris del comerç de maquinària, equips industrials, embarcacions i aeronaus",511
+307,5115,"Intermediaris del comerç de mobles, articles per a la llar i ferreteria",511
+308,5116,"Intermediaris del comerç de tèxtils, peces de vestir, calçat i articles de cuir",511
+309,5117,"Intermediaris del comerç de productes alimentaris, begudes i tabac",511
+310,5118,"Intermediaris del comerç especialitzats en la venda de productes específics o grups de productes no esmentats anteriorment",511
+311,5119,"Intermediaris del comerç de productes diversos",511
+312,5121,"Comerç a l'engròs de cereals, llavors i aliments per al bestiar",512
+313,5122,"Comerç a l'engròs de flors i plantes",512
+314,5123,"Comerç a l'engròs d'animals vius",512
+315,5124,"Comerç a l'engròs de cuirs i pells",512
+316,5125,"Comerç a l'engròs de tabac en brut",512
+317,5131,"Comerç a l'engròs de fruites, patates i verdures",513
+318,5132,"Comerç a l'engròs de carn i productes carnis",513
+319,5133,"Comerç a l'engròs de productes lactis, ous, olis i greixos comestibles",513
+320,5134,"Comerç a l'engròs de begudes",513
+321,5135,"Comerç a l'engròs de productes del tabac",513
+322,5136,"Comerç a l'engròs de sucre, xocolata i confiteria",513
+323,5137,"Comerç a l'engròs de cafè, te, cacau i espècies",513
+324,5138,"Comerç a l'engròs de peix i marisc i altres productes alimentaris",513
+325,5139,"Comerç a l'engròs, no especialitzat, de productes alimentaris, begudes i tabac",513
+326,5141,"Comerç a l'engròs de tèxtils",514
+327,5142,"Comerç a l'engròs de peces de vestir i calçat",514
+328,5143,"Comerç a l'engròs d'aparells electrodomèstics, de ràdio i de televisió",514
+329,5144,"Comerç a l'engròs de porcellana i cristalleria, papers pintats i articles de neteja",514
+330,5145,"Comerç a l'engròs de perfumeria i productes de bellesa",514
+331,5146,"Comerç a l'engròs de productes farmacèutics",514
+332,5147,"Comerç a l'engròs d'altres béns de consum diferents dels alimentaris",514
+333,5151,"Comerç a l'engròs de combustibles sòlids, líquids i gasosos, i productes similars",515
+334,5152,"Comerç a l'engròs de metalls i minerals metàl·lics",515
+335,5153,"Comerç a l'engròs de fusta, materials de construcció i aparells sanitaris",515
+336,5154,"Comerç a l'engròs de ferreteria, lampisteria i calefacció",515
+337,5155,"Comerç a l'engròs de productes químics",515
+338,5156,"Comerç a l'engròs d'altres productes semielaborats",515
+339,5157,"Comerç a l'engròs de ferralla i productes de rebuig",515
+340,5160,"Comerç a l'engròs d'altres components i equips electrònics",516
+341,5161,"Comerç a l'engròs de màquines eina",516
+342,5162,"Comerç a l'engròs de maquinària per a la mineria, la construcció i l'enginyeria civil",516
+343,5163,"Comerç a l'engròs de maquinària per a les indústries tèxtils, màquines de cosir i de tricotar",516
+344,5166,"Comerç a l'engròs de màquines, accessoris i eines agrícoles, inclosos els tractors",516
+345,5167,"Comerç a l'engròs d'ordinadors, perifèrics i programes informàtics",516
+346,5168,"Comerç a l'engròs d'altres tipus de màquines i equips d'oficina",516
+347,5169,"Comerç a l'engròs d'altres tipus de maquinària per a la indústria, el comerç i la navegació",516
+348,5170,"Altres tipus de comerç a l'engròs",517
+349,5211,"Comerç al detall, amb predomini d'aliments, begudes i tabac en establiments no especialitzats",521
+350,5212,"Comerç al detall d'altres productes en establiments no especialitzats",521
+351,5221,"Comerç al detall de fruites i verdures",522
+352,5222,"Comerç al detall de carn i productes carnis",522
+353,5223,"Comerç al detall de peix i marisc",522
+354,5224,"Comerç al detall de pa i productes de fleca, confiteria i pastisseria",522
+355,5225,"Comerç al detall de begudes",522
+356,5226,"Comerç al detall de productes de tabac",522
+357,5227,"Altres tipus de comerç al detall en establiments especialitzats en alimentació",522
+358,5231,"Comerç al detall de productes farmacèutics",523
+359,5232,"Comerç al detall d'articles mèdics i ortopèdics",523
+360,5233,"Comerç al detall de cosmètics i articles de tocador",523
+361,5241,"Comerç al detall de tèxtils",524
+362,5242,"Comerç al detall de peces de vestir",524
+363,5243,"Comerç al detall de calçat i articles de cuir",524
+364,5244,"Comerç al detall de mobles; aparells d'il·luminació i altres articles per a la llar",524
+365,5245,"Comerç al detall d'electrodomèstics, aparells de ràdio, televisió i so",524
+366,5246,"Comerç al detall de ferreteria, pintures i vidre",524
+367,5247,"Comerç al detall de llibres, periòdics i papereria",524
+368,5248,"Altres tipus de comerç al detall en establiments especialitzats",524
+369,5250,"Comerç al detall de béns de segona mà, en establiments",525
+370,5261,"Comerç al detall per correspondència i per Internet",526
+371,5262,"Comerç al detall en parades de venda i mercats ambulants",526
+372,5263,"Altres tipus de comerç al detall fora d'establiments",526
+373,5271,"Reparació de calçat i altres articles de cuir",527
+374,5272,"Reparació d'aparells domèstics elèctrics",527
+375,5273,"Reparació de rellotges i joieria",527
+376,5274,"Altres reparacions",527
+377,5510,"Hotels",551
+378,5521,"Albergs juvenils i refugis de muntanya",552
+379,5522,"Càmpings",552
+380,5523,"Altres tipus d'allotjament",552
+381,5530,"Restaurants",553
+382,5540,"Establiments de begudes",554
+383,5551,"Menjadors col·lectius",555
+384,5552,"Provisió de menjars preparats",555
+385,6010,"Transport per ferrocarril",601
+386,6021,"Altres tipus de transport terrestre regular de viatgers",602
+387,6022,"Transport en taxi",602
+388,6023,"Altres tipus de transport terrestre discrecional de viatgers",602
+389,6024,"Transport de mercaderies per carretera",602
+390,6030,"Transport per canonada",603
+391,6110,"Transport marítim",611
+392,6120,"Transport per vies de navegació interiors",612
+393,6210,"Transport aeri regular",621
+394,6220,"Transport aeri discrecional",622
+395,6230,"Transport espacial",623
+396,6311,"Manipulació de mercaderies",631
+397,6312,"Dipòsit i emmagatzematge",631
+398,6321,"Altres activitats afins al transport terrestre",632
+399,6322,"Altres activitats afins al transport marítim",632
+400,6323,"Altres activitats afins al transport aeri",632
+401,6330,"Activitats de les agències de viatges, operadors turístics, i altres activitats d'ajut al sector turístic",633
+402,6340,"Organització del transport de mercaderies",634
+403,6411,"Activitats postals nacionals",641
+404,6412,"Activitats de correus diferents de les activitats postals nacionals",641
+405,6420,"Telecomunicacions",642
+406,6511,"Banca central",651
+407,6512,"Altres tipus de mediació monetària",651
+408,6521,"Arrendament financer",652
+409,6522,"Altres tipus d'activitats creditícies",652
+410,6523,"Altres tipus de mediació financera",652
+411,6601,"Assegurances de vida",660
+412,6602,"Plans de pensions",660
+413,6603,"Assegurances de no vida",660
+414,6711,"Administració de mercats financers",671
+415,6712,"Serveis de mediació en operacions de valors i gestió de fons",671
+416,6713,"Activitats auxiliars de la mediació financera",671
+417,6720,"Activitats auxiliars d'assegurances i plans de pensions",672
+418,7011,"Promoció immobiliària per compte propi",701
+419,7012,"Compravenda de béns immobiliaris per compte propi",701
+420,7020,"Lloguer de béns immobiliaris per compte propi",702
+421,7031,"Agents de la propietat immobiliària",703
+422,7032,"Gestió i administració de la propietat immobiliària",703
+423,7110,"Lloguer d'automòbils",711
+424,7121,"Lloguer d'altres mitjans de transport terrestre",712
+425,7122,"Lloguer de mitjans de navegació",712
+426,7123,"Lloguer de mitjans de transport aeri",712
+427,7131,"Lloguer de maquinària i equips agraris",713
+428,7132,"Lloguer de maquinària i equips per a construcció i enginyeria civil",713
+429,7133,"Lloguer de màquines i equips d'oficina (inclosos els ordinadors)",713
+430,7134,"Lloguer d'altres tipus de maquinària i equips",713
+431,7140,"Lloguer d'efectes personals i efectes domèstics",714
+432,7210,"Consulta d'equips informàtics",721
+433,7221,"Edició de programes informàtics",722
+434,7222,"Altres activitats de consulta i subministrament de programes informàtics",722
+435,7230,"Processament de dades",723
+436,7240,"Activitats relacionades amb bases de dades",724
+437,7250,"Manteniment i reparació de màquines d'oficina, comptabilitat i equips informàtics",725
+438,7260,"Altres activitats relacionades amb la informàtica",726
+439,7310,"Recerca i desenvolupament sobre ciències naturals i tècniques",731
+440,7320,"Recerca i desenvolupament sobre ciències socials i humanitats",732
+441,7411,"Activitats jurídiques",741
+442,7412,"Activitats de comptabilitat, tenidoria de llibres, auditoria i assessoria fiscal",741
+443,7413,"Estudis de mercat i enquestes d'opinió pública",741
+444,7414,"Consulta i assessorament sobre direcció i gestió empresarial",741
+445,7415,"Gestió de societats de cartera (holdings)",741
+446,7420,"Serveis tècnics d'arquitectura i enginyeria, i altres activitats relacionades amb l'assessorament tècnic",742
+447,7430,"Assaigs i anàlisis tècnics",743
+448,7440,"Publicitat",744
+449,7450,"Selecció i col·locació de personal",745
+450,7460,"Serveis d'investigació i de seguretat",746
+451,7470,"Activitats industrials de neteja",747
+452,7481,"Activitats de fotografia",748
+453,7482,"Activitats d'envasament i empaquetatge per compte d'altri",748
+454,7483,"Activitats de secretaria i traducció",748
+455,7484,"Altres activitats empresarials",748
+456,7486,"Activitats de centres d'atenció telefònica",748
+457,7511,"Activitats generals de l'Administració pública",751
+458,7512,"Regulació de les activitats sanitàries, educatives i culturals, i altres serveis socials, excepte la Seguretat Social obligatòria",751
+459,7513,"Regulació de l'activitat econòmica",751
+460,7514,"Altres activitats auxiliars de serveis per a l'Administració pública en general",751
+461,7521,"Afers exteriors",752
+462,7522,"Defensa",752
+463,7523,"Justícia",752
+464,7524,"Ordre públic i seguretat",752
+465,7525,"Activitats de protecció civil",752
+466,7530,"Seguretat Social obligatòria",753
+467,8010,"Ensenyament primari",801
+468,8021,"Ensenyament secundari de formació general",802
+469,8022,"Ensenyament secundari de formació tècnica i professional",802
+470,8030,"Ensenyament superior",803
+471,8041,"Ensenyament de les escoles de conducció i pilotatge",804
+472,8042,"Ensenyament per a adults i altres tipus d'ensenyament ncaa",804
+473,8511,"Activitats hospitalàries",851
+474,8512,"Activitats mèdiques",851
+475,8513,"Activitats odontològiques",851
+476,8514,"Altres activitats sanitàries",851
+477,8520,"Activitats veterinàries",852
+478,8531,"Activitats de prestació de serveis socials amb allotjament",853
+479,8532,"Activitats de prestació de serveis socials sense allotjament",853
+480,9001,"Activitats de recollida i tractament d'aigües residuals",900
+481,9002,"Activitats de recollida i tractament de residus",900
+482,9003,"Altres activitats de sanejament, descontaminació i altres serveis similars",900
+483,9111,"Activitats d'organitzacions empresarials i patronals",911
+484,9112,"Activitats d'organitzacions professionals",911
+485,9120,"Activitats sindicals",912
+486,9131,"Activitats d'organitzacions religioses",913
+487,9132,"Activitats d'organitzacions polítiques",913
+488,9133,"Altres activitats associatives",913
+489,9211,"Producció cinematogràfica i de vídeo",921
+490,9212,"Distribució de pel·lícules",921
+491,9213,"Exhibició de pel·lícules",921
+492,9220,"Activitats de ràdio i televisió",922
+493,9231,"Creació i interpretació artística i literària",923
+494,9232,"Gestió de sales d'espectacles",923
+495,9233,"Activitats de fires i parcs d'atraccions",923
+496,9234,"Altres activitats d'espectacles",923
+497,9240,"Activitats d'agències de notícies",924
+498,9251,"Activitats de biblioteques i arxius",925
+499,9252,"Activitats de museus i conservació de llocs i edificis històrics",925
+500,9253,"Activitats de jardins botànics, zoològics i parcs nacionals",925
+501,9261,"Gestió d'estadis i altres instal·lacions esportives",926
+502,9262,"Altres activitats esportives",926
+503,9271,"Activitats relacionades amb els jocs d'atzar i les apostes",927
+504,9272,"Altres activitats recreatives",927
+505,9301,"Rentatge, neteja i tenyiment de peces tèxtils i de pell",930
+506,9302,"Perruqueria i altres tractaments de bellesa",930
+507,9303,"Pompes fúnebres i activitats que s'hi relacionen",930
+508,9304,"Activitats de manteniment físic",930
+509,9305,"Altres activitats de serveis personals",930
+510,9500,"Activitats de les llars que ocupen personal domèstic",950
+511,9600,"Activitats de les llars que produeixen béns per a ús propi",960
+512,9700,"Activitats de les llars que produeixen serveis per a ús propi",970
+513,9900,"Organismes extraterritorials",990
