@@ -209,7 +209,7 @@ list_tables('db.sqlite3')
 conn = sqlite3.connect('db.sqlite3')
 cursor = conn.cursor()
 
-"""
+
 nombre_archivo = "01_comarques.csv"
 inserta_Comarca(conn, cursor,nombre_archivo)
 
@@ -234,14 +234,14 @@ inserta_estudios(conn, cursor, nombre_archivo)
 nombre_archivo = "seccionesLuz.csv"
 inserta_Familia_Profesion(conn, cursor, nombre_archivo)
 
-"""
+
 
 nombre_archivo = "subseccionesLuz.csv"
 inserta_Familia_Profesion(conn, cursor, nombre_archivo)
-
+"""
 nombre_archivo = "Ambito.csv"
 inserta_Ambito(conn, cursor, nombre_archivo)
-
+"""
 #os.system("pause")
 conn.close()
 
