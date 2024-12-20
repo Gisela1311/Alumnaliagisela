@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% load static %}
-    <link rel="icon" href="{% static '/img/Logo3/favicon-32x32.png' %}" type="image/png"> 
+    <link rel="icon" href="{% static '/img/Logo2/favicon-32x32.png' %}" type="image/png"> 
     
     <title>{% block titulo %}{% endblock titulo%}</title> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -22,17 +22,17 @@
         <div class="col-md-3 d-flex align-items-center" > 
           <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
             <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
-            <img src="{% static '/img/Logo3/Logo.jpg' %}" alt="Logo Alumnalia" height="200" width="200"> 
+            <img src="{% static '/img/Logo2/Logo_pantalla_y_birrete.jpg' %}" alt="Logo Alumnalia" height="200" width="230"> 
           </a>          
         </div>
         <!--opciones de navegación-->
         <div class="col-md-9 d-flex align-items-center" > 
           <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0" style=" font-size: 25px;"> 
             <li><a href="{% url 'inicio' %}" class="nav-link px-2 link-secondary">Inicio</a></li>
-            <li><a href="{% url 'datos_personales_estudiantes' %}" class="nav-link px-2 link-secondary">F. Datos Generales Estudiantes</a></li> 
-            <li><a href="{% url 'datos_personales_formadores' %}" class="nav-link px-2 link-secondary">F. Datos Generales Formadores</a></li> 
-            <li><a href="{% url 'datos_formador' %}" class="nav-link px-2 link-secondary">F. Datos Formador</a></li> 
-            <li><a href="#" class="nav-link px-2 link-secondary">F. Datos Estudiante</a></li>    
+            <li><a href="{% url 'datos_personales_estudiantes' %}" class="nav-link px-2 link-secondary">F. D. Generales Estudiante</a></li> 
+            <li><a href="{% url 'datos_personales_formadores' %}" class="nav-link px-2 link-secondary">F. D. Generales Formadore</a></li> 
+            <li><a href="{% url 'datos_especificos_formador' %}" class="nav-link px-2 link-secondary">F. D. Específicos Formador</a></li> 
+            <li><a href="{% url 'datos_especificos_estudiante' %}" class="nav-link px-2 link-secondary">F. D. Específicos Estudiante</a></li>    
           </ul>
         </div>   
         </header>
