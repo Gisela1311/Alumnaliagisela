@@ -45,10 +45,10 @@ class Comarca_provincias(models.Model):
         verbose_name="id de Comarca_provincias", 
         primary_key=True
         )     
-    fk_com = models.ForeignKey(Comarca, on_delete=models.CASCADE, related_name='Comarca_provincias', default=True)
-    fk_pro = models.ForeignKey(Provincias, on_delete=models.CASCADE, related_name='Comarca_provincias', default=True)
+    fk_com = models.ForeignKey(Comarca, on_delete=models.CASCADE, verbose_name="id de la Comarca", related_name='Comarca_provincias', default=True)
+    fk_pro = models.ForeignKey(Provincias, on_delete=models.CASCADE,  verbose_name="id de la Provicia", related_name='Comarca_provincias', default=True)
     def __str__(self):
-        return f"{self.pk_cam_pro}"
+        return f"{self.pk_cam_pro} id Comarca: {self.pk_cam_pro} id Provicia: {self.pk_cam_pro}"
     class Meta:
         db_table = "Comarca_provincias" 
 
