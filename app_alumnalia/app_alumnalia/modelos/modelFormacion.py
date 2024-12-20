@@ -12,9 +12,10 @@ class Familia_Profesion(models.Model):
     pk_fm_pro= models.CharField(max_length=20,verbose_name="id de Entidad Formadora",primary_key=True)
     desc_fm_pro= models.CharField(max_length=200, verbose_name="Descripcion de la Familia Profesional")
     def __str__(self):
-        return f"{self.pk_fm_pro}"
+        return f"{self.pk_fm_pro} {self.desc_fm_pro}"
     class Meta:
         db_table = "Familia_Profesional" 
+        ordering = ['pk_fm_pro']
 
 class Denominacion(models.Model):
     pk_deno= models.CharField(max_length=20,verbose_name="id de Denominacion",primary_key=True)
@@ -23,6 +24,7 @@ class Denominacion(models.Model):
         return f"{self.pk_den}"
     class Meta:
         db_table = "Denominacion" 
+        
 
 class Ambito(models.Model):
     pk_amb= models.CharField(max_length=20,verbose_name="id de Ambito",primary_key=True)
@@ -39,6 +41,7 @@ class Estudio_Profesion(models.Model):
         return f"{self.desc_est_pro}"
     class Meta:
         db_table = "Estudio_Profesional" 
+        ordering = ['desc_est_pro']
 
 ######## Entidad Formadora ###### tabla Origen de datos foap2024
 #1

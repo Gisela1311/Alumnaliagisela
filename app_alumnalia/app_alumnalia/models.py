@@ -3,7 +3,7 @@ from django.db import models
 from .encryption_utils import encrypt_data, decrypt_data
 from datetime import datetime, date
 from .modelos.modelAdmin import Tipo_Usuario
-from .modelos.modelFormacion import Estudio_Profesion
+from .modelos.modelFormacion import Estudio_Profesion, Familia_Profesion
 from .modelos.modelDir import Comarca, Provincias, Comarca_provincias, Municipios, TipoVia
 
 

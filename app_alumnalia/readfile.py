@@ -236,8 +236,8 @@ inserta_Familia_Profesion(conn, cursor, nombre_archivo)
 
 """
 
-nombre_archivo = "subseccionesLuz.csv"
-inserta_Familia_Profesion(conn, cursor, nombre_archivo)
+#nombre_archivo = "subseccionesLuz.csv"
+#inserta_Familia_Profesion(conn, cursor, nombre_archivo)
 
 nombre_archivo = "Ambito.csv"
 inserta_Ambito(conn, cursor, nombre_archivo)
